@@ -27,6 +27,8 @@ h6 {
     padding: 40px 0;
 }
 
+
+/*====== Header Area CSS ======= */
 .header-area {
     z-index: 10;
 }
@@ -102,7 +104,7 @@ h6 {
     text-align: right;
 
 }
-
+/*======= Menu area CSS ======*/
 .menu-area {
     background: #30323A;
 }
@@ -170,6 +172,46 @@ span#m-list {
     padding: 15px 0;
 }
 
+.onclick-dropdown {
+    position: relative;
+}
+.onclick-dropdown ul {
+    position: absolute;
+    background: #30323A;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    z-index: 100;
+    transition: .5s;
+    opacity: 0;
+    visibility: hidden;
+    right: 20px;
+}
+
+.onclick-dropdown:hover > ul {
+    visibility: visible;
+    opacity: 1;
+    right: 0;
+}
+
+.onclick-dropdown ul li {
+    list-style: none;
+    border-bottom: 1px solid #505050;
+}
+
+.onclick-dropdown ul li a {
+    color: #fff;
+    padding: 12px 15px;
+    display: block;
+    text-transform: uppercase;
+    transition: .4s;
+}
+
+.onclick-dropdown ul li a:hover {
+    background-color: #505050;
+}
+
+/*========= Slider area CSS =========*/
 .slider-bg-1 {
     background-image: url(../../tool/img/slider-image-1.jpg);
 }
@@ -272,8 +314,6 @@ span input[type="search"] {
     color: #fff;
 }
 
-span {}
-
 span.sb input[type="search"]:focus {
     background: #f8f8f8;
     color: #333;
@@ -305,7 +345,7 @@ span.sb input[type="submit"] {
     color: #fff;
 }
 
-
+/*========= Footer area CSS =========*/
 .brand-name .lnmae a {
     color: #fff;
 }
@@ -374,6 +414,7 @@ div#social-icon a {
     text-align: center;
 }
 
+/* ========== Single Header CSS =======*/
 .single-header-a, .single-header-u
 {
     box-shadow: 0px 8px 6px -6px #ddd;
@@ -398,44 +439,6 @@ div#social-icon a {
 }
 
 
-.onclick-dropdown {
-    position: relative;
-}
-.onclick-dropdown ul {
-    position: absolute;
-    background: #30323A;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    z-index: 100;
-    transition: .5s;
-    opacity: 0;
-    visibility: hidden;
-    right: 20px;
-}
-
-.onclick-dropdown:hover > ul {
-    visibility: visible;
-    opacity: 1;
-    right: 0;
-}
-
-.onclick-dropdown ul li {
-    list-style: none;
-    border-bottom: 1px solid #505050;
-}
-
-.onclick-dropdown ul li a {
-    color: #fff;
-    padding: 12px 15px;
-    display: block;
-    text-transform: uppercase;
-    transition: .4s;
-}
-
-.onclick-dropdown ul li a:hover {
-    background-color: #505050;
-}
 
 /*====================== Form CSS ==================*/
 .login-form,
@@ -496,6 +499,7 @@ form#user-search {
 small a {
     color: #6C757D;
 }
+
 
 .book-bg-1 {
     background-image: url(../../tool/img/book1.jpg);
@@ -631,7 +635,7 @@ small a {
     margin-top: 30px;
 }
 
-/*================== Admin Dashboard ==================*/
+/*======== Admin Dashboard CSS ========*/
 
 .admin-nav {
     background-color: #30323A;
@@ -732,7 +736,7 @@ small a {
 
 }
 
-/*============== Book Detail ==============*/
+/*=========== Book Detail CSS ==========*/
 #book-img img {
     width: 100%;
     height: 300px;
@@ -756,7 +760,7 @@ small a {
     color: #555;
 }
 
-/* ========= Users Books view ============ */
+/* ========= Users Books view CSS ========= */
 #book-image img {
     width: 100%;
     height: 180px;
