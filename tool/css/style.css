@@ -1,4 +1,5 @@
 /*========== Base CSS ==============*/
+@import url('https://fonts.googleapis.com/css?family=Khula:300,400,600,700,800');
 
 * {
     margin: 0 auto;
@@ -9,9 +10,10 @@ a:hover {
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
+    font-family: 'Khula', sans-serif;
+    font-size: 15px;
     letter-spacing: .6px;
+    color: #333;
 }
 
 h1,
@@ -861,3 +863,39 @@ small a {
 .book-description {
     line-height: 1.9;
 }
+
+
+
+
+
+
+
+
+
+
+/*================
+COLOR CSS
+================= */
+
+.hearder-top,.lname a,.btn-login,.ic-cart a,.menu ul li:hover a,.fq,.widget ul li a:hover,.single-header-a,.single-header-a span a, .single-header-u span a,.admin-search button,.user-menu ul li a:hover 
+{
+    color: #eb4924;
+}
+
+button#ctg,.btn-login:hover,.slider-area .owl-dots div.active,span.sb input[type="submit"],.btn-buy,.my-btn,.my-btn:hover,.book-details a,.addto-cart a,.view-btn a:hover,.admin-menu ul li:hover,.admin-search button:hover,#addto-cart a,#book-details a
+{
+    background-color: #eb4924;
+}
+
+.single-book:hover,.view-btn a,#single-book:hover,.my-btn,span input[type="search"],.btn-login,.ic-cart a
+{
+    border: 1px solid #eb4924;
+}
+.slide-text h2,.hearder-top,.single-header-a
+{
+  border-bottom: 1px solid #eb4924;   
+}
+.slide-text h2
+{
+  border-top: 1px solid #eb4924;   
+} 
