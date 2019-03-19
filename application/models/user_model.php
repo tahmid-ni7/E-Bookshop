@@ -43,6 +43,14 @@ class user_model extends CI_Model
 		}
 	}
 
+	public function recent_books()
+	{
+		$this->db->limit(6);
+		$this->db->order_by('id', 'DESC');
+		$query = $this->db->get('books');
+		return $query->result();
+	}
+
 
 
 } 

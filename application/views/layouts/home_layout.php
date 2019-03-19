@@ -77,69 +77,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
 
     <div class="section-padding after-slider">
-        <div class="container">
-            <div class="section-title sl">
-                <h3>Recent Books</h3>
-            </div>
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="single-book">
-                        <div class="book-img book-bg-1">
-                            <div class="book-bg-inner">
-                                <div class="addto-cart"><a href=""><i class="fas fa-shopping-cart"></i> Add to cart</a></div>
-                            </div>
-                        </div>
-                        <div class="book-name">Book name</div>
-                        <div class="price">price: TK. 50</div>
-                        <div class="book-details"><a href="">View Details</a></div>
 
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="single-book">
-                        <div class="book-img book-bg-2">
-                            <div class="book-bg-inner">
-                                <div class="addto-cart"><a href=""><i class="fas fa-shopping-cart"></i> Add to cart</a></div>
-                            </div>
-                        </div>
-                        <div class="book-name">Book name</div>
-                        <div class="price">price: TK. 50</div>
-                        <div class="book-details"><a href="">View Details</a></div>
-
-
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="single-book">
-                        <div class="book-img book-bg-3">
-                            <div class="book-bg-inner">
-                                <div class="addto-cart"><a href=""><i class="fas fa-shopping-cart"></i> Add to cart</a></div>
-                            </div>
-                        </div>
-                        <div class="book-name">Book name</div>
-                        <div class="price">price: TK. 50</div>
-                        <div class="book-details"><a href="">View Details</a></div>
-
-
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="single-book">
-                        <div class="book-img book-bg-4">
-                            <div class="book-bg-inner">
-                                <div class="addto-cart"><a href=""><i class="fas fa-shopping-cart"></i> Add to cart</a></div>
-                            </div>
-                        </div>
-                        <div class="book-name">Book name</div>
-                        <div class="price">price: TK. 50</div>
-                        <div class="book-details"><a href="">View Details</a></div>
-
-
-                    </div>
-                </div>
-            </div>
-            <div class="view-btn"><a href="">View all <i class="fas fa-arrow-circle-right"></i></a></div>
-        </div>
+        <div><?php $this->load->view('users/recent_books') ?></div>
+        
     </div>
     <!--====================== Footer Area =======================-->
     <div class="footer-area">

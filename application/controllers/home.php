@@ -25,6 +25,9 @@ class Home extends CI_Controller {
 		$view['category'] = $this->admin_model->get_category();
 		/*==============================*/
 
+		$this->load->model('user_model');
+		$view['books'] = $this->user_model->recent_books();
+
 		$this->load->view('layouts/home_layout', $view);
 	}
 }

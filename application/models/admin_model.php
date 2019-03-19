@@ -106,6 +106,7 @@ class admin_model extends CI_Model
 
 	public function get_books()
 	{
+		$this->db->order_by('id', 'DESC');
 		$query = $this->db->get('books');
 		return $query->result();
 	}
