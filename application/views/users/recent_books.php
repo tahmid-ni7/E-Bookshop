@@ -11,7 +11,7 @@
                             <div id="addto-cart"><a href=""><i class="fas fa-shopping-cart"></i> Add to cart</a></div>
                         </div>
                         <div class="book-text">
-                            <div id="book-name"><?= substr(htmlentities($book->book_name),0,21) ?></div>
+                            <div id="book-name"><?= substr(htmlentities($book->book_name),0,20) ?></div>
                             <div id="author">By <i><?= $book->author ?></i></div>
                             <div id="price"><?= $book->price ?>.TK</div>
                             <div id="book-details">

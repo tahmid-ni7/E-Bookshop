@@ -834,6 +834,7 @@ small a {
 #book-name {
     font-size: 14px;
     text-transform: capitalize;
+    font-weight: 700;
 }
 
 #price {
