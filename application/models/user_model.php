@@ -43,14 +43,24 @@ class user_model extends CI_Model
 		}
 	}
 
-
 	public function get_books()
 	{
-		$this->db->order_by('id', 'DESC');
-		$query = $this->db->get('books');
+		/*=== SQL join and Data filter ===*/
+		$this->db->select('*');
+		$this->db->from('category');
+		$this->db->join('books', 'books.categoryId = category.id');
+		if(isset($_GET['ctg']))
+		{
+			$a = $_GET['ctg'];
+			$query = $this->db->where('category.id', $a);
+			$this->db->order_by('books.id', 'DESC'); 
+			$query = $this->db->get();
+			return $query->result();
+		}
+		$this->db->order_by('books.id', 'DESC');
+		$query = $this->db->get();
 		return $query->result();
 	}
-
 
 	public function recent_books()
 	{
