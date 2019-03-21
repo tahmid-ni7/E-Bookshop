@@ -59,7 +59,7 @@ class admin extends CI_Controller {
 				print $this->db->error();
 			}
 		}
-		
+
 	}
 
 /*================ Category Detail display page ================*/
@@ -82,7 +82,7 @@ class admin extends CI_Controller {
 
 		$this->form_validation->set_rules('category', 'Category name', 'trim|required|alpha_numeric_spaces');
 		$this->form_validation->set_rules('description', 'Description', 'trim|required|callback_my_rules');
-		
+
 
 		if($this->form_validation->run() == FALSE)
 		{
@@ -109,7 +109,7 @@ class admin extends CI_Controller {
 	{
 		$this->load->model('admin_model');
 		$this->admin_model->delete_category($id);
-		
+
 		$this->session->set_flashdata('success', '<i class= "fas fa-trash text-danger"></i> Category deleted successfully');
 		redirect('admin/category');
 	}
@@ -169,7 +169,7 @@ class admin extends CI_Controller {
 	{
 		$this->load->model('admin_model');
 		$this->admin_model->delete_user($id);
-		
+
 		$this->session->set_flashdata('success', '<i class= "fas fa-trash text-danger"></i> User deleted successfully');
 		redirect('admin/allUsers');
 	}
@@ -218,7 +218,7 @@ class admin extends CI_Controller {
 
 		if(($this->form_validation->run() && $this->upload->do_upload()) == FALSE)
 		{
-			
+
 			$view['admin_view'] = "admin/add_books";
 			$this->load->view('layouts/admin_layout', $view);
 
@@ -269,7 +269,7 @@ class admin extends CI_Controller {
 
 		$this->load->library('upload', $config);
 
-		$this->form_validation->set_rules('book_name', 'Book name', 'trim|required|alpha_numeric_spaces|strip_tags[book_name]');
+		$this->form_validation->set_rules('book_name', 'Book name', 'trim|required|strip_tags[book_name]');
 		$this->form_validation->set_rules('description', 'Description', 'trim|required|min_length[100]|strip_tags[description]');
 		$this->form_validation->set_rules('author', 'Author name', 'trim|required|alpha_numeric_spaces|strip_tags[author]');
 		$this->form_validation->set_rules('publisher', 'Publisher name', 'trim|required|alpha_numeric_spaces|strip_tags[publisher]');
@@ -281,7 +281,7 @@ class admin extends CI_Controller {
 
 		if(($this->form_validation->run() && $this->upload->do_upload()) == FALSE)
 		{
-			
+
 			$view['admin_view'] = "admin/book_edit";
 			$this->load->view('layouts/admin_layout', $view);
 
@@ -307,10 +307,11 @@ class admin extends CI_Controller {
 	{
 		$this->load->model('admin_model');
 		$this->admin_model->delete_book($id);
-		
+
 		$this->session->set_flashdata('success', '<i class= "fas fa-trash text-danger"></i> Book deleted successfully');
-		redirect('admin/books');		
+		redirect('admin/books');
 	}
+
 
 /*============== SET CUSTOM VALIDATION RULES FOR TEXT-AREA ==============*/
 

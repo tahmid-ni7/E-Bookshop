@@ -105,16 +105,26 @@ class admin_model extends CI_Model
 	}
 
 	public function get_books()
-	{
-		$this->db->order_by('id', 'DESC');
-		$query = $this->db->get('books');
+	{	
+		/*=== SQL join ===*/
+		$this->db->select('*');
+		$this->db->from('category');
+		$this->db->join('books', 'books.categoryId = category.id');
+
+		$this->db->order_by('books.id', 'DESC');
+		$query = $this->db->get();
 		return $query->result();
 	}
 
 	public function get_book_detail($id)
 	{
-		$this->db->where('id', $id);
-		$query = $this->db->get('books');
+		/*=== SQL join ===*/
+		$this->db->select('*');
+		$this->db->from('category');
+		$this->db->join('books', 'books.categoryId = category.id');
+
+		$this->db->where('books.id', $id);
+		$query = $this->db->get();
 		return $query->row();		
 	}
 

@@ -1,5 +1,6 @@
 /*========== Base CSS ==============*/
-@import url('https://fonts.googleapis.com/css?family=Khula:300,400,600,700,800');
+
+@import url('https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700');
 
 * {
     margin: 0 auto;
@@ -10,10 +11,11 @@ a:hover {
 }
 
 body {
-    font-family: 'Khula', sans-serif;
-    font-size: 15px;
+    font-family: 'Hind', sans-serif;
+    font-size: 14px;
     letter-spacing: .6px;
     color: #333;
+    overflow-x: hidden;
 }
 
 h1,
@@ -68,7 +70,9 @@ h6 {
 .lname span {
     color: #1E2225;
 }
-
+.lname span img {
+    width: 32px;
+}
 .welcome-tx {
     font-size: 13px;
 }
@@ -502,120 +506,6 @@ small a {
     color: #6C757D;
 }
 
-
-.book-bg-1 {
-    background-image: url(../../tool/img/book1.jpg);
-}
-.book-bg-2 {
-    background-image: url(../../tool/img/book2.jpg);
-}
-.book-bg-3 {
-    background-image: url(../../tool/img/book3.jpg);
-}
-.book-bg-4 {
-    background-image: url(../../tool/img/book4.jpg);
-}
-.book-img{
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-    display: table;
-    width: 100%;
-    position: relative;
-}
-
-.section-title h3 {
-    color: #30323A;
-    font-size: 32px;
-    text-transform: uppercase;
-    border-bottom: 1px solid #dddd;
-    padding: 8px 2px;
-    margin-bottom: 25px;
-}
-
-.section-padding {
-    padding: 50px 0;
-}
-
-.section-padding.sl {
-    margin-top: -20px;
-}
-
-.single-book {
-    border: 1px solid #ddd;
-    padding: 5px;
-    display: block;
-    background: #F8F8F8;
-    transition: .4s;
-}
-
-.book-name {
-    font-size: 18px;
-    text-transform: uppercase;
-    text-align: center;
-}
-
-.price {
-    font-size: 18px;
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: 700;
-}
-
-.book-details a {
-    color: #fff;
-    background: #F8694A;
-    text-align: center;
-    display: block;
-    padding: 10px 0;
-    font-size: 16px;
-    margin-top: 10px;
-}
-.book-bg-inner {
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-    width: 100%;
-}
-.addto-cart a {
-    color: #fff;
-    font-size: 16px;
-    background: #F8694A;
-    display: block;
-    padding: 12px 0;
-    text-transform: uppercase;
-    z-index: 2;
-    opacity: 0;
-    visibility: hidden;
-    position: relative;
-    transition: .4s;
-}
-.book-img:after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #30323A;
-    content: "";
-    opacity: 0;
-    visibility: hidden;
-    z-index: 1;
-    transition: .4s;
-}
-.single-book:hover .addto-cart a {
-    visibility: visible;
-    opacity: 1;
-}
-.single-book:hover .book-img:after
-{
-    opacity: .7;
-    visibility: visible;
-}
-.single-book:hover {
-    box-shadow: 0px 12px 6px -5px #dddd;
-    border: 1px solid #F8694A;
-}
 .view-btn a {
     background: #fff;
     display: inline-block;
@@ -665,9 +555,9 @@ small a {
 
 .user-name {
     padding: 15px;
-    border-bottom: 1px solid #dddd;
+    border-bottom: 1px solid #F8694A;
     font-size: 20px;
-    text-transform: uppercase;
+    text-transform: inherit;
 }
 
 .admin-menu ul li:hover {
@@ -749,7 +639,10 @@ small a {
     margin-bottom: 10px;
     text-transform: capitalize;
 }
-
+.book-info div:nth-child(4) {
+    font-size: 18px;
+    text-transform: capitalize;
+}
 .book-info div:last-child {
     font-size: 25px;
     color: #000;
@@ -771,13 +664,13 @@ small a {
 }
 
 #single-book {
-    border: 1px solid #ddd;
+    border: 1px solid #f0f0f0;
     display: block;
-    background: #F8F8F8;
     transition: .4s;
     position: relative;
     margin-bottom: 10px;
     width: 100%;
+    box-shadow: 0px 7px 6px -3px #f1f1f1;
 }
 
 #single-book:hover {
@@ -828,6 +721,21 @@ small a {
     opacity: .5;
     visibility: visible;
 }
+#single-book:hover #book-image img{
+    animation-name: largesmall;
+    animation-duration: 1.2s;
+    animation-iteration-count: 1;
+
+}
+
+@keyframes largesmall{
+    to,from{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(.9);
+    }
+}
 .book-text {
     padding: 5px;
     text-align: center;
@@ -841,6 +749,7 @@ small a {
 
 #price {
     font-weight: 700;
+    font-size: 15px;
 }
 
 #book-details a {
@@ -862,6 +771,7 @@ small a {
 }
 .book-description {
     line-height: 1.9;
+    font-size: 15px;
 }
 
 
@@ -877,25 +787,25 @@ small a {
 COLOR CSS
 ================= */
 
-.hearder-top,.lname a,.btn-login,.ic-cart a,.menu ul li:hover a,.fq,.widget ul li a:hover,.single-header-a,.single-header-a span a, .single-header-u span a,.admin-search button,.user-menu ul li a:hover 
+/* .hearder-top,.lname a,.btn-login,.ic-cart a,.menu ul li:hover a,.fq,.widget ul li a:hover,.single-header-a,.single-header-a span a, .single-header-u span a,.admin-search button,.user-menu ul li a:hover 
 {
-    color: #eb4924;
+    color: #dd4b39;
 }
 
 button#ctg,.btn-login:hover,.slider-area .owl-dots div.active,span.sb input[type="submit"],.btn-buy,.my-btn,.my-btn:hover,.book-details a,.addto-cart a,.view-btn a:hover,.admin-menu ul li:hover,.admin-search button:hover,#addto-cart a,#book-details a
 {
-    background-color: #eb4924;
+    background-color: #dd4b39;
 }
 
 .single-book:hover,.view-btn a,#single-book:hover,.my-btn,span input[type="search"],.btn-login,.ic-cart a
 {
-    border: 1px solid #eb4924;
+    border: 1px solid #dd4b39;
 }
 .slide-text h2,.hearder-top,.single-header-a
 {
-  border-bottom: 1px solid #eb4924;   
+  border-bottom: 1px solid #dd4b39;   
 }
 .slide-text h2
 {
-  border-top: 1px solid #eb4924;   
-} 
+  border-top: 1px solid #dd4b39;   
+} */

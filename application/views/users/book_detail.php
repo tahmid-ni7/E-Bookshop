@@ -10,7 +10,7 @@
 				<div>Book Name: <?= strip_tags($book_detail->book_name)?></div>
 				<div>Author: <i><?= strip_tags($book_detail->author)?></i></div>
 				<div>Publisher: <?= strip_tags($book_detail->publisher)?></div>
-				<div>Category: <?= strip_tags($book_detail->categoryId)?></div>
+				<div>Category: <?= strip_tags($book_detail->category)?></div>
 				<div>Price: <?= strip_tags($book_detail->price)?>.TK</div>
 				</div>
 				<div><a href="" class="btn btn-outline-success btn-sm"><i class="fas fa-shopping-cart"></i> Add to cart</a></div>

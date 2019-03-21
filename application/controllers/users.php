@@ -83,9 +83,9 @@ class Users extends CI_Controller {
 				$login_data = array(
 
 					'user_data' => $user_data,
-					'name' 		=> $name,
 					'email'		=> $email,
 					'type'		=> $type,
+					'name'		=> $name,
 					'logged_in'	=> true
 
 				);
@@ -114,7 +114,11 @@ class Users extends CI_Controller {
 			}
 			else
 			{
-
+				/*=== LOAD DYNAMIC CATAGORY ===*/
+				$this->load->model('admin_model');
+				$view['category'] = $this->admin_model->get_category();
+				/*==============================*/
+				
 				$this->session->set_flashdata('login_fail', 'Invalid logged in!');
 
 				$view['user_view'] = "users/login";
@@ -140,8 +144,8 @@ class Users extends CI_Controller {
 		$view['category'] = $this->admin_model->get_category();
 		/*==============================*/
 		
-		$this->load->model('admin_model');
-		$view['books'] = $this->admin_model->get_books();
+		$this->load->model('user_model');
+		$view['books'] = $this->user_model->get_books();
 
 		$view['user_view'] = "users/all_books";
 		$this->load->view('layouts/user_layout', $view);

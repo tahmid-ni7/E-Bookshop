@@ -30,7 +30,7 @@
   	<?php foreach($users_data as $udata): ?>
     <tr>
       <?php print '<td>'.htmlentities($udata->id).'</td>'; ?>
-      <?php print '<td>'.htmlentities($udata->name).'</td>'; ?>
+      <?php print '<td class= "text-info">'.htmlentities($udata->name).'</td>'; ?>
       <?php print '<td>'.htmlentities($udata->contact).'</td>'; ?>
       <?php print '<td>'.htmlentities($udata->email).'</td>'; ?>
       <?php print '<td>'.htmlentities($udata->type).'</td>'; ?>

@@ -6,7 +6,7 @@
                 <?= form_textarea(['name'=>'review', 'placeholder'=>'Give a review',  'value'=>set_value('review'), 'class'=>'form-control', 'rows'=>'3'])?>
             </div>
             <div class="col-md-2 col-sm-2">
-                <?= form_submit(['name'=>'submit', 'value'=>'review', 'class'=>'btn btn-success'])?>
+                <?= form_submit(['name'=>'submit', 'value'=>'Review', 'class'=>'btn btn-success'])?>
             </div>
         </div>
 </form>

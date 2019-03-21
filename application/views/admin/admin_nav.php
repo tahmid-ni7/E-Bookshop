@@ -1,5 +1,13 @@
 <div class="admin-nav">
-    <div class="user-name"><i class="fas fa-user"></i> User Name</div>
+    <div class="user-name"><i class="fas fa-user"></i> 
+    <?php 
+        if($this->session->userdata('logged_in'))
+        {
+            $name = $this->session->userdata('email');
+            print $name;
+        }
+     ?>
+    </div>
     <div class="admin-search">
         <form action="">
             <div class="form-group">
