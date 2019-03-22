@@ -63,7 +63,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <a href="" class="btn-login"><i class="fas fa-user-cog"></i> Register</a>-->
                             </div>
                             <div class="col-md-4">
-                                <div class="ic-cart"><a href=""><i class="fas fa-shopping-cart"></i> Cart</a></div>
+                                <div class="ic-cart"><a href="<?= base_url()?>/cart"><i class="fas fa-shopping-cart"></i> Cart</a></div>
                             </div>
                         </div>
                     </div>
