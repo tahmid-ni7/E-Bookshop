@@ -1,11 +1,11 @@
 <br>
 <div class="container">
 	<div class="row">
-		<div class="col-md-8 col-sm-8 col-xs-12" id="book-detail">
+		<div class="col-lg-8 col-md-9 col-sm-12" id="book-detail">
 			<div id="table-header">Book Detail</div><br>
 			<div class="row">
-			<div class="col-md-4 col-sm-5" id="book-img"><?php print '<img src = "'.strip_tags($book_detail->book_image).'" alt = "">';?></div>
-			<div class="col-md-8 col-sm-7">
+			<div class="col-lg-4 col-md-5 col-sm-6" id="book-img"><?php print '<img src = "'.strip_tags($book_detail->book_image).'" alt = "">';?></div>
+			<div class="col-lg-8 col-md-7 col-sm-6">
 				<div class="book-info">
 				<div>Book Name: <?= strip_tags($book_detail->book_name)?></div>
 				<div>Author: <i><?= strip_tags($book_detail->author)?></i></div>
@@ -27,7 +27,7 @@
 		  ?>
 
 		</div>
-		<div class="col-sm-4">
+		<div class="col-lg-4 col-md-3">
 			
 		</div>
 	</div>

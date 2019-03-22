@@ -8,14 +8,11 @@
                      
                         <ul class="active">
                             <?php foreach($category as $ctg): ?>
-                            <?php print '<li><a href="'.base_url('users/all_books').'/?ctg='.$ctg->id.'">'.$ctg->category.'</a></li>'; ?>
-                           <!--  <li><a href="#">Category2</a></li>
-                           <li><a href="#">Category3</a></li>
-                           <li><a href="#">Category4</a></li>
-                           <li><a href="#">Category5</a></li> -->
+                                
+                            <?php print '<li><a href="'.base_url('users/all_books').'/?ctg='.$ctg->id.'">'.$ctg->category.'</a></li>';?>
+                           
                             <?php endforeach; ?>
                         </ul>
-                   
                     </div>
                 </div>
                 <div class="col-md-9">

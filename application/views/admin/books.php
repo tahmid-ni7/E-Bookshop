@@ -40,7 +40,7 @@
       <?php print '<td>'.strip_tags($book->publisher).'</td>'; ?>
       <?php print '<td>'.strip_tags($book->price).'.TK</td>'; ?>
       <?php print '<td>'.strip_tags($book->quantity).'</td>'; ?>
-      <?php print '<td>'.(strip_tags($book->category)).'</td>'; ?>
+      <?php print '<td>'.ucwords(strip_tags($book->category)).'</td>'; ?>
 
       <?php print '<td><img src = "'.strip_tags($book->book_image).'" alt = "" width="50" hieght="80" </td>';?>
 

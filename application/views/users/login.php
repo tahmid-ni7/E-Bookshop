@@ -17,8 +17,8 @@
             <div class="form-header">Login Form</div>
             <?= form_open('users/login');?>
                 <div class="form-group row">
-                    <label for="email" class="col-sm-2 col-form-label">Email</label>
-                    <div class="col-sm-6">
+                    <label for="email" class="col-md-2 col-form-label">Email</label>
+                    <div class="col-md-6">
                     <?= form_input(['name'=>'email','placeholder'=>'Enter email...','value'=>set_value('email'), 'class'=>'form-control']);?>
                     </div>
                     <div class="col-md-4">
@@ -26,8 +26,8 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="password" class="col-sm-2 col-form-label">Password</label>
-                    <div class="col-sm-6">
+                    <label for="password" class="col-md-2 col-form-label">Password</label>
+                    <div class="col-md-6">
                         <?= form_password(['name'=>'password','placeholder'=>'Enter password...','value'=> '', 'class'=>'form-control']);?>
                         <small><a href="">Forget password</a></small>
                     </div>
@@ -47,8 +47,8 @@
                  <div class="col-sm-4"></div>
              </div> -->
               <div class="form-group row">
-                <label for="type" class="col-sm-2 col-form-label">Type</label>
-                <div class="col-sm-6">
+                <label for="type" class="col-md-2 col-form-label">Type</label>
+                <div class="col-md-6">
                     <?php $options = array(
                             '' => 'Choose...',
                             'U'=> 'User',
@@ -57,7 +57,7 @@
                     print form_dropdown('type', $options, 'U', ['class' => 'form-control']);
                     ?>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-md-4">
                      <?= form_error('type', '<div class="text-danger">','</div>'); ?>
                 </div>
               </div>

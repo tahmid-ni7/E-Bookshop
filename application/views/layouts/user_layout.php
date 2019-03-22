@@ -84,7 +84,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!--============ Content-area ===========-->
     <div class="container">
         <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-12 col-md-12 col-sm-12">
                 <?php $this->load->view($user_view); ?>
             </div>
         </div>
