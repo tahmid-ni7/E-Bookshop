@@ -79,10 +79,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div>
         <?php $this->load->view('temp/slider'); ?>
     </div>
-
+    <!--==== Recent Books ====-->
     <div class="section-padding after-slider">
-        <div><?php $this->load->view('users/recent_books') ?></div>    
+        <div class="container">
+            <div class="section-title"><a href="<?= base_url()?>users/all_books">recent Books</a></div>
+            <div><?php $this->load->view('temp/recent_books') ?></div> 
+        </div>   
     </div>
+    <!--==== CSE Books ====-->
+    <div class="section-padding">
+        <div class="container">
+            <div class="section-title"><a href="<?= base_url()?>users/all_books/?ctg=1">Computer science and engineering Books</a></div>
+            <div><?php $this->load->view('temp/cse_books') ?></div> 
+        </div>   
+    </div>
+
     <!--============ Footer Area ============-->
     <div class="footer-area">
         <div class="container">

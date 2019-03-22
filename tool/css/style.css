@@ -28,9 +28,24 @@ h6 {
 }
 
 .section-padding {
-    padding: 40px 0;
+    padding: 20px 0;
 }
-
+.section-title {
+    font-size: 24px;
+    text-transform: capitalize;
+    font-weight: 600;
+    border-bottom: 1px solid #dddd;
+    margin-bottom: 10px;
+}
+.section-title a
+{
+    color: #555;
+    transition: .4s;
+}
+.section-title a:hover
+{
+    color: #333;
+}
 
 /*====== Header Area CSS ======= */
 .header-area {
@@ -407,7 +422,7 @@ div#social-icon a {
 
 .copy-right {
     margin-top: 20px;
-    border-top: 1px solid #888;
+    border-top: 1px solid #444;
     text-align: center;
     color: #dddd;
 }
@@ -613,18 +628,17 @@ small a {
 .user-menu ul li a {
     display: block;
     color: #30323A;
-    padding: 4px 12px;
+    padding: 6px 12px;
     text-transform: capitalize;
     transition: .4s;
 }
 .user-menu ul li a:hover {
-    background-color: #F2F3F5;
+    background-color: #E8E9EB;
     color: #F8694A;
 }
 .user-menu-area {
     background: #F7F8FA;
     border-bottom: 1px solid #dddd;
-    padding: 3px 0;
 
 }
 

@@ -1,10 +1,7 @@
-<div class="container">
-            <div class="section-title sl">
-                <h3>Recent Books</h3>
-            </div>
-            <div class="row con-flex">
-                <?php foreach($books as $book):?>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+
+        <div class="row con-flex">
+                <?php foreach($cse_books as $book):?>
+                <div class="col-lg-2 col-md-3 col-sm-4">
                     <div id="single-book">
                         <div id="book-image">
                             <?php print '<img src = "'.strip_tags($book->book_image).'" alt = "">';?>
@@ -22,6 +19,3 @@
                 </div>
             <?php endforeach;?>
         </div>
-
-        <div class="view-btn"><a href="<?= base_url()?>users/all_books">View all <i class="fas fa-arrow-circle-right"></i></a></div>
-</div>

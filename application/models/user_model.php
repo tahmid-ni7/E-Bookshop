@@ -70,6 +70,15 @@ class user_model extends CI_Model
 		return $query->result();
 	}
 
+	public function cse_books()
+	{
+		$this->db->limit(6);
+		$this->db->where('categoryId', '1');
+		$this->db->order_by('id', 'DESC');
+		$query = $this->db->get('books');
+		return $query->result();
+	}
+
 
 
 } 
