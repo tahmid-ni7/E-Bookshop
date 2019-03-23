@@ -7,7 +7,7 @@
 			<div id="book-image">
 				<?php print '<img src = "'.strip_tags($book->book_image).'" alt = "">';?>
 			</div>
-			<?php print '<div id="addto-cart"><a href="'.base_url().'cart/buy/'.$book->id.'"><i class="fas fa-shopping-cart"></i> Add to cart</a></div>'; ?>
+			<?php print '<div id="addto-cart"><a href="'.base_url().'cart/add_to_cart/'.$book->id.'"><i class="fas fa-shopping-cart"></i> Add to cart</a></div>'; ?>
 			<!-- <div id="addto-cart"><a href=""><i class="fas fa-shopping-cart"></i> Add to cart</a></div> -->
 			
 			<div class="book-text">
@@ -15,8 +15,7 @@
 				<div id="author">By <i><?= htmlentities($book->author) ?></i></div>
 				<div id="price"><?= htmlentities($book->price) ?>.TK</div>
 				<div id="book-details"><?php print '<a href = "'.base_url().'users/book_view/'.$book->id.'">View Details</a>'; ?></div>
-				
-			</div>
+				</div>
 		</div>	
 	</div>
 	<?php endforeach;?>

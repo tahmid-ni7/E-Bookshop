@@ -5,7 +5,7 @@
                     <div id="single-book">
                         <div id="book-image">
                             <?php print '<img src = "'.strip_tags($book->book_image).'" alt = "">';?>
-                            <div id="addto-cart"><a href=""><i class="fas fa-shopping-cart"></i> Add to cart</a></div>
+                            <?php print '<div id="addto-cart"><a href="'.base_url().'cart/add_to_cart/'.$book->id.'"><i class="fas fa-shopping-cart"></i> Add to cart</a></div>'; ?>
                         </div>
                         <div class="book-text">
                             <div id="book-name"><?= substr(htmlentities($book->book_name),0,20) ?></div>

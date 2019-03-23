@@ -8,6 +8,12 @@ class Cart extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->library('cart');
+
+		/*if ($this->session->userdata('logged_in') == FALSE) {
+
+			$this->session->set_flashdata('no_access', 'For buying the books you must be logged in your account.');
+			redirect('users/login');
+		}*/
 	}
 
 	public function index()
@@ -19,9 +25,10 @@ class Cart extends CI_Controller {
 
 		$view['user_view'] = "users/myCart";
 		$this->load->view('layouts/user_layout', $view);
+		
 	}
 
-	public function buy($id)
+	public function add_to_cart($id)
 	{
 		/*=== LOAD DYNAMIC CATAGORY ===*/
 		$this->load->model('admin_model');
@@ -32,6 +39,7 @@ class Cart extends CI_Controller {
 		$this->load->model('admin_model');
 		$books = $this->admin_model->get_book_detail($id);
 
+/*=============== Insert Data into cart =============*/
 		$data = array(
 
 				'id'=> $books->id,
@@ -40,14 +48,12 @@ class Cart extends CI_Controller {
 				'book_image'=> $books->book_image,
 				'qty'=> 1
 		);
-
-/*=============== Insert Data into cart ================*/
 		
 		$this->cart->insert($data);
 		redirect('cart');
 
-}
-/*=============== Update data from cart ================*/
+	}
+/*=============== Update data from cart ============*/
 	public function update_cart()
 	{
 		$contents = $this->input->post();

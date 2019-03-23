@@ -788,7 +788,10 @@ small a {
     font-size: 15px;
 }
 
-
+/*===== CART CSS =====*/
+td.hidden {
+    position: absolute;
+}
 
 
 

@@ -1,13 +1,13 @@
-<br><div id="table-header">Your cart</div>
+<br><div id="table-header"><i class="fas fa-shopping-cart"></i> my cart</div>
 <div class="container">
   <?= form_open('cart/update_cart');?>
-  <table class="table table-hover">
-  <thead class="thead">
+  <table class="table">
+  <thead class="thead-light">
     <tr>
-      <th>Quantity</th>
-      <th>Name</th>
-      <th>Price</th>
       <th>Image</th>
+      <th>Book Name</th>
+      <th>Quantity</th>
+      <th>Price</th>
       <th>Sub total</th>
       <th>Action</th>
     </tr>
@@ -18,19 +18,25 @@ $i = 1;
 foreach ($this->cart->contents() as $books) 
 {
   print '<tbody>';
-   
-      print '<td>'.form_hidden($i.'[rowid]', $books['rowid']).'</td>';
       print '<tr>';
-      print '<td>';
-      print form_input(array('name'=> $i.'[qty]', 'value'=> $books['qty'], 'class'=>'form-control'));
-      print '</td>';
+      print '<td class="hidden">'.form_hidden($i.'[rowid]', $books['rowid']).'</td>';
+      print '</tr>';
+
+      print '<tr>';
+      print "<td><img src = '".$books['book_image']."' alt = '' width='50' hieght='80'</td>";
 
       print "<td>".$books['name']."</td>";
-      print "<td>".$books['price']."</td>";
-      print "<td><img src = '".$books['book_image']."' alt = '' width='50' hieght='80'</td>";
-      print "<td>".$books['subtotal']."</td>";
+
       print '<td>';
-      print anchor("cart/delete_cart/".$books['rowid']."", "Delete", ['class'=>'btn btn-danger btn-sm']);
+      print form_input(array('name'=> $i.'[qty]', 'value'=> $books['qty'], 'class'=>'form-control', 'width'=>'10'));
+      print '</td>';
+
+      print "<td>".$books['price'].".TK</td>";
+      
+      print "<td>".$books['subtotal'].".TK</td>";
+
+      print '<td>';
+      print anchor("cart/delete_cart/".$books['rowid']."", "<i class = 'fas fa-trash'></i>", ['class'=>'btn btn-outline-danger btn-sm', 'title'=>'Delete']);
       print '</td>';
 
       print '</tr>';
@@ -39,21 +45,23 @@ foreach ($this->cart->contents() as $books)
 
 }
       print "<tr>";
-      print "<td colspan = '3'></td>";
-      print "<td>Total</td>";
+      print "<td colspan = '2'></td>";
+      print '<td>';
+      print form_submit("", 'Update cart', ['class'=>'btn btn-primary btn-sm']);
+      print '</td>';
+      print "<td><b>Total</b></td>";
       print "<td>";
       print $this->cart->total();
-      print "</td>";
+      print ".TK</td>";
       print "<td>";
-      print anchor("", 'Check out now', ['class'=>'btn btn-primary btn-sm']);
+      print anchor("", 'Checkout', ['class'=>'btn btn-outline-danger btn-sm']);
       print "</td>";
       print "</tr>"
 ?>
 </table>
 
 <div>
-  <span><?= form_submit("", 'Update cart', ['class'=>'btn btn-primary btn-sm'])?></span>
-  <span><a href="<?= base_url()?>users/all_books" class="btn btn-success btn-sm">Continue shoping</a></span> 
+  <span><a href="<?= base_url()?>users/all_books" class="btn btn-outline-success btn-sm">Continue shoping</a></span> 
 </div>
 </div>
 <br>
