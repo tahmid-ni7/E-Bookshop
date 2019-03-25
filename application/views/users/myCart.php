@@ -6,6 +6,11 @@
   {
     print '<div class = "error-msg">'.$this->session->flashdata('error').'</div>';
   }
+
+  if($this->session->flashdata('remove_cart'))
+  {
+    print '<div class = "error-msg">'.$this->session->flashdata('remove_cart').'</div>';
+  }
   ?>
   <?= form_open("cart/update_cart");?>
   <table class="table">
@@ -51,24 +56,44 @@ foreach ($this->cart->contents() as $books)
       $i++;
 
 }
+      print '<tr>';
+      print "<td colspan = '3'></td>";
+      print "<td><b>Shipping Fee</b></td>";
+      if($this->cart->contents()){
+        print "<td>40.TK</td>";
+      }
+      else{
+        print "<td>0.TK</td>";
+      }
+      print '</tr>';
+
       print "<tr>";
-      print "<td colspan = '2'></td>";
-      print '<td>';
+      print "<td>";
+      print '<a href ="'.base_url('users/all_books').'" class="btn btn-outline-success btn-sm"><i class="fas fa-shopping-bag"></i> Continue Shopping</a>';
+      print "</td>";
+      print "<td colspan = '1'></td>";
+      print "<td>";
       print form_submit("", 'Update cart', ['class'=>'btn btn-primary btn-sm']);
-      print '</td>';
+      print "</td>";
+
       print "<td><b>Total</b></td>";
+      if($this->cart->contents())
+      {
+        print "<td>";
+        $shipping = 40;
+        print $this->cart->total() + $shipping;
+        print ".TK</td>";
+      }
+      else{
+        print "<td>0.TK</td>";
+      }
+
       print "<td>";
-      print $this->cart->total();
-      print ".TK</td>";
-      print "<td>";
-      print anchor("", 'Checkout', ['class'=>'btn btn-outline-danger btn-sm']);
+        print anchor("", '<i class="fas fa-check"></i> Checkout', ['class'=>'btn btn-outline-danger btn-sm']);
       print "</td>";
       print "</tr>"
 ?>
 </table>
 
-<div>
-  <span><a href="<?= base_url()?>users/all_books" class="btn btn-outline-success btn-sm">Continue shoping</a></span> 
-</div>
 </div>
 <br>

@@ -128,16 +128,17 @@ h6 {
 }
 .cart-count {
     background: #F8694A;
-    height: 20px;
-    width: 20px;
+    height: 18px;
+    width: 18px;
     position: absolute;
     right: 8px;
     top: -6px;
     color: #fff;
     text-align: center;
     border-radius: 50%;
-    line-height: 22px;
+    line-height: 18px;
     font-weight: 600;
+    font-size: 12px;
 }
 /*======= Menu area CSS ======*/
 .menu-area {
@@ -782,15 +783,19 @@ small a {
 
 #book-details a {
     display: block;
-    background: #F8694A;
+    background: #00307f;
     position: absolute;
     width: 100%;
     left: 0;
     bottom: 0;
     color: #fff;
-    padding: 5px 0;
+    padding: 6px 0;
     opacity: 0;
     visibility: hidden;
+    transition: .4s;
+}
+#book-details a:hover {
+    background: #004ece;
 }
 #single-book:hover #book-details a
 {
