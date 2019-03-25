@@ -118,13 +118,26 @@ h6 {
     border: 1px solid #F8694A;
     border-radius: 3px;
     transition: .4s;
+    position: relative;
 }
 .ic-cart a:hover {
     background: #F2F3F5;
 }
 .ic-cart {
     text-align: right;
-
+}
+.cart-count {
+    background: #F8694A;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    right: 8px;
+    top: -6px;
+    color: #fff;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 22px;
+    font-weight: 600;
 }
 /*======= Menu area CSS ======*/
 .menu-area {

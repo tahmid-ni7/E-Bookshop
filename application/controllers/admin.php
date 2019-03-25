@@ -13,6 +13,10 @@ class admin extends CI_Controller {
 			$this->session->set_flashdata('no_access', 'You are not allowed or not logged in! Please Log in with an admin account');
 			redirect('users/login');
 		}
+
+		/*=== Load the cart library ===*/
+		$this->load->library('cart');
+		
 	}
 
 /*=============== Admin Index Page =================*/
@@ -264,7 +268,7 @@ class admin extends CI_Controller {
 			'upload_path'=>'./uploads/image/',
 			'allowed_types'=>'jpg|png',
 			'max_size' => '400,',
-			'overwrite' => FALSE
+			'overwrite' => TRUE
 			];
 
 		$this->load->library('upload', $config);

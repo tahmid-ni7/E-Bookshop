@@ -1,7 +1,7 @@
 <div class="container">
 <div class="my-form">
     <div id="form-header">sell your books</div>
-    <?= form_open_multipart("admin/add_books")?>
+    <?= form_open_multipart("user_home/sell_books")?>
         <div class="form-group row">
             <label for="book-name" class="col-sm-2 col-form-label">Book Name</label>
             <div class="col-sm-6">

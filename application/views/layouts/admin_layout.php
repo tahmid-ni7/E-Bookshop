@@ -64,6 +64,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </div>
                             <div class="col-md-4">
                                 <div class="ic-cart"><a href="<?= base_url()?>/cart"><i class="fas fa-shopping-cart"></i> Cart</a></div>
+                                <!--=== cart item count ===-->
+                                <?php if($this->cart->contents()): ?>
+                                <div class="cart-count">
+                                    <div><?php $rows = count($this->cart->contents());
+                                    print $rows; ?></div>
+                                </div>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>

@@ -13,6 +13,9 @@ class User_home extends CI_Controller {
 			$this->session->set_flashdata('no_access', 'You are not allowed or not logged in! Please Log in with an user account');
 			redirect('users/login');
 		}
+
+		/*=== Load the cart library ===*/
+		$this->load->library('cart');
 	}
 
 	public function index()

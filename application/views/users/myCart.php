@@ -1,6 +1,13 @@
-<br><div id="table-header"><i class="fas fa-shopping-cart"></i> my cart</div>
+<br>
+<div id="table-header"><i class="fas fa-shopping-cart"></i> my cart</div>
 <div class="container">
-  <?= form_open('cart/update_cart');?>
+  <?php 
+  if($this->session->flashdata('error'))
+  {
+    print '<div class = "error-msg">'.$this->session->flashdata('error').'</div>';
+  }
+  ?>
+  <?= form_open("cart/update_cart");?>
   <table class="table">
   <thead class="thead-light">
     <tr>
@@ -28,7 +35,7 @@ foreach ($this->cart->contents() as $books)
       print "<td>".$books['name']."</td>";
 
       print '<td>';
-      print form_input(array('name'=> $i.'[qty]', 'value'=> $books['qty'], 'class'=>'form-control', 'width'=>'10'));
+      print form_input(array('name'=> $i.'[qty]', 'value'=> $books['qty'], 'class'=>'form-control'));
       print '</td>';
 
       print "<td>".$books['price'].".TK</td>";

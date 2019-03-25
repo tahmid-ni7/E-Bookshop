@@ -56,8 +56,9 @@ class Cart extends CI_Controller {
 /*=============== Update data from cart ============*/
 	public function update_cart()
 	{
-		$contents = $this->input->post();
 
+		$contents = $this->input->post();
+		$this->load->model('admin_model');
 		foreach ($contents as $content) 
 		{
 			$info = array(
@@ -66,7 +67,24 @@ class Cart extends CI_Controller {
 			'qty' => $content['qty']
 
 			);
-			$this->cart->update($info);
+			if($content['qty'] < 0)
+			{
+				$this->session->set_flashdata('error', '*Quantity can not be less than 0 or negative value.');
+			}
+			else 
+			{
+			/*	$books = $this->admin_model->get_book_detail($id);
+				if($content['qty'] > $books->'quantity')
+				{
+					$this->session->set_flashdata('error', '*This much quantity is not in stock.');
+				}
+				else
+				{
+					$this->cart->update($info);
+				}*/
+				$this->cart->update($info);
+			}
+			
 		}
 			redirect('cart');
 	}

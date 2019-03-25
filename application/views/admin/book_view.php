@@ -20,8 +20,8 @@
 			<hr>
 		  <div><h5>Action</h5></div>
 	      <?php print '<td>';
-	        print '<a href= "'.base_url().'admin/book_edit/'.$book_detail->id.'" title= "Edit" class="btn btn-success btn-sm"> <i class= "fas fa-wrench"></i></a>&nbsp';
-	        print '<a href= "'.base_url().'admin/book_delete/'.$book_detail->id.'" title= "Delete" class="btn btn-danger btn-sm"> <i class= "fas fa-trash"></i></a>&nbsp';
+	        print '<a href= "'.base_url().'admin/book_edit/'.$book_detail->id.'" title= "Edit" class="btn btn-success btn-sm"> <i class= "fas fa-wrench"></i> Update</a>&nbsp';
+	        print '<a href= "'.base_url().'admin/book_delete/'.$book_detail->id.'" title= "Delete" class="btn btn-danger btn-sm"> <i class= "fas fa-trash"></i> Delete</a>&nbsp';
 
 	        print '</td>'; 
 	      ?>
