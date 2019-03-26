@@ -21,7 +21,7 @@
                             <li><a href="<?= base_url()?>home">Home</a></li>
                             <li><a href="<?= base_url()?>users/all_books">Books</a></li>
                             <li><a href="#">E-learning <i class="fas fa-arrow-alt-circle-right"></i></a></li>
-                            <li><a href="<?= base_url()?>admin">Admin <i class="fas fa-cog"></i></a></li>
+                            <li><a href="<?= base_url()?>admin">Admin <i class="fas fa-tools"></i></a></li>
                             <li><a href="#">About us</a></li>
                             <li><a href="#">Contact us</a></li>
                             

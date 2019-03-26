@@ -19,7 +19,7 @@
 
 <br>
 <div class="container-fluid">
-	<div id="table-header">Books list</div>
+	<div id="table-header">Pending Books list</div>
 	<table class="table table-hover">
   <thead class="thead-light">
     <tr>
@@ -54,8 +54,9 @@
 
 
       <?php print '<td>';
-        print '<a href= "'.base_url().'admin/book_view/'.$book->id.'" title= "View More" class="btn btn-primary btn-sm">View</a>&nbsp';
+        print '<div><a href= "'.base_url().'admin/published_books/'.$book->id.'" title= "Published the book" class="btn btn-primary btn-sm">Published</a></div><br>';
 
+        print '<div><a href= "'.base_url().'admin/delete_pending_books/'.$book->id.'" title= "Delete" class="btn btn-danger btn-sm"><i class= "fas fa-trash"></i> Delete&nbsp</a></div>';
         print '</td>'; 
       ?>
     </tr>

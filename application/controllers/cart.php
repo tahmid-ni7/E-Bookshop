@@ -50,15 +50,15 @@ class Cart extends CI_Controller {
 		);
 		
 		$this->cart->insert($data);
-		return redirect('cart');
+		redirect('cart');
 
 	}
 /*=============== Update data from cart ============*/
 	public function update_cart()
 	{
-
-		$contents = $this->input->post();
 		$this->load->model('admin_model');
+		
+		$contents = $this->input->post();
 		foreach ($contents as $content) 
 		{
 			$info = array(
@@ -97,6 +97,7 @@ class Cart extends CI_Controller {
 		if($this->cart->remove($rowid))
 		{
 			$this->session->set_flashdata('remove_cart', 'Book removed from the cart.');
+		}
 		redirect('cart');
 	}
 

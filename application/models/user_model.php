@@ -53,11 +53,13 @@ class user_model extends CI_Model
 		{
 			$a = $_GET['ctg'];
 			$query = $this->db->where('category.id', $a);
-			$this->db->order_by('books.id', 'DESC'); 
+			$this->db->order_by('books.id', 'DESC');
+			$this->db->where('books.status', 1);
 			$query = $this->db->get();
 			return $query->result();
 		}
 		$this->db->order_by('books.id', 'DESC');
+		$this->db->where('books.status', 1);
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -66,6 +68,7 @@ class user_model extends CI_Model
 	{
 		$this->db->limit(6);
 		$this->db->order_by('id', 'DESC');
+		$this->db->where('status', 1);
 		$query = $this->db->get('books');
 		return $query->result();
 	}
@@ -75,8 +78,30 @@ class user_model extends CI_Model
 		$this->db->limit(6);
 		$this->db->where('categoryId', '1');
 		$this->db->order_by('id', 'DESC');
+		$this->db->where('status', 1);
 		$query = $this->db->get('books');
 		return $query->result();
+	}
+
+	public function add_books()
+	{
+		$data = $this->upload->data();
+		$image_path = base_url("uploads/image/".$data['raw_name'].$data['file_ext']);
+		
+		$data = array(
+			'book_name' => $this->input->post('book_name'),
+			'description' => $this->input->post('description'),
+			'author' => $this->input->post('author'),
+			'publisher' => $this->input->post('publisher'),
+			'price' => $this->input->post('price'),
+			'quantity' => $this->input->post('quantity'),
+			'categoryId' => $this->input->post('categoryId'),
+			'book_image' => $image_path,
+			'userId' => $this->session->userdata('user_data'),
+		);
+
+		$insert_book = $this->db->insert('books', $data);
+		return $insert_book;
 	}
 
 

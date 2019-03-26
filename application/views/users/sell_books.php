@@ -78,7 +78,7 @@
                     </select>
                 </div>
             <div class="col-sm-4">
-                <div class="text-danger form-error"><?= form_error('categoryId')?></div>
+            <div class="text-danger form-error"><?= form_error('categoryId')?></div>
             </div>
         </div>
 

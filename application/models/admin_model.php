@@ -97,7 +97,9 @@ class admin_model extends CI_Model
 			'price' => $this->input->post('price'),
 			'quantity' => $this->input->post('quantity'),
 			'categoryId' => $this->input->post('categoryId'),
-			'book_image' => $image_path
+			'book_image' => $image_path,
+			'userId' => $this->session->userdata('user_data'),
+			'status' => $this->input->post('status')
 		);
 
 		$insert_book = $this->db->insert('books', $data);
@@ -112,6 +114,7 @@ class admin_model extends CI_Model
 		$this->db->join('books', 'books.categoryId = category.id');
 
 		$this->db->order_by('books.id', 'DESC');
+		$this->db->where('books.status', '1');
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -141,7 +144,9 @@ class admin_model extends CI_Model
 			'price' => $this->input->post('price'),
 			'quantity' => $this->input->post('quantity'),
 			'categoryId' => $this->input->post('categoryId'),
-			'book_image' => $image_path
+			'book_image' => $image_path,
+			'userId' => $this->session->userdata('user_data'),
+			'status' => $this->input->post('status')
 		);
 
 		return $query = $this->db->where('id', $id)->update('books', $data);
@@ -152,4 +157,29 @@ class admin_model extends CI_Model
 		$this->db->where('id', $id);
 		$this->db->delete('books');
 	}
+
+
+	public function pending_books()
+	{	
+		/*=== SQL join ===*/
+		$this->db->select('*');
+		$this->db->from('category');
+		$this->db->join('books', 'books.categoryId = category.id');
+
+		$this->db->order_by('books.id', 'DESC');
+		$this->db->where('books.status', '0');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	public function published_books($id, $data)
+	{
+		
+		$data = array(
+			'status' => 1
+		);
+
+		return $query = $this->db->where('id', $id)->update('books', $data);
+	}
+
 }

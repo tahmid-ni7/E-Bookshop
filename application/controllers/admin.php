@@ -315,8 +315,34 @@ class admin extends CI_Controller {
 		$this->session->set_flashdata('success', '<i class= "fas fa-trash text-danger"></i> Book deleted successfully');
 		redirect('admin/books');
 	}
+	
+	/*======Pending Books =======*/
+	public function pending_books()
+	{
+		$this->load->model('admin_model');
+		$view['books'] = $this->admin_model->pending_books();
 
+		$view['admin_view'] = "admin/pending_books";
+		$this->load->view('layouts/admin_layout', $view);
+	}
 
+	public function published_books($id)
+	{
+		$this->load->model('admin_model');
+		if($this->admin_model->published_books($id, $data))
+		{
+			$this->session->set_flashdata('success','Book published successfully');
+			redirect('admin/books');
+		}
+	}
+	public function delete_pending_books($id)
+	{
+		$this->load->model('admin_model');
+		$this->admin_model->delete_book($id);
+
+		$this->session->set_flashdata('success', '<i class= "fas fa-trash text-danger"></i> Book deleted successfully');
+		redirect('admin/pending_books');
+	}
 /*============== SET CUSTOM VALIDATION RULES FOR TEXT-AREA ==============*/
 
 	public function my_rules($description)

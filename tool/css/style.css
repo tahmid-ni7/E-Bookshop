@@ -657,6 +657,35 @@ small a {
 
 }
 
+.books-menu ul {
+    padding: 0;
+    margin: 0;
+}
+
+.books-menu ul li {
+    list-style: none;
+    display: inline-block;
+}
+
+.books-menu ul li a {
+    color: #30323A;
+    padding: 8px 10px;
+    display: block;
+    text-transform: capitalize;
+    transition: .4s;
+}
+
+.books-menu {
+    background: #F7F8FA;
+    margin-top: 20px;
+    text-align: center;
+    border: 1px solid #F8694A;
+}
+
+.books-menu ul li a:hover {
+    background: #E8E9EB;
+    color: #F8694A;
+}
 /*=========== Book Detail CSS ==========*/
 #book-img img {
     width: 100%;

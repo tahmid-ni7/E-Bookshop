@@ -63,8 +63,18 @@ class User_home extends CI_Controller {
 
 		}
 		else
-		{
+		{	
+			$this->load->model('user_model');
 
+			if($this->user_model->add_books())
+			{
+				$this->session->set_flashdata('success', 'Book added successfully');
+				redirect('user_home');
+			}
+			else
+			{
+				print $this->db->error();
+			}	
 		}
 		
 	}

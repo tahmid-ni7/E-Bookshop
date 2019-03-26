@@ -4,6 +4,10 @@
     {
         print '<div class= "success-msg">'.$this->session->flashdata('login_success').'</div>';
     }
+    if($this->session->flashdata('success'))
+    {
+        print '<div class= "success-msg">'.$this->session->flashdata('success').'</div>';
+    }
 ?>
 </div>
 

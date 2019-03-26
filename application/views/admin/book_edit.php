@@ -81,6 +81,17 @@
                 <div class="text-danger form-error"><?= form_error('categoryId')?></div>
             </div>
         </div>
+        <div class="form-group row">
+            <label for="status" class="col-sm-2 col-form-label">Status</label>
+            <div class="col-sm-6">
+                <select name="status" class="form-control">
+                    <option value="1">Published</option>
+                </select>
+            </div>
+            <div class="col-sm-4">
+               <div class="text-danger form-error"></div>    
+            </div>
+        </div>
 
         <div class="sub">
             <span><?= form_submit(['name'=> 'submit', 'value'=> 'Update', 'class'=>'btn btn-primary btn-sm my-btn'])?></span>
