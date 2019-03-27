@@ -859,6 +859,8 @@ td.hidden {
     width: 18px;
     border-radius: 50%;
     color: #fff;
+    font-size: 12px;
+    line-height: 18px;
 }
 
 
