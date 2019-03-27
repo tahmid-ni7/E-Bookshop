@@ -39,3 +39,5 @@ In these Terms, references to "you", "User" shall mean the user end, "Service Pr
 
 <div class="section-title border-top">Term and Policy updates</div><br>
 <p>We reserve the right to change or update these terms and policies at any time by placing a prominent notice on our site. Such changes shall be effective immediately upon posting to this site.</p>
+
+<p><i>Date of last revision: 28 March 2019</i></p>

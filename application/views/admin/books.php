@@ -12,7 +12,16 @@
       <ul>
         <li><a href="<?= base_url()?>admin/books"><i class="fas fa-book"></i> all books</a></li>
         <li><a href="<?= base_url()?>admin/add_books"><i class="fas fa-plus-circle"></i> Add new book</a></li>
-        <li><a href="<?= base_url()?>admin/pending_books"><i class="fas fa-tools"></i> Pending books</a></li>
+
+        <li class="pending-books"><a href="<?= base_url()?>admin/pending_books"><i class="fas fa-tools"></i> Pending books</a> 
+        <div class = "count-pending-books"><?php 
+          $this->load->model('admin_model');
+          $count_pending_books = count($this->admin_model->pending_books());
+          print $count_pending_books;
+          ?> 
+        </div>
+        </li>
+        
       </ul>
   </div>
 </div>

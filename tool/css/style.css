@@ -846,6 +846,21 @@ td.hidden {
 }
 
 
+.pending-books {
+    position: relative;
+}
+
+.count-pending-books {
+    position: absolute;
+    top: 2px;
+    right: -8px;
+    background: #F8694A;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    color: #fff;
+}
+
 
 
 

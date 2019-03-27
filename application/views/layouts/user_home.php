@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!-- jQuery min js -->
     <script type="text/javascript" src="<?= base_url('tool/js/jquery-3.2.1.slim.min.js'); ?>"></script>
 
-    <title>User Home</title>
+    <title>Bookshop | User Home</title>
     <link rel="shortcut icon" type="image/png" href="<?= base_url('tool/img/favicon.png'); ?>">
 </head>
 
