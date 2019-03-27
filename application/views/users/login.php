@@ -11,6 +11,14 @@
     }
 ?>
 </div>
+<div class="text-success">
+<?php 
+    if($this->session->flashdata('reg_success'))
+    {
+        print '<div class= "success-msg">'.$this->session->flashdata('reg_success').'</div>';
+    }
+?>
+</div>
 <div class="login-form-area">
     <div class="container">
         <div class="login-form">

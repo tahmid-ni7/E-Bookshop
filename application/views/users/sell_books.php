@@ -87,7 +87,7 @@
             <div class="form-check">
               <?= form_checkbox(['name'=>'conditionBox', 'class'=>'form-check-input', 'value'=> TRUE]);?>
               <label class="form-check-label" for="term">
-                I declare that all the information given above all are true and valid. And I read the <a href="#" class="text-primary">terms and condition</a> of this application.
+                I declare that all the information given above all are true and valid. And I read the <a href="<?= base_url()?>users/terms" target ="_blank" class="text-primary">terms and condition</a> of this application.
               </label>
             </div>
             </div>

@@ -38,6 +38,10 @@ h6 {
     border-bottom: 1px solid #dddd;
     margin-bottom: 10px;
 }
+.border-top
+{
+    border-top: 1px solid #dddd;
+}
 .section-title a
 {
     color: #555;

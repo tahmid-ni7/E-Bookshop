@@ -57,6 +57,15 @@
 
                     <div class="text-danger form-error"><?= form_error('city')?></div>
                 </div>
+                <div class="form-group">
+                    <div class="form-check">
+                      <?= form_checkbox(['name'=>'conditionBox', 'class'=>'form-check-input', 'value'=> TRUE]);?>
+                      <label class="form-check-label" for="term">
+                        I declare that all the information given above all are true and valid. By clicking the sign up, you agree to our <a href="<?= base_url()?>users/terms" target ="_blank" class="text-primary">terms and condition</a>. You may receive SMS notifications from us and can opt out at any time.
+                      </label>
+                    </div>
+                    <div class="text-danger form-error"><?= form_error('conditionBox')?></div>
+                </div>
 
 
                 <div class="form-group">

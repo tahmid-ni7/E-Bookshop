@@ -31,6 +31,7 @@ class Users extends CI_Controller {
 		'trim|required|alpha_dash|min_length[3]|matches[password]');
 		$this->form_validation->set_rules('address', 'Address', 'trim|required|max_length[80]|strip_tags[address]');
 		$this->form_validation->set_rules('city', 'City', 'trim|required|alpha_numeric_spaces');
+		$this->form_validation->set_rules('conditionBox', 'Check box', 'trim|required');
 
 
 		if($this->form_validation->run() == FALSE)
@@ -49,8 +50,8 @@ class Users extends CI_Controller {
 
 			if($this->user_model->register_user())
 			{
-				$this->session->set_flashdata('reg_success', 'Your Registration is successfull');
-				redirect('users/registration');
+				$this->session->set_flashdata('reg_success', 'Your Registration is successfull.');
+				redirect('users/login');
 			}
 			else
 			{
@@ -171,6 +172,17 @@ class Users extends CI_Controller {
 		$view['book_detail'] = $this->admin_model->get_book_detail($id);
 
 		$view['user_view'] = "users/book_detail";
+		$this->load->view('layouts/user_layout', $view);
+	}
+
+	public function terms()
+	{
+		/*=== LOAD DYNAMIC CATAGORY ===*/
+		$this->load->model('admin_model');
+		$view['category'] = $this->admin_model->get_category();
+		/*==============================*/
+		
+		$view['user_view'] = "temp/terms";
 		$this->load->view('layouts/user_layout', $view);
 	}
 
