@@ -1,3 +1,14 @@
+<!--=== Book Menu ===-->
+<div class="container-fluid">
+    <div class="books-menu">
+      <ul>
+        <li><a href="<?= base_url()?>admin/books"><i class="fas fa-book"></i> all books</a></li>
+        <li><a href="<?= base_url()?>admin/add_books"><i class="fas fa-plus-circle"></i> Add new book</a></li>
+        <li><a href="<?= base_url()?>admin/pending_books"><i class="fas fa-tools"></i> Pending books</a></li>
+      </ul>
+  </div>
+</div>
+
 <div class="container">
 <div class="my-form">
     <div id="form-header">Add new books</div>

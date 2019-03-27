@@ -53,6 +53,7 @@ class User_home extends CI_Controller {
 		$this->form_validation->set_rules('quantity', 'Quantity', 'trim|required|numeric|strip_tags[quantity]');
 		$this->form_validation->set_rules('categoryId', 'Category', 'trim|required');
 		/*$this->form_validation->set_rules('userfile', 'File', 'trim|required');*/
+		$this->form_validation->set_rules('conditionBox', 'Check box', 'trim|required');
 
 
 		if(($this->form_validation->run() && $this->upload->do_upload()) == FALSE)
@@ -74,8 +75,33 @@ class User_home extends CI_Controller {
 			else
 			{
 				print $this->db->error();
-			}	
+			}
+			redirect('user_home/myBooks');	
 		}
+
 		
+	}
+
+	public function myBooks()
+	{
+		/*=== LOAD DYNAMIC CATAGORY ===*/
+		$this->load->model('admin_model');
+		$view['category'] = $this->admin_model->get_category();
+		/*==============================*/
+
+		$this->load->model('user_model');
+		$view['books'] = $this->user_model->my_books();
+
+		$view['user_view'] = "users/users_books";
+		$this->load->view('layouts/user_home', $view);
+	}
+
+	public function myBooks_delete($id)
+	{
+		$this->load->model('user_model');
+		$this->user_model->delete_book($id);
+
+		$this->session->set_flashdata('success', '<i class= "fas fa-trash text-danger"></i> Book deleted successfully');
+		redirect('user_home/myBooks');
 	}
 }

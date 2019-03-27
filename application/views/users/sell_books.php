@@ -82,8 +82,23 @@
             </div>
         </div>
 
+        <div class="form-group row">
+            <div class="col-sm-8">
+            <div class="form-check">
+              <?= form_checkbox(['name'=>'conditionBox', 'class'=>'form-check-input', 'value'=> TRUE]);?>
+              <label class="form-check-label" for="term">
+                I declare that all the information given above all are true and valid. And I read the <a href="#" class="text-primary">terms and condition</a> of this application.
+              </label>
+            </div>
+            </div>
+            <div class="col-sm-4">
+            <div class="text-danger form-error"><?= form_error('conditionBox')?></div>   
+            </div>
+        </div>
+      
+
         <div class="sub">
-            <span><?= form_submit(['name'=> 'submit', 'value'=> 'Add Book', 'class'=>'btn btn-primary btn-sm my-btn'])?></span>
+            <span><?= form_submit(['name'=> 'submit', 'value'=> 'Sell Book', 'class'=>'btn btn-primary btn-sm my-btn'])?></span>
             <span><?= form_reset(['name'=> 'reset', 'value'=> 'Reset', 'class'=>'btn btn-danger btn-sm my-btn-res'])?></span>
         </div>
     </form>

@@ -105,6 +105,25 @@ class user_model extends CI_Model
 	}
 
 
+	public function my_books()
+	{
+		/*=== SQL join ===*/
+		$this->db->select('*');
+		$this->db->from('category');
+		$this->db->join('books', 'books.categoryId = category.id');
+
+		$this->db->order_by('books.id', 'DESC');
+		$this->db->where('books.userId', $this->session->userdata('user_data'));
+		$query = $this->db->get();
+		return $query->result();	
+	}
+
+	public function delete_book($id)
+	{
+		$this->db->where('id', $id);
+		$this->db->delete('books');
+	}
+
 
 } 
 
