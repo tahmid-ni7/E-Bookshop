@@ -161,6 +161,7 @@ class Users extends CI_Controller {
 		$this->load->view('layouts/user_layout', $view);
 	}
 
+/*======== Book details info and all reviews =======*/
 	public function book_view($id)
 	{
 		/*=== LOAD DYNAMIC CATAGORY ===*/
@@ -168,11 +169,28 @@ class Users extends CI_Controller {
 		$view['category'] = $this->admin_model->get_category();
 		/*==============================*/
 
-		$this->load->model('admin_model');
-		$view['book_detail'] = $this->admin_model->get_book_detail($id);
+		$this->form_validation->set_rules('review', 'Review', 'trim|required|min_length[10]|strip_tags[review]');
 
-		$view['user_view'] = "users/book_detail";
-		$this->load->view('layouts/user_layout', $view);
+		if($this->form_validation->run() == FALSE)
+		{
+			/*=== Book Details ===*/
+			$this->load->model('admin_model');
+			$view['book_detail'] = $this->admin_model->get_book_detail($id);
+			/*=== Get reviews ===*/
+			$this->load->model('user_model');
+			$view['reviews'] = $this->user_model->get_reviews();
+
+			$view['user_view'] = "users/book_detail";
+			$this->load->view('layouts/user_layout', $view);
+		}
+		else
+		{
+			$this->load->model('user_model');
+			$this->user_model->reviews($id);
+			redirect('users/book_view/'.$id.'');
+		}
+		
+
 	}
 
 	public function terms()

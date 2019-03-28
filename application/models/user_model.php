@@ -125,6 +125,31 @@ class user_model extends CI_Model
 	}
 
 
+	public function reviews($id)
+	{
+		$data = array(
+			'review' => $this->input->post('review'),
+			'userId' => $this->session->userdata('user_data'),
+			'bookId' => $id
+		);
+
+		$insert_review = $this->db->insert('reviews', $data);
+		return $insert_review;
+	}
+
+	public function get_reviews()
+	{
+		$this->db->select('*');
+		$this->db->from('users');
+		$this->db->join('reviews', 'reviews.userId = users.id');
+
+		$this->db->where('reviews.bookId', $this->uri->segment(3));
+		$this->db->order_by('reviews.id', 'DESC');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+
 } 
 
 
