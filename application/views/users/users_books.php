@@ -8,6 +8,9 @@
 </div>
 
 <br>
+<?php $this->load->model('user_model'); ?>
+<?php if($this->user_model->my_books()): ?>
+
 <div class="container-fluid">
 	<div id="table-header">My Books list</div>
 	<table class="table table-hover">
@@ -22,6 +25,7 @@
       <th scope="col">Quantity</th>
       <th scope="col">Category</th>
       <th scope="col">Book Image</th>
+      <th scope="col">Status</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -42,10 +46,21 @@
 
       <?php print '<td><img src = "'.strip_tags($book->book_image).'" alt = "" width="50" hieght="80" </td>';?>
 
-
+      <!--=== For dispaly published/unpublished -->
+      <?php if($book->status == 1)
+      {
+        $book->status = "Published";
+      }else{
+        $book->status = "Unpublished";
+      }
+       print '<td>'.strip_tags($book->status).'</td>'; 
+      ?>
+      
       <?php
       print '<td>';
-        print '<div><a href= "'.base_url().'user_home/myBooks_delete/'.$book->id.'" title= "Delete" class="btn btn-danger btn-sm"><i class= "fas fa-trash"></i> Delete&nbsp</a></div>';
+        print '<div><a href= "'.base_url().'users/book_view/'.$book->id.'" title= "View details" class="btn btn-info btn-sm"><i class= "fas fa-eye"></i> View&nbsp</a></div>';
+        print '<br>';
+        print '<div><a href= "'.base_url().'user_home/myBooks_delete/'.$book->id.'" title= "Delete" class="btn btn-danger btn-sm"><i class= "fas fa-trash"></i> Delete</a></div>';
       print '</td>'; 
       ?>
     </tr>
@@ -53,3 +68,9 @@
   </tbody>
 </table>
 </div>
+
+<?php else: ?>
+  <div class="error-msg"><?php print "You did not post any book's for sell yet. You can upload post for sell your books. "?>
+  <a href="<?= base_url()?>user_home/sell_books" class="text-primary"><b>Sell your books</b></a> now.</div><br>
+<?php endif; ?>
+

@@ -40,7 +40,7 @@ class User_home extends CI_Controller {
 			'upload_path'=>'./uploads/image/',
 			'allowed_types'=>'jpg|png',
 			'max_size' => '400,',
-			'overwrite' => TRUE
+			'overwrite' => FALSE
 			];
 
 		$this->load->library('upload', $config);
