@@ -40,7 +40,7 @@ class User_home extends CI_Controller {
 			'upload_path'=>'./uploads/image/',
 			'allowed_types'=>'jpg|png',
 			'max_size' => '400,',
-			'overwrite' => FALSE
+			'overwrite' => TRUE
 			];
 
 		$this->load->library('upload', $config);
@@ -69,7 +69,7 @@ class User_home extends CI_Controller {
 
 			if($this->user_model->add_books())
 			{
-				$this->session->set_flashdata('success', 'Book added successfully');
+				$this->session->set_flashdata('success', 'Book added successfully,this book will published by admin soon.');
 				redirect('user_home');
 			}
 			else

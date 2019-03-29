@@ -16,7 +16,7 @@
 			</div>
 			</div>
 
-			<br><div class="book-description"><h5>Book description</h5><hr><?= $book_detail->description ?></div>
+			<br><div class="book-description"><h5>Book description</h5><hr><?= nl2br(strip_tags($book_detail->description)) ?></div>
 			<hr>
 		  <div><h5>Action</h5></div>
 	      <?php print '<td>';
@@ -31,3 +31,4 @@
 		</div>
 	</div>
 </div>
+<br>

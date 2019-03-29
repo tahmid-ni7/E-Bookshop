@@ -35,12 +35,8 @@ h6 {
     font-size: 24px;
     text-transform: capitalize;
     font-weight: 600;
-    border-bottom: 1px solid #dddd;
+    border-bottom: 1px solid #dee2e6;
     margin-bottom: 10px;
-}
-.border-top
-{
-    border-top: 1px solid #dddd;
 }
 .section-title a
 {

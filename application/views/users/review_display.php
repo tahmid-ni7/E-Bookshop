@@ -10,10 +10,10 @@ print "Reviews : (".$count_reviews.")";
 	<tbody>
 		<?php foreach($reviews as $comment): ?>
 		<tr>
-			<?php print '<td>';
+			<?php print '<td style="width: 230px">';
 			print '<b class = "text-info">'.htmlentities($comment->name).'</b>';
 			print '<p>'.htmlentities($comment->email).'</p>';
-			print '<p>'.date('h:i a, d M Y', strtotime($comment->dateTime)).'</p>';
+			print '<small>'.date('h:i a, d M Y', strtotime($comment->dateTime)).'</small>';
 			print '</td>'; ?>
 			<?php print '<td>'.htmlentities($comment->review).'</td>'; ?>
 		</tr>

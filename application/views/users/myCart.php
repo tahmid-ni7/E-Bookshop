@@ -40,7 +40,7 @@ foreach ($this->cart->contents() as $books)
       print "<td>".$books['name']."</td>";
 
       print '<td>';
-      print form_input(array('name'=> $i.'[qty]', 'value'=> $books['qty'], 'class'=>'form-control'));
+      print form_input(array('name'=> $i.'[qty]', 'value'=> $books['qty'] , 'class'=>'form-control qty'));
       print '</td>';
 
       print "<td>".$books['price'].".TK</td>";
@@ -89,7 +89,9 @@ foreach ($this->cart->contents() as $books)
       }
 
       print "<td>";
+      if($this->cart->contents()){
         print anchor("", '<i class="fas fa-check"></i> Checkout', ['class'=>'btn btn-outline-danger btn-sm']);
+      }
       print "</td>";
       print "</tr>"
 ?>
