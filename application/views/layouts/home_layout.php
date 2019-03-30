@@ -48,6 +48,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
             </div>
         </div>
+       
         <div class="header-mid">
             <div class="container">
                 <div class="row">
@@ -82,6 +83,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <?php $this->load->view('temp/menu'); ?>
         </div>
     </div>
+    <div class="text-success">
+        <?php 
+            if($this->session->flashdata('login_success'))
+            {
+                print '<div class= "success-msg">';
+                print '<div class = "container">'.$this->session->flashdata('login_success').'</div>';
+                print '</div>';
+            }
+        ?>
+    </div>
+
     <!--============ Slider Area ===========-->
     <div>
         <?php $this->load->view('temp/slider'); ?>

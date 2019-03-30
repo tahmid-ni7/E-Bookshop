@@ -105,13 +105,13 @@ class Users extends CI_Controller {
 				if($type == 'A')
 				{
 
-					$this->session->set_flashdata('login_success', 'Logged in successfully');
+					$this->session->set_flashdata('login_success', 'Logged in successfully. You logged in as an admin.');
 					redirect('admin/index');
 				}
 				elseif ($type == 'U')
 				{
-					$this->session->set_flashdata('login_success', 'Logged in successfully');
-					redirect('user_home');
+					$this->session->set_flashdata('login_success', 'Welcome! You Logged in successfully');
+					redirect('home');
 				}
 				else
 				{
@@ -143,7 +143,7 @@ class Users extends CI_Controller {
 	public function logout()
 	{
 		$this->session->sess_destroy();
-		redirect('home');
+		redirect('home');	
 	}
 
 

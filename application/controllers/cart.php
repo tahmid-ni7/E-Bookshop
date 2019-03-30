@@ -69,7 +69,7 @@ class Cart extends CI_Controller {
 			);
 			if($content['qty'] < 0)
 			{
-				$this->session->set_flashdata('error', 'Quantity can not be less than 0 or negative value.');
+				$this->session->set_flashdata('cart_error', 'Quantity can not be less than 0 or negative value.');
 			}
 			else 
 			{

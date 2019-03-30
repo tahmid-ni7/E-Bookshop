@@ -2,9 +2,9 @@
 <div id="table-header"><i class="fas fa-shopping-cart"></i> my cart</div>
 <div class="container">
   <?php 
-  if($this->session->flashdata('error'))
+  if($this->session->flashdata('cart_error'))
   {
-    print '<div class = "error-msg">'.$this->session->flashdata('error').'</div>';
+    print '<div class = "error-msg">'.$this->session->flashdata('cart_error').'</div>';
   }
 
   if($this->session->flashdata('remove_cart'))

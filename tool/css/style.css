@@ -614,19 +614,17 @@ small a {
 }
 
 .success-msg, .error-msg {
-    
     padding: 6px 15px;
-    margin-top: 10px;
+    margin: 10px 0;
     font-size: 15px;
-    border-radius: 5px;
 }
 .success-msg{
     background: #E6EDDE;
-    border: 0.5px solid #4E7F16;
+    border: 1px solid #4E7F16;
 }
 .error-msg{
     background: #FFEBE8;
-    border: 0.5px solid #DD3C10;
+    border: 1px solid #DD3C10;
 }
 
 
