@@ -616,15 +616,23 @@ small a {
 .success-msg, .error-msg {
     padding: 6px 15px;
     margin: 10px 0;
-    font-size: 15px;
+    font-size: 14px;
 }
 .success-msg{
     background: #E6EDDE;
     border: 1px solid #4E7F16;
+    position: relative;
 }
 .error-msg{
     background: #FFEBE8;
     border: 1px solid #DD3C10;
+    position: relative;
+}
+.cross {
+    position: absolute;
+    top: 6px;
+    right: 25px;
+    font-size: 16px;
 }
 
 

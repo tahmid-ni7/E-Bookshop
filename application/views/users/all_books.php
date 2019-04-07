@@ -1,4 +1,17 @@
-<br><div id="table-header">Buy Books</div><br>
+<br><div id="table-header">Buy Books
+<!--=== for category name as title ===-->
+<?php foreach($category as $ctg): ?>
+<?php 
+if(isset($_GET['ctg']))
+{
+	if($_GET['ctg']== $ctg->id)
+	{
+		print '<i class="fas fa-angle-double-right"></i> '.$ctg->category;
+	}
+} 
+?>
+<?php endforeach; ?>
+</div><br>
 
 <div class="row con-flex">
 	<?php foreach($books as $book):?>
@@ -8,7 +21,6 @@
 				<?php print '<img src = "'.strip_tags($book->book_image).'" alt = "">';?>
 			</div>
 			<?php print '<div id="addto-cart"><a href="'.base_url().'cart/add_to_cart/'.$book->id.'"><i class="fas fa-shopping-cart"></i> Add to cart</a></div>'; ?>
-			<!-- <div id="addto-cart"><a href=""><i class="fas fa-shopping-cart"></i> Add to cart</a></div> -->
 			
 			<div class="book-text">
 				<div id="book-name"><?= substr(htmlentities($book->book_name),0,21) ?></div>
@@ -21,3 +33,4 @@
 	<?php endforeach;?>
 </div>
 
+ 

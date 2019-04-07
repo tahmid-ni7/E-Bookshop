@@ -89,6 +89,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             {
                 print '<div class= "success-msg">';
                 print '<div class = "container">'.$this->session->flashdata('login_success').'</div>';
+                print '<div class="cross"><a href="" class="text-success"><i class="fas fa-times"></i></a></div>';
                 print '</div>';
             }
         ?>
