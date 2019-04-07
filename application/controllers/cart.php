@@ -11,7 +11,7 @@ class Cart extends CI_Controller {
 
 		/*if ($this->session->userdata('logged_in') == FALSE) {
 
-			$this->session->set_flashdata('no_access', 'For buying the books you must be logged in your account.');
+			$this->session->set_flashdata('no_access', '<i class="fas fa-exclamation-triangle"></i> For buying the books you must be logged in your account.');
 			redirect('users/login');
 		}*/
 	}
@@ -69,7 +69,7 @@ class Cart extends CI_Controller {
 			);
 			if($content['qty'] < 0)
 			{
-				$this->session->set_flashdata('cart_error', 'Quantity can not be less than 0 or negative value.');
+				$this->session->set_flashdata('cart_error', '<i class="fas fa-exclamation-triangle"></i> Quantity can not be less than 0 or negative value.');
 			}
 			else 
 			{

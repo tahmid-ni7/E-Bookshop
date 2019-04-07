@@ -1,6 +1,6 @@
 <br>
 <div id="table-header"><i class="fas fa-shopping-cart"></i> my cart</div>
-<div class="container">
+
   <?php 
   if($this->session->flashdata('cart_error'))
   {
@@ -97,5 +97,4 @@ foreach ($this->cart->contents() as $books)
 ?>
 </table>
 
-</div>
 <br>

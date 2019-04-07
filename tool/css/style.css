@@ -846,6 +846,10 @@ small a {
 td.hidden {
     position: absolute;
 }
+.qty
+{
+    width: 90px;
+}
 
 
 .pending-books {

@@ -115,13 +115,13 @@ class Users extends CI_Controller {
 				}
 				else
 				{
-					$this->session->set_flashdata('login_fail', 'Invalid logged in...');
+					$this->session->set_flashdata('login_fail', '<i class="fas fa-exclamation-triangle"></i> Invalid logged in...');
 
 					$view['user_view'] = "users/login";
 					$this->load->view('layouts/user_layout', $view);
 				}
-
 			}
+
 			else
 			{
 				/*=== LOAD DYNAMIC CATAGORY ===*/
@@ -129,7 +129,7 @@ class Users extends CI_Controller {
 				$view['category'] = $this->admin_model->get_category();
 				/*==============================*/
 				
-				$this->session->set_flashdata('login_fail', 'Invalid logged in!');
+				$this->session->set_flashdata('login_fail', '<i class="fas fa-exclamation-triangle"></i> Invalid logged in.');
 
 				$view['user_view'] = "users/login";
 				$this->load->view('layouts/user_layout', $view);

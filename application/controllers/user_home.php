@@ -10,7 +10,7 @@ class User_home extends CI_Controller {
 		$type = $this->session->userdata('type');
 		if($type != 'U')
 		{
-			$this->session->set_flashdata('no_access', 'You are not allowed or not logged in! Please Log in with an user account');
+			$this->session->set_flashdata('no_access', '<i class="fas fa-exclamation-triangle"></i> You are not allowed or not logged in! Please Log in with an user account');
 			redirect('users/login');
 		}
 
