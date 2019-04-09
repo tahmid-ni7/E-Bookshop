@@ -14,7 +14,7 @@
 <div class="container-fluid">
 	<div id="table-header">My Books list</div>
 	<table class="table table-hover">
-  <thead class="thead-light">
+  <thead class="">
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Book Name</th>

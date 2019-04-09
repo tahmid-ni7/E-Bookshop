@@ -104,4 +104,34 @@ class User_home extends CI_Controller {
 		$this->session->set_flashdata('success', '<i class= "fas fa-trash text-danger"></i> Book deleted successfully');
 		redirect('user_home/myBooks');
 	}
+
+	public function my_orders()
+	{
+		/*=== LOAD DYNAMIC CATAGORY ===*/
+		$this->load->model('admin_model');
+		$view['category'] = $this->admin_model->get_category();
+		/*==============================*/
+
+		$this->load->model('user_model');
+		$view['orders'] = $this->user_model->my_orders();
+
+		$view['user_view'] = "users/myOrders";
+		$this->load->view('layouts/user_home', $view);	
+	}
+
+	public function order_view($orderId)
+	{
+		/*=== LOAD DYNAMIC CATAGORY ===*/
+		$this->load->model('admin_model');
+		$view['category'] = $this->admin_model->get_category();
+		/*==============================*/
+
+		$this->load->model('admin_model');
+		$view['order_detail'] = $this->admin_model->get_order_detail($orderId);
+
+		$view['user_view'] = "users/myOrder_detail";
+		$this->load->view('layouts/user_home', $view);
+
+	}
+
 }

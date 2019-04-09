@@ -2,7 +2,7 @@
 
 class admin_model extends CI_Model
 {
-
+	#...Create category
 	public function create_category()
 	{
 		$data = array(
@@ -16,12 +16,14 @@ class admin_model extends CI_Model
 		return $insert_ctg;
 	}
 
+	#...Display all category
 	public function get_category()
 	{
 		$query = $this->db->get('category');
 		return $query->result();
 	}
 
+	#...Display category details
 	public function get_ctg_detail($id)
 	{
 		$this->db->where('id', $id);
@@ -29,6 +31,7 @@ class admin_model extends CI_Model
 		return $query->row();
 	}
 
+	#...Edit category
 	public function edit_category($id, $data)
 	{
 		$data = array(
@@ -41,6 +44,7 @@ class admin_model extends CI_Model
 		return $query = $this->db->where('id', $id)->update('category', $data);
 	}
 
+	#...Delete category
 	public function delete_category($id)
 	{
 		$this->db->where('id', $id);
@@ -48,12 +52,14 @@ class admin_model extends CI_Model
 		
 	}
 
+	#...Display all user
 	public function get_users()
 	{
 		$query = $this->db->get('users');
 		return $query->result();
 	}
 
+	#...Add user
 	public function add_user()
 	{
 
@@ -77,6 +83,7 @@ class admin_model extends CI_Model
 
 	}
 
+	#...Delete User
 	public function delete_user($id)
 	{
 		$this->db->where('id', $id);
@@ -84,6 +91,7 @@ class admin_model extends CI_Model
 		
 	}
 
+	#...Add books
 	public function add_books()
 	{
 		$data = $this->upload->data();
@@ -106,6 +114,7 @@ class admin_model extends CI_Model
 		return $insert_book;
 	}
 
+	#...Display all books
 	public function get_books()
 	{	
 		/*=== SQL join ===*/
@@ -119,6 +128,7 @@ class admin_model extends CI_Model
 		return $query->result();
 	}
 
+	#...Display book details
 	public function get_book_detail($id)
 	{
 		/*=== SQL join ===*/
@@ -131,6 +141,7 @@ class admin_model extends CI_Model
 		return $query->row();		
 	}
 
+	#...Edit book info
 	public function edit_book($id, $data)
 	{
 		$data = $this->upload->data();
@@ -152,6 +163,7 @@ class admin_model extends CI_Model
 		return $query = $this->db->where('id', $id)->update('books', $data);
 	}
 
+	#...Delete book
 	public function delete_book($id)
 	{
 		$this->db->where('id', $id);
@@ -159,6 +171,7 @@ class admin_model extends CI_Model
 	}
 
 
+	#...Get pending books
 	public function pending_books()
 	{	
 		/*=== SQL join ===*/
@@ -172,6 +185,7 @@ class admin_model extends CI_Model
 		return $query->result();
 	}
 
+	#...Published books
 	public function published_books($id, $data)
 	{
 		
@@ -180,6 +194,40 @@ class admin_model extends CI_Model
 		);
 
 		return $query = $this->db->where('id', $id)->update('books', $data);
+	}
+
+	#...Get all orders
+	public function get_orders()
+	{
+		$this->db->order_by('orderId', 'DESC');
+		$query = $this->db->get('orders');
+		return $query->result();
+	}
+
+	#...Get order details
+	public function get_order_detail($orderId)
+	{
+		$this->db->where('orderId', $orderId);
+		$query = $this->db->get('orders');
+		return $query->row();
+	}
+
+	#...Accept orders
+	public function accept_order($orderId, $data)
+	{
+		
+		$data = array(
+			'status' => 1
+		);
+
+		return $query = $this->db->where('orderId', $orderId)->update('orders', $data);
+	}
+
+	#...Delete order
+	public function delete_order($orderId)
+	{
+		$this->db->where('orderId', $orderId);
+		$this->db->delete('orders');
 	}
 
 }

@@ -100,7 +100,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <ul>
                 <li><a href="<?= base_url()?>user_home/sell_books">Sell Books</a></li>
                 <li><a href="<?= base_url()?>user_home/myBooks">My books</a></li>
-                <li><a href="#">My orders</a></li>
+                <li><a href="<?= base_url()?>user_home/my_orders">My orders</a></li>
                 <li><a href="#">Edit profile</a></li>
                 <li><a href="<?= base_url()?>users/logout"><i class="fas fa-power-off"></i> Logout</a></li>
             </ul>

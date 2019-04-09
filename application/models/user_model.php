@@ -183,6 +183,14 @@ class user_model extends CI_Model
 
 	}
 
+	public function my_orders()
+	{
+		$this->db->order_by('orderId', 'DESC');
+		$this->db->where('userId', $this->session->userdata('user_data'));
+		$query = $this->db->get('orders');
+		return $query->result();
+	}
+
 
 } 
 

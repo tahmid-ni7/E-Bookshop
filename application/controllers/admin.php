@@ -343,6 +343,55 @@ class admin extends CI_Controller {
 		$this->session->set_flashdata('success', '<i class= "fas fa-trash text-danger"></i> Book deleted successfully');
 		redirect('admin/pending_books');
 	}
+
+	#...Display all orders
+	public function orders()
+	{
+		$this->load->model('admin_model');
+		$view['orders'] = $this->admin_model->get_orders();
+
+		$view['admin_view'] = "admin/display_orders";
+		$this->load->view('layouts/admin_layout', $view);
+	}
+
+	#...Display Order Details
+	public function order_view($orderId)
+	{
+		$this->load->model('admin_model');
+		$view['order_detail'] = $this->admin_model->get_order_detail($orderId);
+
+		$view['admin_view'] = "admin/order_detail";
+		$this->load->view('layouts/admin_layout', $view);
+	}
+
+	#...Accepting order
+	public function accept_order($orderId)
+	{
+		$this->load->model('admin_model');
+		if($this->admin_model->accept_order($orderId, $data))
+		{
+			$this->session->set_flashdata('success','Order number '.$this->uri->segment(3).' is accepted');
+			redirect('admin/order_view/'.$this->uri->segment(3).'');
+		}
+	}
+
+	#...Deleting orders
+	public function delete_order($orderId)
+	{
+		$this->load->model('admin_model');
+		$this->admin_model->delete_order($orderId);
+
+		$this->session->set_flashdata('success', '<i class= "fas fa-trash text-danger"></i> Order number '.$this->uri->segment(3).' is deleted');
+		redirect('admin/orders');
+	}
+
+
+
+
+
+
+
+	
 /*============== SET CUSTOM VALIDATION RULES FOR TEXT-AREA ==============*/
 
 	public function my_rules($description)
