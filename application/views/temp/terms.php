@@ -37,6 +37,13 @@ In these Terms, references to "you", "User" shall mean the user end, "Service Pr
 	<li><i>Violate abuse, unethically manipulate or exploit any of the terms and conditions of this Agreement or any other terms and conditions for the use of the Website contained elsewhere.</i></li>
 </p>
 
+<div class="section-title border-top">Shipping policy</div><br>
+<p>
+<li>We may cencel your order if we are unable to contact with you.</li>
+<li>We will contact with you with in 24 hours after you placing the order.</li>
+<li>You may get your products with in 4-5 days.</li>
+</p>
+
 <div class="section-title border-top">Term and Policy updates</div><br>
 <p>We reserve the right to change or update these terms and policies at any time by placing a prominent notice on our site. Such changes shall be effective immediately upon posting to this site.</p>
 

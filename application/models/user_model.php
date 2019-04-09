@@ -149,6 +149,40 @@ class user_model extends CI_Model
 		return $query->result();
 	}
 
+	public function add_orders()
+	{
+		$shipping = 40;
+		$total = $this->cart->total();
+		$total_price = $total + $shipping;
+		
+		foreach ($this->cart->contents() as $items) {
+			$a[] = $items['id'];
+			$books = implode(', ', $a);
+
+			$q[] = $items['qty'];
+			$quantity = implode(', ', $q);
+
+		$data = array(
+			'userId'	=> $this->session->userdata('user_data'),
+			'name'		=> $this->input->post('name'),
+			'address'	=> $this->input->post('address'),
+			'city' 		=> $this->input->post('city'),
+			'email'		=> $this->input->post('email'),
+			'contact' 	=> $this->input->post('contact'),
+			'zipcode'	=> $this->input->post('zipcode'),
+			'paymentcheck' => $this->input->post('paymentcheck'),
+			'total_price' => $total_price,
+			'bookId' => $books,
+			'quantity' => $quantity
+
+		);
+	}
+
+		$insert_order = $this->db->insert('orders', $data);
+		return $insert_order;
+
+	}
+
 
 } 
 

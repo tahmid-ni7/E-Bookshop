@@ -89,8 +89,16 @@ foreach ($this->cart->contents() as $books)
       }
 
       print "<td>";
-      if($this->cart->contents()){
-        print anchor("", '<i class="fas fa-check"></i> Checkout', ['class'=>'btn btn-outline-danger btn-sm']);
+      if($this->cart->contents())
+      {
+        if($this->session->userdata('logged_in'))
+        {
+          print anchor("".base_url('checkout')."", '<i class="fas fa-check"></i> Checkout', ['class'=>'btn btn-outline-danger btn-sm']);
+        }
+        else
+        {
+          print "<div class='text-danger'>*Please log in to checkout <a href='users/login' class='btn-login'>Login</a></div>";
+        }
       }
       print "</td>";
       print "</tr>"
