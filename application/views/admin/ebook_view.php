@@ -11,6 +11,7 @@
 				</tr>
 				<tr>
 					<th>Author</th>
+					<td colspan="1"><?= strip_tags($ebook_detail->author) ?></td>
 				</tr>
 				<tr>
 					<th>Publish Date</th>
