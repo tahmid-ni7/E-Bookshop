@@ -1,5 +1,5 @@
 <br>
-<div id="table-header"><i class="fas fa-shopping-cart"></i> my cart</div>
+<div id="table-header"><i class="fas fa-shopping-cart"></i> Shopping Cart</div>
 
   <?php 
   if($this->session->flashdata('cart_error'))
@@ -12,7 +12,9 @@
     print '<div class = "error-msg">'.$this->session->flashdata('remove_cart').'</div>';
   }
   ?>
+
   <?= form_open("cart/update_cart");?>
+  <?php if($this->cart->contents()): ?>
   <table class="table">
   <thead class="thead-light">
     <tr>
@@ -104,5 +106,9 @@ foreach ($this->cart->contents() as $books)
       print "</tr>"
 ?>
 </table>
+<?php else: ?>
+  <div><h5>Your cart is empty, or you have not add any products to cart.</h5></div>
+  <div><a href ="<?= base_url('users/all_books') ?>" class="btn btn-outline-success btn-sm"><i class="fas fa-shopping-bag"></i> Continue Shopping</a></div>
+<?php endif; ?>
 
 <br>

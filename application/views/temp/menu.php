@@ -20,15 +20,20 @@
                         <ul>
                             <li><a href="<?= base_url()?>home">Home</a></li>
                             <li><a href="<?= base_url()?>users/all_books">Books</a></li>
-                            <li><a href="#">E-learning <i class="fas fa-arrow-alt-circle-right"></i></a></li>
-                            <li><a href="<?= base_url()?>admin">Admin <i class="fas fa-tools"></i></a></li>
+                            <li><a href="<?= base_url()?>users/all_ebooks">E-books <i class="fas fa-arrow-alt-circle-right"></i></a></li>
                             <li><a href="#">About us</a></li>
                             <li><a href="#">Contact us</a></li>
-                            
-                            <?php $type = $this->session->userdata('type') ?>
+
+                        <!-- #For admin button  -->
+                        <?php if($this->session->userdata('type') == 'A'): ?>
+                            <li><a href="<?= base_url()?>admin"><i class="fas fa-tools"></i> Admin</a></li>
+                        <?php endif; ?>
+                        
+                        <!-- #For user account button  -->
+                        <?php $type = $this->session->userdata('type') ?>
                             <?php if($type == 'U'): ?>
                             <li class="btn-user"><a href="<?= base_url()?>user_home"><i class="far fa-user"></i> My account</a></li>
-                            <?php endif; ?>
+                        <?php endif; ?>
                         </ul>
                     </div>
                 </div>

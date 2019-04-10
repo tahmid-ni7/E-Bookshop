@@ -512,7 +512,7 @@ form {
     margin-top: 45px;
 }
 form#user-search {
-    margin-top: 0px;
+    margin-top: 1px;
 }
 
 .my-btn, .my-btn-res {
@@ -606,6 +606,7 @@ small a {
     color: #F8694A;
     padding: 8px 10px;
     transition: .4s;
+    cursor: pointer;
 }
 .admin-search button:hover
 {
@@ -867,6 +868,32 @@ td.hidden {
     color: #fff;
     font-size: 12px;
     line-height: 18px;
+}
+/*=== E-books Menu ===*/
+.ebooks-menu {
+    background: #F7F8FA;
+}
+
+.ebooks-menu ul {
+    padding: 0;
+    margin: 0;
+}
+
+.ebooks-menu ul li {
+    list-style: none;
+}
+.ebooks-menu ul li a {
+    display: block;
+    width: 100%;
+    padding: 10px 10px;
+    color: #555;
+    border-bottom: 1px solid #E7E8EA;
+    transition: .4s;
+}
+
+.ebooks-menu ul li a:hover {
+    background: #E7E8EA;
+    border-bottom: 1px solid #F8694A;
 }
 
 

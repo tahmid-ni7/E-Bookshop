@@ -230,4 +230,57 @@ class admin_model extends CI_Model
 		$this->db->delete('orders');
 	}
 
+	/*==== E-Book ====*/
+	#...Add E-books
+	public function add_ebooks()
+	{
+		$data = $this->upload->data();
+		$file_path = base_url("uploads/file/".$data['raw_name'].$data['file_ext']);
+		
+		$data = array(
+			'ebook_name' => $this->input->post('ebook_name'),
+			'description' => $this->input->post('description'),
+			'author' => $this->input->post('author'),
+			'categoryId' => $this->input->post('categoryId'),
+			'book_file' => $file_path
+		);
+
+		$insert_ebook = $this->db->insert('ebooks', $data);
+		return $insert_ebook;
+	}
+
+	#...Get all e-books
+	public function get_ebooks()
+	{	
+		/*=== SQL join ===*/
+		$this->db->select('*');
+		$this->db->from('category');
+		$this->db->join('ebooks', 'ebooks.categoryId = category.id');
+
+		$this->db->order_by('ebooks.id', 'DESC');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	#...Get E-book details
+	public function get_ebook_detail($id)
+	{
+		/*=== SQL join ===*/
+		$this->db->select('*');
+		$this->db->from('category');
+		$this->db->join('ebooks', 'ebooks.categoryId = category.id');
+
+		$this->db->where('ebooks.id', $id);
+		$query = $this->db->get();
+		return $query->row();		
+	}
+
+	#...Delete order
+	public function delete_ebook($id)
+	{
+		$this->db->where('id', $id);
+		$this->db->delete('ebooks');
+	}
+
+
 }

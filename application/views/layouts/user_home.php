@@ -61,11 +61,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="col-md-8">
                               <div class="admin-search">
                                 <form id="user-search">
-                                <div class="form-group">
-                                <input type="search" class="form-control" placeholder="Search Books">
-                                </div>
-                                <button type="submit"><i class="fas fa-search"></i></button>
-                              </form>
+                                    <div class="form-group">
+                                        <input type="search" class="form-control" placeholder="Search Books">
+                                        </div>
+                                    <button type="submit"><i class="fas fa-search"></i></button>
+                                </form>
                               </div>
                             </div>
                             <div class="col-md-4">

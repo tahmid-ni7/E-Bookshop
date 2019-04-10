@@ -43,6 +43,7 @@ class user_model extends CI_Model
 		}
 	}
 
+	##...Get all books and filter category wise books
 	public function get_books()
 	{
 		/*=== SQL join and Data filter ===*/
@@ -188,6 +189,26 @@ class user_model extends CI_Model
 		$this->db->order_by('orderId', 'DESC');
 		$this->db->where('userId', $this->session->userdata('user_data'));
 		$query = $this->db->get('orders');
+		return $query->result();
+	}
+
+	##...Get all E-books and filter category wise E-books
+	public function get_ebooks()
+	{
+		/*=== SQL join and Data filter ===*/
+		$this->db->select('*');
+		$this->db->from('category');
+		$this->db->join('ebooks', 'ebooks.categoryId = category.id');
+		if(isset($_GET['ctg']))
+		{
+			$a = $_GET['ctg'];
+			$query = $this->db->where('category.id', $a);
+			$this->db->order_by('ebooks.id', 'DESC');
+			$query = $this->db->get();
+			return $query->result();
+		}
+		$this->db->order_by('ebooks.id', 'DESC');
+		$query = $this->db->get();
 		return $query->result();
 	}
 

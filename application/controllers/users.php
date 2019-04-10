@@ -193,6 +193,36 @@ class Users extends CI_Controller {
 
 	}
 
+	public function all_ebooks()
+	{
+		/*=== LOAD DYNAMIC CATAGORY ===*/
+		$this->load->model('admin_model');
+		$view['category'] = $this->admin_model->get_category();
+		/*==============================*/
+		
+		$this->load->model('user_model');
+		$view['ebooks'] = $this->user_model->get_ebooks();
+
+		$view['user_view'] = "users/all_ebooks";
+		$this->load->view('layouts/user_layout', $view);
+	}
+
+	public function ebook_view($id)
+	{
+		/*=== LOAD DYNAMIC CATAGORY ===*/
+		$this->load->model('admin_model');
+		$view['category'] = $this->admin_model->get_category();
+		/*==============================*/
+
+		$this->load->model('admin_model');
+		$view['ebook_detail'] = $this->admin_model->get_ebook_detail($id);
+
+		$view['user_view'] = "users/ebook_detail";
+		$this->load->view('layouts/user_layout', $view);
+
+		
+	}
+
 	public function terms()
 	{
 		/*=== LOAD DYNAMIC CATAGORY ===*/

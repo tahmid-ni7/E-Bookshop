@@ -386,12 +386,94 @@ class admin extends CI_Controller {
 	}
 
 
+	/*======== E-BOOK ======*/
+
+	public function add_ebooks()
+	{
+		/*=== LOAD DYNAMIC CATAGORY ===*/
+		$this->load->model('admin_model');
+		$view['category'] = $this->admin_model->get_category();
+		/*==============================*/
+
+		#...File Upload validation
+		$config = [
+			'upload_path'=>'./uploads/file/',
+			'allowed_types'=>'pdf',
+			'max_size' => '2024,',
+			'overwrite' => FALSE
+			];
+			
+
+		$this->load->library('upload', $config);
+
+		$this->form_validation->set_rules('ebook_name', 'Book name', 'trim|required|strip_tags[book_name]');
+		$this->form_validation->set_rules('description', 'Description', 'trim|required|min_length[100]|strip_tags[description]');
+		$this->form_validation->set_rules('author', 'Author name', 'trim|required|alpha_numeric_spaces|strip_tags[author]');
+		
+		$this->form_validation->set_rules('categoryId', 'Category', 'trim|required');
+		/*$this->form_validation->set_rules('userfile', 'File', 'trim|required');*/
+
+
+		if(($this->form_validation->run() && $this->upload->do_upload()) == FALSE)
+		{
+
+			$view['admin_view'] = "admin/add_ebooks";
+			$this->load->view('layouts/admin_layout', $view);
+
+		}
+		else
+		{
+			$this->load->model('admin_model');
+
+			if($this->admin_model->add_ebooks())
+			{
+				$this->session->set_flashdata('success', 'E-Book added successfully');
+				redirect('admin/ebooks');
+			}
+			else
+			{
+				print $this->db->error();
+			}
+
+		}
+
+	}
+
+	public function ebooks()
+	{
+		$this->load->model('admin_model');
+		$view['ebooks'] = $this->admin_model->get_ebooks();
+
+		$view['admin_view'] = "admin/ebooks";
+		$this->load->view('layouts/admin_layout', $view);
+	}
+
+	public function ebook_view($id)
+	{
+		$this->load->model('admin_model');
+		$view['ebook_detail'] = $this->admin_model->get_ebook_detail($id);
+
+		$view['admin_view'] = "admin/ebook_view";
+		$this->load->view('layouts/admin_layout', $view);
+	}
+
+	#...Deleting e-books
+	public function delete_ebook($id)
+	{
+		$this->load->model('admin_model');
+		$this->admin_model->delete_ebook($id);
+
+		$this->session->set_flashdata('success', '<i class= "fas fa-trash text-danger"></i> E-Book deleted successfully.');
+		redirect('admin/ebooks');
+	}
 
 
 
 
 
-	
+
+
+
 /*============== SET CUSTOM VALIDATION RULES FOR TEXT-AREA ==============*/
 
 	public function my_rules($description)

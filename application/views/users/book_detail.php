@@ -3,6 +3,7 @@
 	<div class="row">
 		<div class="col-lg-8 col-md-9 col-sm-12" id="book-detail">
 			<div id="table-header">Book Detail</div><br>
+			<div><h5>Details of <span class="text-info"><?= strip_tags($book_detail->book_name)?></span></h5></div>
 			<div class="row">
 			<div class="col-lg-4 col-md-5 col-sm-6" id="book-img"><?php print '<img src = "'.strip_tags($book_detail->book_image).'" alt = "">';?></div>
 			<div class="col-lg-8 col-md-7 col-sm-6">
