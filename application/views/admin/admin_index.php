@@ -8,7 +8,7 @@
 </div>
 
 
-<div class="admin-index section-padding text-center">
+<div class="admin-index section-padding text-center" style="min-height: 500px">
 	<h3>Welcome to admin home page</h3>
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum odit esse, voluptas sapiente velit vel reprehenderit nemo suscipit cumque sint!</p>
 </div>

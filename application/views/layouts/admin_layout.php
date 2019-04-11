@@ -95,14 +95,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <?php $this->load->view('admin/admin_nav'); ?>
                 </div>
                 <div class="col-md-10 col-sm-9 col-xs-8">
-                    <?php $this->load->view($admin_view); ?>
+                    <?php $this->load->view($admin_view); ?><br>
+
+                    <!--============ Footer Area ============-->
+                    <div>
+                        <?php $this->load->view('temp/footer'); ?>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-
-    <!--============ Footer Area ============-->
-    <div>
-        <?php $this->load->view('temp/footer'); ?>
     </div>

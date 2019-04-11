@@ -129,33 +129,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
 
     <!--============ Footer Area ============-->
-    <div class="footer-area">
+    <div class="footer-area-home">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
                     <div class="widget">
                         <div class="brand-name">
                             <div class="lname"><a href=""><span>Bookshop</span> & E-learning</a></div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias quia libero porro corporis maiores ut adipisci nulla veritatis ex magni.</p>
+                            <p>This is a online books market place, it allows you to sell & buy your favourite books. You can also find here different types of e-books, which you can download for free.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="widget">
-                        <h3>Customer Services</h3>
+                        <h3>Our Services</h3>
 
                         <ul>
-                            <li><a href="">About us</a></li>
-                            <li><a href="">Shiping & return</a></li>
-                            <li><a href="">Shiping guide</a></li>
-                            <li><a href="">FAQ</a></li>
+                            <li><a href="<?= base_url('users/all_books')?>">Buy Books</a></li>
+                            <li><a href="<?= base_url('users/all_ebooks')?>">Find E-books</a></li>
+                            <li><a href="<?= base_url('user_home/sell_books')?>">Sell your books</a></li>
+                            <li><a href="<?= base_url('users/terms')?>">Terms and conditions</a></li>
+                            <li><a href="#">FAQ</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="widget">
                         <h3>Stay connected</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos vitae, eaque cumque. Nulla, reprehenderit animi.</p>
+                        <p>Communication is very much important for building good customer relationship. You can connected with us through the social media. If you have any types of quiries fell free to ask. You are always welcome.</p>
                         <div id="social-icon">
                             <span><a href="https://www.facebook.com/iamTahmid.ni7" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a></span>
                             <span><a href="https://github.com/tahmid-ni7" title="Github" target="_blank"><i class="fab fa-github"></i></a></span>
@@ -165,7 +166,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
             </div>
             <div class="copy-right">
-                <p><i class="fas fa-copyright"></i> Tahmid Nishat | 2019 <br>All right reserved</p>
+                <p><i class="fas fa-copyright"></i> 2019 Tahmid Nishat, Inc. <br>All right reserved</p>
             </div>
         </div>
     </div>

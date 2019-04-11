@@ -1,9 +1,9 @@
 <div class="footer-area">
     <div class="container">
         <div id="s-footer">
-            <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col-md-12 col-sm-12">
                 <div class="footer-text">
-                    <p><i class="fas fa-copyright"></i> Tahmid Nishat | 2019 <br>
+                    <p><i class="fas fa-copyright"></i> 2019 Tahmid Nishat, Inc. <br>
                         Email: tahmid.ni7@gmail.com</p>
                 </div>
                 <div id="social-icon">

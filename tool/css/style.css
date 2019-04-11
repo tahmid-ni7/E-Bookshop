@@ -61,8 +61,8 @@ h6 {
 }
 
 .hearder-top {
-    background-color: #f8f8f8;
-    color: #1E2225;
+    background-color: #F6F7F8;
+    color: #30323A;
     padding: 2px 0;
     border-bottom: 1px solid #F8694A;
     box-shadow: 0px 6px 6px -6px rgb(0, 0, 0, 0.3);
@@ -386,9 +386,15 @@ span.sb input[type="submit"] {
     color: #fff;
 }
 
-.footer-area {
+.footer-area-home {
     background-color: #1E2225;
     color: #dddd;
+    padding: 30px 0;
+}
+.footer-area
+{
+    background-color: #F6F7F8;
+    color: #30323A;
     padding: 30px 0;
 }
 
@@ -412,7 +418,7 @@ span.sb input[type="submit"] {
 
 .widget ul li a {
     color: #dddd;
-    display: block;
+    display: inline-block;
     padding: 5px 0;
     text-transform: capitalize;
     transition: .4s;
@@ -422,8 +428,12 @@ span.sb input[type="submit"] {
     color: #F8694A;
 }
 
-div#social-icon a {
+.footer-area-home #social-icon a
+{
     color: #dddd;
+}
+#social-icon a {
+    color: #30323A;
     font-size: 20px;
 }
 
@@ -561,9 +571,10 @@ small a {
 
 .admin-nav {
     background-color: #30323A;
-    height: 100vh;
+    height: auto;
     color: #fff;
     padding: 0;
+    padding-bottom: 20px;
 }
 .admin-menu ul {
     padding: 0;
