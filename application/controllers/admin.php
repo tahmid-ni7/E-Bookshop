@@ -204,7 +204,7 @@ class admin extends CI_Controller {
 		$config = [
 			'upload_path'=>'./uploads/image/',
 			'allowed_types'=>'jpg|png',
-			'max_size' => '400,',
+			'max_size' => '400',
 			'overwrite' => FALSE
 			];
 
@@ -267,7 +267,7 @@ class admin extends CI_Controller {
 		$config = [
 			'upload_path'=>'./uploads/image/',
 			'allowed_types'=>'jpg|png',
-			'max_size' => '400,',
+			'max_size' => '400',
 			'overwrite' => TRUE
 			];
 
@@ -399,7 +399,7 @@ class admin extends CI_Controller {
 		$config = [
 			'upload_path'=>'./uploads/file/',
 			'allowed_types'=>'pdf',
-			'max_size' => '2024,',
+			'max_size' => '5200',
 			'overwrite' => FALSE
 			];
 			

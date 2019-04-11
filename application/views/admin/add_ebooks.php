@@ -44,7 +44,7 @@
             <label for="book_file" class="col-sm-2 col-form-label">Book File</label>
             <div class="col-sm-6">
                 <?= form_upload(['name'=>'userfile', 'class'=>'form-control'])?>
-                <div class="text-secondary">* Upload pdf format. file should not be more than 2MB</div>
+                <div class="text-secondary">* Upload pdf format. file should not be more than 5MB</div>
             </div>
             <div class="col-sm-4">
                <div class="text-danger form-error"></div>    
