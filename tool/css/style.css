@@ -1,7 +1,41 @@
+
+/*=== google font ===*/
+/*@import url('https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700');*/
+
+/*=== Custom Fonts ===*/
+@font-face
+{
+    font-family: myfont;
+    font-weight: 700;
+    src:url(../../tool/fonts/Hind-Bold.ttf) format("truetype");
+    
+}
+@font-face
+{
+    font-family: myfont;
+    font-weight: 300;
+    src: url(../../tool/fonts/Hind-Light.ttf) format("truetype");  
+}
+@font-face
+{
+    font-family: myfont;
+    font-weight: 500;
+    src: url(../../tool/fonts/Hind-Medium.ttf) format("truetype");  
+}
+@font-face
+{
+    font-family: myfont;
+    font-weight: 600;
+    src: url(../../tool/fonts/Hind-SemiBold.ttf) format("truetype");  
+}
+@font-face
+{
+    font-family: myfont;
+    font-weight: 400;
+    src: url(../../tool/fonts/Hind-Regular.ttf) format("truetype");  
+}
+
 /*========== Base CSS ==============*/
-
-@import url('https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700');
-
 * {
   margin: 0;
   padding: 0;
@@ -12,11 +46,13 @@ a:hover {
 }
 
 body {
-    font-family: 'Hind', sans-serif;
+   
+    font-family: myfont;
+    /*font-family: 'Hind', sans-serif;*/
     font-size: 14px;
+    font-weight: 400;
     letter-spacing: .6px;
     color: #333;
-    overflow-x: hidden;
 }
 
 h1,
@@ -163,6 +199,7 @@ h6 {
     transition: .4s;
     border-radius: 3px;
     text-transform: uppercase;
+    font-weight: 500;
 }
 
 .menu ul li:hover a {
@@ -191,7 +228,7 @@ button#ctg {
     font-size: 16px;
     padding: 10px 12px;
     text-align: left;
-    font-weight: 700;
+    font-weight: 500;
     text-transform: uppercase;
     position: relative;
     outline: none;
