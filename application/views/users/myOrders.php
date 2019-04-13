@@ -3,7 +3,8 @@
 <?php if($this->user_model->my_orders()): ?>
 
 	<div id="table-header">My orders</div>
-	<table class="table table-hover">
+  <div class="table-responsive-sm table-responsive-md">
+	<table class="table">
   <thead class="">
     <tr>
       <th scope="col">ID</th>
@@ -31,25 +32,26 @@
 
       <?php 
       if($order->status == 1)
-      {
-        $order->status = "Accepted";
+      { 
+        $order->status = '<span class = "text-success">Accepted</span>';
       }
       else
       {
-        $order->status = "Pending";
+        $order->status = '<span class = "text-danger">Pending</span>';
       }
-      print '<td>'.strip_tags($order->status).'</td>';
+      print '<td>'.$order->status.'</td>';
        
       ?>
   
       <?php print '<td>';
-        print '<a href= "'.base_url().'user_home/order_view/'.$order->orderId.'" title= "View Details" class="btn btn-primary btn-sm">Details</a>&nbsp';
+        print '<a href= "'.base_url().'user_home/order_view/'.$order->orderId.'" title= "View Details" class="btn btn-info btn-sm">Details</a>&nbsp';
         print '</td>'; 
       ?>
     </tr>
 	<?php endforeach; ?>
   </tbody>
 </table>
+</div>
 
 <?php else: ?>
   <div class="error-msg"><?php print "You did not order any book yet. You can order books from here. "?>

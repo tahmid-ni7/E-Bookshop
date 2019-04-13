@@ -13,7 +13,7 @@
 
 <div class="container-fluid">
 	<div id="table-header">My Books list</div>
-	<table class="table table-hover">
+	<table class="table">
   <thead class="">
     <tr>
       <th scope="col">ID</th>
@@ -49,11 +49,11 @@
       <!--=== For dispaly published/unpublished -->
       <?php if($book->status == 1)
       {
-        $book->status = "Published";
+        $book->status = '<span class = "text-success">Published</span>';
       }else{
-        $book->status = "Unpublished";
+        $book->status = '<span class = "text-danger">Unpublished</span>';
       }
-       print '<td>'.strip_tags($book->status).'</td>'; 
+       print '<td>'.($book->status).'</td>'; 
       ?>
       
       <?php

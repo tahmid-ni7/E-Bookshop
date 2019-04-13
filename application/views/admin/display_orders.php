@@ -9,6 +9,7 @@
 <br>
 <div class="container-fluid">
 	<div id="table-header">all orders</div>
+  <div class="table-responsive-sm">
 	<table class="table table-hover">
   <thead class="thead-light">
     <tr>
@@ -39,14 +40,14 @@
 
       <?php 
       if($order->status == 1)
-      {
-        $order->status = "Accepted";
+      { 
+        $order->status = '<span class = "text-success">Accepted</span>';
       }
       else
       {
-        $order->status = "Pending";
+        $order->status = '<span class = "text-danger">Pending</span>';
       }
-      print '<td>'.strip_tags($order->status).'</td>';
+      print '<td>'.$order->status.'</td>';
        
       ?>
   
@@ -58,4 +59,5 @@
 	<?php endforeach; ?>
   </tbody>
 </table>
+</div>
 </div>

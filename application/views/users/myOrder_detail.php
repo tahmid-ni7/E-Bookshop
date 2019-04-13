@@ -60,14 +60,14 @@
 					<?php
 					if($order_detail->status == 1)
 					{
-						$order_detail->status = "Accepted";
+						$order_detail->status = '<span class = "text-success">Accepted</span>';
 					}
 					else
 					{
-						$order_detail->status = "Pending";
+						$order_detail->status = '<span class = "text-danger">Pending</span>';
 					}
 					print '<th>Order Status</th>';
-					print '<td colspan="1">'.strip_tags($order_detail->status).'</td>';
+					print '<td colspan="1">'.($order_detail->status).'</td>';
 					?>
 				</tr>
 			</table>
