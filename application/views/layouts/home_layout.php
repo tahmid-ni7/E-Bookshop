@@ -123,7 +123,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!--==== CSE Books ====-->
     <div class="section-padding">
         <div class="container">
-            <div class="section-title"><a href="<?= base_url()?>users/all-books/?ctg=1">Computer science and engineering Books</a></div>
+            <div class="section-title"><a href="<?= base_url()?>users/all-books/?ctg=CSE">Computer science and engineering Books</a></div>
             <div><?php $this->load->view('temp/cse_books') ?></div> 
         </div>   
     </div>

@@ -4,7 +4,7 @@
 <?php 
 if(isset($_GET['ctg']))
 {
-	if($_GET['ctg']== $ctg->id)
+	if($_GET['ctg']== $ctg->tag)
 	{
 		print '<i class="fas fa-angle-double-right" style="color: #ddd"></i> '.$ctg->category;
 	}

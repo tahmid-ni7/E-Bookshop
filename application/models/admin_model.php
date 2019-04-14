@@ -8,7 +8,8 @@ class admin_model extends CI_Model
 		$data = array(
 
 		'category' => $this->input->post('category'),
-		'description' => $this->input->post('description')
+		'description' => $this->input->post('description'),
+		'tag' => $this->input->post('tag')
 
 		);
 
@@ -37,7 +38,8 @@ class admin_model extends CI_Model
 		$data = array(
 
 		'category' => $this->input->post('category'),
-		'description' => $this->input->post('description')
+		'description' => $this->input->post('description'),
+		'tag' => $this->input->post('tag')
 
 		);
 

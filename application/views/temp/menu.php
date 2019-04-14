@@ -9,7 +9,7 @@
                         <ul class="active">
                             <?php foreach($category as $ctg): ?>
                                 
-                            <?php print '<li><a href="'.base_url('users/all-books').'/?ctg='.$ctg->id.'">'.$ctg->category.'</a></li>';?>
+                            <?php print '<li><a href="'.base_url('users/all-books').'/?ctg='.$ctg->tag.'">'.$ctg->category.'</a></li>';?>
                            
                             <?php endforeach; ?>
                         </ul>

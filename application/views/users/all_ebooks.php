@@ -6,7 +6,7 @@
       <ul>
         <?php foreach($category as $ctg): ?>
                                 
-        <?php print '<li><a href="'.base_url('users/all-ebooks').'/?ctg='.$ctg->id.'">'.$ctg->category.'</a></li>';?>
+        <?php print '<li><a href="'.base_url('users/all-ebooks').'/?ctg='.$ctg->tag.'">'.$ctg->category.'</a></li>';?>
        
         <?php endforeach; ?>
       </ul>
@@ -21,7 +21,7 @@
         <?php 
         if(isset($_GET['ctg']))
         {
-          if($_GET['ctg'] == $ctg->id)
+          if($_GET['ctg'] == $ctg->tag)
           {
             print '<i class="fas fa-angle-double-right" style="color: #ddd"></i> '.$ctg->category;
           }

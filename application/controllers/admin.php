@@ -43,6 +43,7 @@ class admin extends CI_Controller {
 	public function add_category()
 	{
 		$this->form_validation->set_rules('category', 'Category name', 'trim|required|alpha_numeric_spaces');
+		$this->form_validation->set_rules('tag', 'Category tag', 'trim|required|alpha|strip_tags[tag]');
 		$this->form_validation->set_rules('description', 'Description', 'trim|required|strip_tags[description]');
 
 		if($this->form_validation->run() == FALSE)
@@ -85,6 +86,7 @@ class admin extends CI_Controller {
 		$view['ctg_detail'] = $this->admin_model->get_ctg_detail($id);
 
 		$this->form_validation->set_rules('category', 'Category name', 'trim|required|alpha_numeric_spaces');
+		$this->form_validation->set_rules('tag', 'Category tag', 'trim|required|alpha|strip_tags[tag]');
 		$this->form_validation->set_rules('description', 'Description', 'trim|required|callback_my_rules');
 
 

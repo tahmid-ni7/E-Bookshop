@@ -5,6 +5,7 @@
 			<div id="table-header">Category Detail</div><br>
 			<h4>Category Name: <?= strip_tags($ctg_detail->category) ?></h4>
 			<p><?= strip_tags($ctg_detail->description) ?></p>
+			<b>Tag: <?= strip_tags($ctg_detail->tag) ?></b>
 			<hr>
 		  <div><h5>Action</h5></div>
 	      <?php print '<td>';

@@ -20,6 +20,15 @@
                 <div class="text-danger form-error"><?= form_error('description')?></div>
             </div>
         </div>
+        <div class="form-group row">
+            <label for="category-tag" class="col-sm-2 col-form-label">Tag</label>
+            <div class="col-sm-6">
+            <?= form_input(['name'=>'tag', 'value'=>set_value('tag', $ctg_detail->tag), 'placeholder'=> 'Category tag...', 'class'=>'form-control'])?>
+            </div>
+            <div class="col-md-4">
+                <div class="text-danger form-error"><?= form_error('tag')?></div>
+            </div>
+        </div>
         
 
         <div class="sub">

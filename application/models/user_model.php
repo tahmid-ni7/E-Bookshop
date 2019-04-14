@@ -53,7 +53,7 @@ class user_model extends CI_Model
 		if(isset($_GET['ctg']))
 		{
 			$a = $_GET['ctg'];
-			$query = $this->db->where('category.id', $a);
+			$query = $this->db->where('category.tag', $a);
 			$this->db->order_by('books.id', 'DESC');
 			$this->db->where('books.status', 1);
 			$query = $this->db->get();
@@ -202,7 +202,7 @@ class user_model extends CI_Model
 		if(isset($_GET['ctg']))
 		{
 			$a = $_GET['ctg'];
-			$query = $this->db->where('category.id', $a);
+			$query = $this->db->where('category.tag', $a);
 			$this->db->order_by('ebooks.id', 'DESC');
 			$query = $this->db->get();
 			return $query->result();
