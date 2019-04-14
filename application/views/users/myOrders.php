@@ -44,7 +44,7 @@
       ?>
   
       <?php print '<td>';
-        print '<a href= "'.base_url().'user_home/order_view/'.$order->orderId.'" title= "View Details" class="btn btn-info btn-sm">Details</a>&nbsp';
+        print '<a href= "'.base_url().'user_home/order-view/'.$order->orderId.'" title= "View Details" class="btn btn-info btn-sm">Details</a>&nbsp';
         print '</td>'; 
       ?>
     </tr>

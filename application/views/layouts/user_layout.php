@@ -64,15 +64,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <a href="<?= base_url()?>users/login" class="btn-login"><i class="fas fa-sign-in-alt"></i> Login</a>
                                 <a href="<?= base_url()?>users/registration" class="btn-login"><i class="fas fa-user-cog"></i> Register</a>
 
-                                <?php else: ?>
-                                <div class="admin-search">
-                                  <form id="user-search">
-                                    <div class="form-group">
+                            <?php else: ?>
+                                
+                            <div class="admin-search">
+                                <form id="user-search">
                                     <input type="search" class="form-control" placeholder="Search Books">
-                                    </div>
                                     <button type="submit"><i class="fas fa-search"></i></button>
-                                  </form>
-                                </div>  
+                                </form>
+                            </div> 
                                 
                             <?php endif; ?>
                             </div>

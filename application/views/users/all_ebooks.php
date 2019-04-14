@@ -6,7 +6,7 @@
       <ul>
         <?php foreach($category as $ctg): ?>
                                 
-        <?php print '<li><a href="'.base_url('users/all_ebooks').'/?ctg='.$ctg->id.'">'.$ctg->category.'</a></li>';?>
+        <?php print '<li><a href="'.base_url('users/all-ebooks').'/?ctg='.$ctg->id.'">'.$ctg->category.'</a></li>';?>
        
         <?php endforeach; ?>
       </ul>
@@ -44,7 +44,7 @@
       <tbody>
         <?php foreach($ebooks as $ebook): ?>
         <tr>
-          <?php print '<td><a href = "'.base_url().'users/ebook_view/'.$ebook->id.'" title="More Description" class= "text-info">'.strip_tags(ucwords($ebook->ebook_name)).'</a></td>'; ?>
+          <?php print '<td><a href = "'.base_url().'users/ebook-view/'.$ebook->id.'" title="More Description" class= "text-info">'.strip_tags(ucwords($ebook->ebook_name)).'</a></td>'; ?>
 
           <?php print '<td><p>'.substr(strip_tags($ebook->description), 0, 100).'<p></td>'; ?>
           <?php print '<td>'.strip_tags($ebook->author).'</td>'; ?>
@@ -52,7 +52,7 @@
 
 
           <?php print '<td>';
-            print '<a href= "'.base_url().'users/ebook_view/'.$ebook->id.'" title= "View details" class="btn btn-primary btn-sm">View</a>&nbsp';
+            print '<a href= "'.base_url().'users/ebook-view/'.$ebook->id.'" title= "View details" class="btn btn-primary btn-sm">View</a>&nbsp';
 
             print '</td>'; 
           ?>

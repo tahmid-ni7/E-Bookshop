@@ -9,7 +9,7 @@
                         <ul class="active">
                             <?php foreach($category as $ctg): ?>
                                 
-                            <?php print '<li><a href="'.base_url('users/all_books').'/?ctg='.$ctg->id.'">'.$ctg->category.'</a></li>';?>
+                            <?php print '<li><a href="'.base_url('users/all-books').'/?ctg='.$ctg->id.'">'.$ctg->category.'</a></li>';?>
                            
                             <?php endforeach; ?>
                         </ul>
@@ -19,8 +19,8 @@
                     <div class="menu">
                         <ul>
                             <li><a href="<?= base_url()?>home">Home</a></li>
-                            <li><a href="<?= base_url()?>users/all_books">Books</a></li>
-                            <li><a href="<?= base_url()?>users/all_ebooks">E-books <i class="fas fa-arrow-alt-circle-right"></i></a></li>
+                            <li><a href="<?= base_url()?>users/all-books">Books</a></li>
+                            <li><a href="<?= base_url()?>users/all-ebooks">E-books <i class="fas fa-arrow-alt-circle-right"></i></a></li>
                             
                             <!-- #Button trigger modal -->
                             <li><a href = "#" data-toggle="modal" data-target="#exampleModal">Contact Us</a></li>
@@ -43,7 +43,7 @@
                         <!-- #For user account button  -->
                         <?php $type = $this->session->userdata('type') ?>
                             <?php if($type == 'U'): ?>
-                            <li class="btn-user"><a href="<?= base_url()?>user_home"><i class="far fa-user"></i> My account</a></li>
+                            <li class="btn-user"><a href="<?= base_url()?>user-home"><i class="far fa-user"></i> My account</a></li>
                         <?php endif; ?>
                         </ul>
                     </div>

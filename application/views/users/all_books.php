@@ -30,7 +30,7 @@ if(isset($_GET['ctg']))
 				<div id="book-name"><?= substr(htmlentities($book->book_name),0,21) ?></div>
 				<div id="author">By <i><?= htmlentities($book->author) ?></i></div>
 				<div id="price"><?= htmlentities($book->price) ?>.TK</div>
-				<div id="book-details"><?php print '<a href = "'.base_url().'users/book_view/'.$book->id.'">View Details</a>'; ?></div>
+				<div id="book-details"><?php print '<a href = "'.base_url().'users/book-view/'.$book->id.'">View Details</a>'; ?></div>
 				</div>
 		</div>	
 	</div>

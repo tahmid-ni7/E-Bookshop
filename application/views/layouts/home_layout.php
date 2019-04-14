@@ -65,15 +65,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <a href="<?= base_url()?>users/login" class="btn-login"><i class="fas fa-sign-in-alt"></i> Login</a>
                                 <a href="<?= base_url()?>users/registration" class="btn-login"><i class="fas fa-user-cog"></i> Register</a>
 
-                                <?php else: ?>
-                                <div class="admin-search">
-                                  <form id="user-search">
-                                    <div class="form-group">
+                            <?php else: ?>
+                               
+                              <div class="admin-search">
+                                <form id="user-search">
                                     <input type="search" class="form-control" placeholder="Search Books">
-                                    </div>
                                     <button type="submit"><i class="fas fa-search"></i></button>
-                                  </form>
-                                </div>  
+                                </form>
+                              </div>
+                               
                                 
                             <?php endif; ?>
                             </div>
@@ -116,14 +116,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!--==== Recent Books ====-->
     <div class="section-padding after-slider">
         <div class="container">
-            <div class="section-title"><a href="<?= base_url()?>users/all_books">recent Books</a></div>
+            <div class="section-title"><a href="<?= base_url()?>users/all-books">recent Books</a></div>
             <div><?php $this->load->view('temp/recent_books') ?></div> 
         </div>   
     </div>
     <!--==== CSE Books ====-->
     <div class="section-padding">
         <div class="container">
-            <div class="section-title"><a href="<?= base_url()?>users/all_books/?ctg=1">Computer science and engineering Books</a></div>
+            <div class="section-title"><a href="<?= base_url()?>users/all-books/?ctg=1">Computer science and engineering Books</a></div>
             <div><?php $this->load->view('temp/cse_books') ?></div> 
         </div>   
     </div>

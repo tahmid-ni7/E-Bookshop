@@ -14,7 +14,7 @@
                     <div id="author">By <i><?= $book->author ?></i></div>
                     <div id="price"><?= $book->price ?>.TK</div>
                     <div id="book-details">
-                        <?php print '<a href = "'.base_url().'users/book_view/'.$book->id.'">View details</a>'; ?>
+                        <?php print '<a href = "'.base_url().'users/book-view/'.$book->id.'">View details</a>'; ?>
                     </div>
                 </div>
             </div>  

@@ -61,9 +61,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="col-md-8">
                               <div class="admin-search">
                                 <form id="user-search">
-                                    <div class="form-group">
-                                        <input type="search" class="form-control" placeholder="Search Books">
-                                        </div>
+                                    <input type="search" class="form-control" placeholder="Search Books">
                                     <button type="submit"><i class="fas fa-search"></i></button>
                                 </form>
                               </div>
@@ -98,9 +96,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="container">
             <div class="user-menu">
             <ul>
-                <li><a href="<?= base_url()?>user_home/sell_books">Sell Books</a></li>
-                <li><a href="<?= base_url()?>user_home/myBooks">My books</a></li>
-                <li><a href="<?= base_url()?>user_home/my_orders">My orders</a></li>
+                <li><a href="<?= base_url()?>user-home/sell-books">Sell Books</a></li>
+                <li><a href="<?= base_url()?>user-home/myBooks">My books</a></li>
+                <li><a href="<?= base_url()?>user-home/my-orders">My orders</a></li>
                 <li><a href="#">Edit profile</a></li>
                 <li><a href="<?= base_url()?>users/logout"><i class="fas fa-power-off"></i> Logout</a></li>
             </ul>
@@ -110,7 +108,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!--=========== Content-area ==========-->
     <div class="container">
         <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-12 col-md-12 col-sm-12">
                 <?php $this->load->view($user_view); ?>
             </div>
         </div>

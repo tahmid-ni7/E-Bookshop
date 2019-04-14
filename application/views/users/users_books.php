@@ -35,7 +35,7 @@
   	<?php foreach($books as $book): ?>
     <tr>
       <?php print '<td>'.$book->id.'</td>'; ?>
-      <?php print '<td><a href = "'.base_url().'users/book_view/'.$book->id.'" title="More Description" class= "text-info">'.strip_tags(ucwords($book->book_name)).'</a></td>'; ?>
+      <?php print '<td><a href = "'.base_url().'users/book-view/'.$book->id.'" title="More Description" class= "text-info">'.strip_tags(ucwords($book->book_name)).'</a></td>'; ?>
 
       <?php print '<td>'.substr(strip_tags($book->description), 0, 100).'</td>'; ?>
       <?php print '<td>'.strip_tags($book->author).'</td>'; ?>
@@ -58,9 +58,9 @@
       
       <?php
       print '<td>';
-        print '<div><a href= "'.base_url().'users/book_view/'.$book->id.'" title= "View details" class="btn btn-info btn-sm"><i class= "fas fa-eye"></i> View&nbsp</a></div>';
+        print '<div><a href= "'.base_url().'users/book-view/'.$book->id.'" title= "View details" class="btn btn-info btn-sm"><i class= "fas fa-eye"></i> View&nbsp</a></div>';
         print '<br>';
-        print '<div><a href= "'.base_url().'user_home/myBooks_delete/'.$book->id.'" title= "Delete" class="btn btn-danger btn-sm"><i class= "fas fa-trash"></i> Delete</a></div>';
+        print '<div><a href= "'.base_url().'user-home/myBooks-delete/'.$book->id.'" title= "Delete" class="btn btn-danger btn-sm"><i class= "fas fa-trash"></i> Delete</a></div>';
       print '</td>'; 
       ?>
     </tr>
