@@ -25,7 +25,7 @@
 			</div>
 			</div>
 
-			<br><div class="book-description"><h5>Book description</h5><hr><?= nl2br(htmlentities($book_detail->description)) ?></div>
+			<br><div class="book-description"><h5>Book description</h5><hr><p><?= nl2br(htmlentities($book_detail->description)) ?></p></div>
 			<hr>
 
 		  <?php if($this->session->userdata('logged_in'))

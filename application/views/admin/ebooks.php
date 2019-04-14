@@ -39,11 +39,11 @@
       <?php print '<td>'.$ebook->id.'</td>'; ?>
       <?php print '<td><a href = "'.base_url().'admin/ebook_view/'.$ebook->id.'" title="More Description" class= "text-info">'.strip_tags(ucwords($ebook->ebook_name)).'</a></td>'; ?>
 
-      <?php print '<td>'.substr(strip_tags($ebook->description), 0, 100).'</td>'; ?>
-      <?php print '<td>'.strip_tags($ebook->author).'</td>'; ?>
+      <?php print '<td><p>'.substr(strip_tags($ebook->description), 0, 100).'</p></td>'; ?>
+      <?php print '<td><p>'.strip_tags($ebook->author).'</p></td>'; ?>
       <?php print '<td>'.ucwords(strip_tags($ebook->category)).'</td>'; ?>
 
-      <?php print '<td>View and Download :<br><a href="'.strip_tags($ebook->book_file).'" target = "_blank" class = "text-info">'.strip_tags(ucwords($ebook->ebook_name)).'</a></td>';?>
+      <?php print '<td>View and Download :<br><p><a href="'.strip_tags($ebook->book_file).'" target = "_blank" class = "text-info">'.strip_tags(ucwords($ebook->ebook_name)).'</a></p></td>';?>
 
 
       <?php print '<td>';

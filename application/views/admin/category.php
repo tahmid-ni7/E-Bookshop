@@ -28,7 +28,7 @@
       <?php print '<td>'.$ctg->id.'</td>'; ?>
       <?php print '<td><a href = "'.base_url().'admin/ctg_view/'.$ctg->id.'" title="More Description" class= "text-info">'.strip_tags(ucwords($ctg->category)).'</a></td>'; ?>
 
-      <?php print '<td>'.substr(strip_tags($ctg->description), 0, 90).'</td>'; ?>
+      <?php print '<td><p>'.substr(strip_tags($ctg->description), 0, 90).'</p></td>'; ?>
       <?php print '<td>';
         print '<a href= "'.base_url().'admin/ctg_view/'.$ctg->id.'" title= "View More" class="btn btn-primary btn-sm">View</a>&nbsp';
 

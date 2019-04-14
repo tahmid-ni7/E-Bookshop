@@ -15,23 +15,23 @@
 			<table class="table">
 				<tr>
 					<th>Ship Name</th>
-					<td colspan="1"><?= strip_tags($order_detail->name) ?></td>
+					<td colspan="1"><span><?= strip_tags($order_detail->name) ?></span></td>
 				</tr>
 				<tr>
 					<th>Contact</th>
-					<td colspan="1"><?= strip_tags($order_detail->contact) ?></td>
+					<td colspan="1"><span><?= strip_tags($order_detail->contact) ?></span></td>
 				</tr>
 				<tr>
 					<th>Email</th>
-					<td colspan="1"><?= strip_tags($order_detail->email) ?></td>
+					<td colspan="1"><span><?= strip_tags($order_detail->email) ?></span></td>
 				</tr>
 				<tr>
 					<th>Address</th>
-					<td colspan="1"><?= strip_tags($order_detail->address) ?></td>
+					<td colspan="1"><span><?= strip_tags($order_detail->address) ?></span></td>
 				</tr>
 				<tr>
 					<th>Shipping City</th>
-					<td colspan="1"><?= strip_tags($order_detail->city) ?></td>
+					<td colspan="1"><span><?= strip_tags($order_detail->city) ?></span></td>
 				</tr>
 				<tr>
 					<th>Total price</th>

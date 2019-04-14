@@ -46,7 +46,7 @@
         <tr>
           <?php print '<td><a href = "'.base_url().'users/ebook_view/'.$ebook->id.'" title="More Description" class= "text-info">'.strip_tags(ucwords($ebook->ebook_name)).'</a></td>'; ?>
 
-          <?php print '<td>'.substr(strip_tags($ebook->description), 0, 100).'</td>'; ?>
+          <?php print '<td><p>'.substr(strip_tags($ebook->description), 0, 100).'<p></td>'; ?>
           <?php print '<td>'.strip_tags($ebook->author).'</td>'; ?>
           <?php print '<td>'.ucwords(strip_tags($ebook->category)).'</td>'; ?>
 

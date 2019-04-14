@@ -54,6 +54,14 @@ body {
     letter-spacing: .6px;
     color: #333;
 }
+/* #word-break
+{
+    word-break: break-word;
+} */
+p, a, b, span
+{
+    word-break: break-word;
+}
 
 h1,
 h2,
@@ -62,6 +70,7 @@ h4,
 h5,
 h6 {
     color: #333;
+    word-break: break-word;
 }
 
 .section-padding {

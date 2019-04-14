@@ -15,7 +15,7 @@ print "Reviews : (".$count_reviews.")";
 			print '<p>'.htmlentities($comment->email).'</p>';
 			print '<small>'.date('h:i a, d M Y', strtotime($comment->dateTime)).'</small>';
 			print '</td>'; ?>
-			<?php print '<td>'.htmlentities($comment->review).'</td>'; ?>
+			<?php print '<td><p>'.nl2br(htmlentities($comment->review)).'</p></td>'; ?>
 		</tr>
 		<?php endforeach ?>
 	</tbody>

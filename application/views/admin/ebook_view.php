@@ -7,11 +7,11 @@
 			<table class="table">
 				<tr>
 					<th>Book Name</th>
-					<td colspan="1"><?= strip_tags($ebook_detail->ebook_name) ?></td>
+					<td colspan="1"><span><?= strip_tags($ebook_detail->ebook_name) ?></span></td>
 				</tr>
 				<tr>
 					<th>Author</th>
-					<td colspan="1"><?= strip_tags($ebook_detail->author) ?></td>
+					<td colspan="1"><span><?= strip_tags($ebook_detail->author) ?></span></td>
 				</tr>
 				<tr>
 					<th>Publish Date</th>
@@ -19,7 +19,7 @@
 				</tr>
 				<tr>
 					<th>Book file</th>
-					<td colspan="1"><a href="<?= $ebook_detail->book_file ?>" target = "_blank"><?= $ebook_detail->ebook_name?></a></td>
+					<td colspan="1"><a href="<?= $ebook_detail->book_file ?>" target = "_blank"><span><?= strip_tags($ebook_detail->author) ?></span></a></td>
 				</tr>
 				<tr class="border-bottom">
 					<th>Category</th>
