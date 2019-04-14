@@ -23,14 +23,21 @@
                             <li><a href="<?= base_url()?>users/all_ebooks">E-books <i class="fas fa-arrow-alt-circle-right"></i></a></li>
                             
                             <!-- #Button trigger modal -->
-                            <li><a href = "" data-toggle="modal" data-target="#exampleModal">Contact Us</a></li>
-                            <?php $this->load->view('temp/contact_modal') ?>
+                            <li><a href = "#" data-toggle="modal" data-target="#exampleModal">Contact Us</a></li>
+                            <?php
+                            #load contact modal
+                            $this->load->view('temp/contact_modal')  
+                            ?>
 
-                            <li><a href="#">About us</a></li>
+                            <li><a href = "#" data-toggle="modal" data-target="#aboutModal">About Us</a></li>
+                            <?php
+                            #Load about model 
+                            $this->load->view('temp/about_modal')
+                            ?>
 
                         <!-- #For admin button  -->
                         <?php if($this->session->userdata('type') == 'A'): ?>
-                            <li><a href="<?= base_url()?>admin"><i class="fas fa-tools"></i> Admin</a></li>
+                            <li class="btn-user"><a href="<?= base_url()?>admin"><i class="fas fa-tools"></i> Admin panel</a></li>
                         <?php endif; ?>
                         
                         <!-- #For user account button  -->

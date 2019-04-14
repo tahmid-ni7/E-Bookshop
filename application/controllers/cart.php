@@ -73,14 +73,16 @@ class Cart extends CI_Controller {
 			}
 			else 
 			{
-			/*	$books = $this->admin_model->get_book_detail($id);
-				if($content['qty'] > $books->'quantity')
+				/* $books = $this->admin_model->get_book_detail($id);
+
+				if($content['qty'] <= $books->quantity)
 				{
-					$this->session->set_flashdata('error', '*This much quantity is not in stock.');
+					
+					$this->cart->update($info);
 				}
 				else
 				{
-					$this->cart->update($info);
+					$this->session->set_flashdata('error', '*This much quantity is not in stock.');
 				}*/
 				$this->cart->update($info);
 			}
