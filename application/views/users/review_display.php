@@ -1,12 +1,15 @@
-<div id="table-header">
+<div class="section-title">
 <?php 
 $this->load->model('user_model');
 $count_reviews = count($this->user_model->get_reviews());
 
-print "Reviews : (".$count_reviews.")";
+print "<a href = '#collapseReview' data-toggle = 'collapse' role = 'button' aria-controls='collapseReview'><i class = 'far fa-comment'></i> Reviews : (".$count_reviews.")</a>";
 ?>
 </div>
-<table class="table table-hover">
+
+<div class="collapse" id="collapseReview">
+  <div class="card card-body">
+    <table class="table table-hover">
 	<tbody>
 		<?php foreach($reviews as $comment): ?>
 		<tr>
@@ -19,4 +22,6 @@ print "Reviews : (".$count_reviews.")";
 		</tr>
 		<?php endforeach ?>
 	</tbody>
-</table>
+	</table>
+  </div>
+</div><br>

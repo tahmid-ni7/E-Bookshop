@@ -80,7 +80,6 @@ h6 {
     font-size: 24px;
     text-transform: capitalize;
     font-weight: 600;
-    border-bottom: 1px solid #dee2e6;
     margin-bottom: 10px;
 }
 .section-title a
@@ -92,6 +91,7 @@ h6 {
 {
     color: #333;
 }
+
 
 /*====== Header Area CSS ======= */
 .header-area {
