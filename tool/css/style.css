@@ -229,68 +229,60 @@ h6 {
     background-color: #30323a21;
 }
 
-button#ctg {
-    width: 100%;
-    border: none;
-    background: #F8694A;
-    color: #fff;
-    font-size: 16px;
-    padding: 10px 12px;
-    text-align: left;
-    font-weight: 500;
-    text-transform: uppercase;
-    position: relative;
-    outline: none;
-    cursor: pointer;
-}
-
-span#m-list {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-}
-
 .header-mid {
     padding: 15px 0;
 }
 
-.onclick-dropdown {
+/*=== Onclick Drop-down ===*/
+.ctg-btn {
+    display: block;
+    padding: 11px 16px;
+    color: #fff;
+    font-weight: 600;
+    background-color: #F8694A;
+    text-transform: uppercase;
     position: relative;
 }
-.onclick-dropdown ul {
+
+.ctg-btn:hover {
+    color: #fff;
+}
+#m-list {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+.onclick-ctg{
+    margin: 0;
+    padding: 0;
+}
+.onclick-ctg ul {
     position: absolute;
     background: #30323A;
     width: 100%;
     padding: 0;
     margin: 0;
     z-index: 100;
-    transition: .5s;
-    opacity: 0;
-    visibility: hidden;
-    right: 20px;
 }
-
-.onclick-dropdown:hover > ul {
-    visibility: visible;
-    opacity: 1;
-    right: 0;
-}
-
-.onclick-dropdown ul li {
+.onclick-ctg ul li {
     list-style: none;
     border-bottom: 1px solid #505050;
 }
-
-.onclick-dropdown ul li a {
+.onclick-ctg ul li a {
     color: #fff;
     padding: 12px 15px;
     display: block;
     text-transform: uppercase;
     transition: .4s;
+    font-size: 14px;
 }
-
-.onclick-dropdown ul li a:hover {
+.onclick-ctg ul li a:hover {
     background-color: #505050;
+}
+.dropdown-menu {
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
 /*========= Slider area CSS =========*/
@@ -952,8 +944,6 @@ td.hidden {
     background: #E7E8EA;
     border-bottom: 1px solid #F8694A;
 }
-
-
 
 
 
