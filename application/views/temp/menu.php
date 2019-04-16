@@ -2,7 +2,7 @@
     <div class="container">
         <div class="main-menu">
             <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-4">
+                <div class="col-lg-3 col-md-4">
                     <!--=== Onclick Drop-down Menu ===-->
                     <div class="dropdown show onclick-ctg">
                       <a class="ctg-btn" href="#" role="button" data-toggle="dropdown" aria-haspopup="true">
@@ -20,9 +20,9 @@
                       </div>
                     </div>
                 </div>
-                <div class="col-lg-9 col-md-9 col-sm-8">
+                <div class="col-lg-9 col-md-8">
                     <div class="menu">
-                        <ul>
+                        <ul id="nav">
                             <li><a href="<?= base_url()?>home">Home</a></li>
                             <li><a href="<?= base_url()?>users/all-books">Books</a></li>
                             <li><a href="<?= base_url()?>users/all-ebooks">E-books <i class="fas fa-arrow-alt-circle-right"></i></a></li>

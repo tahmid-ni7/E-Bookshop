@@ -13,7 +13,7 @@
                    <div class="col-md-6">
                        <div class="search-bar">
                            <form action="">
-                               <span class="sb"><input type="search" name="search" placeholder="Find your books" ></span>
+                               <span class="sb"><input type="search" name="" placeholder="Find your books" ></span>
                                <span class="sb"><input type="submit" name="search" value="Search"></span>
                            </form>
                        </div>
@@ -36,7 +36,7 @@
                    <div class="col-md-6">
                        <div class="search-bar">
                            <form action="">
-                               <span class="sb"><input type="search" name="search" placeholder="Find your books" ></span>
+                               <span class="sb"><input type="search" name="" placeholder="Find your books" ></span>
                                <span class="sb"><input type="submit" name="search" value="Search"></span>
                            </form>
                        </div>
@@ -59,7 +59,7 @@
                    <div class="col-md-6">
                        <div class="search-bar">
                            <form action="">
-                               <span class="sb"><input type="search" name="search" placeholder="Find your books" ></span>
+                               <span class="sb"><input type="search" name="" placeholder="Find your books" ></span>
                                <span class="sb"><input type="submit" name="search" value="Search"></span>
                            </form>
                        </div>

@@ -7,9 +7,12 @@
 			items: 1,
 			nav: false,
 			dots: true,
-			loop: true
+			loop: true,
+			autoplay: 3000,
+			animateIn: 'fadeIn',
+  			animateOut: 'fadeOut'
 		});
-
+		
 	});
 
 

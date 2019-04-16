@@ -11,12 +11,12 @@
       <div class="modal-body">
         <div><p>This is an online Bookshop and E-learning application, where you can buy and sell the books. You can also find different categories of e-books, you can read it for free. But some e-books you might be buy for read.</p></div>
         <div>
-          <h6>Our services</h6>
-          <p><i class="far fa-dot-circle"></i> Sell Books</p>
-          <p><i class="far fa-dot-circle"></i> Buy Books</p>
-          <p><i class="far fa-dot-circle"></i> Read free e-books</p>
-          <p><i class="far fa-dot-circle"></i> Home delivery</p>
-          <p><i class="far fa-dot-circle"></i> Cash on delivery</p>
+          <h5>Our services</h5>
+          <p><i class="fas fa-circle text-secondary"></i> Sell Books</p>
+          <p><i class="fas fa-circle text-secondary"></i> Buy Books</p>
+          <p><i class="fas fa-circle text-secondary"></i> Read free e-books</p>
+          <p><i class="fas fa-circle text-secondary"></i> Home delivery</p>
+          <p><i class="fas fa-circle text-secondary"></i> Cash on delivery</p>
         </div>
         <br>
         <div>

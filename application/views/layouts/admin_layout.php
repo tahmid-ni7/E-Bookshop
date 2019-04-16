@@ -91,10 +91,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="admin-area">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-2 col-sm-3 col-xs-4 admin-nav">
+                <div class="col-md-2 col-sm-3 admin-nav">
                     <?php $this->load->view('admin/admin_nav'); ?>
                 </div>
-                <div class="col-md-10 col-sm-9 col-xs-8">
+                <div class="col-md-10 col-sm-9">
                     <?php $this->load->view($admin_view); ?><br>
 
                     <!--============ Footer Area ============-->

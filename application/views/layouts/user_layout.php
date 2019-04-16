@@ -71,7 +71,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <input type="search" class="form-control" placeholder="Search Books">
                                     <button type="submit"><i class="fas fa-search"></i></button>
                                 </form>
-                            </div> 
+                            </div>
                                 
                             <?php endif; ?>
                             </div>
@@ -104,7 +104,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!--============ Content-area ===========-->
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="col-lg-12 col-md-12 col-sm-12" style="min-height: 500px">
                 <?php $this->load->view($user_view); ?>
             </div>
         </div>
