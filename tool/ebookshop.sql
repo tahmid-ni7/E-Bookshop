@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 12, 2019 at 04:48 PM
+-- Generation Time: Apr 18, 2019 at 09:05 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.2
 
@@ -74,21 +74,22 @@ INSERT INTO `books` (`id`, `book_name`, `description`, `author`, `publisher`, `p
 CREATE TABLE `category` (
   `id` int(11) NOT NULL,
   `category` varchar(100) NOT NULL,
-  `description` text NOT NULL
+  `description` text NOT NULL,
+  `tag` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `category`
 --
 
-INSERT INTO `category` (`id`, `category`, `description`) VALUES
-(1, 'Computer Science and Engineering', 'All the books from computer science and software engineering, and programming related books.'),
-(2, 'Civil Engineering', 'All the books from Civil Engineering and environmental science department'),
-(3, 'Machanical engineering', 'All the books from Machanical engineering.'),
-(4, 'EEE', 'All the books from Electrical and Electronics Engineering Department.'),
-(5, 'BBA', 'All the books from business administration.'),
-(6, 'literature', 'All the novels, drama, poems, story books, and any other books of literature.'),
-(7, 'Others', 'Other types of books, except these category.');
+INSERT INTO `category` (`id`, `category`, `description`, `tag`) VALUES
+(1, 'Computer Science and Engineering', 'All the books from computer science and software engineering, and programming related books.', 'CSE'),
+(2, 'Civil Engineering', 'All the books from Civil Engineering and environmental science department', 'CE'),
+(3, 'Machanical engineering', 'All the books from Machanical engineering.', 'ME'),
+(4, 'EEE', 'All the books from Electrical and Electronics Engineering Department.', 'EEE'),
+(5, 'BBA', 'All the books from business administration.', 'BBA'),
+(6, 'Literature', 'All the novels, drama, poems, story books, and any other books of literature.', 'Literature'),
+(7, 'Others', 'Other types of books, except these category.', 'Others');
 
 -- --------------------------------------------------------
 
@@ -149,7 +150,7 @@ INSERT INTO `orders` (`orderId`, `userId`, `name`, `email`, `contact`, `address`
 (1, 1, 'Tahmid Nishat', 'tahmid.ni7@gmail.com', '01822597379', 'Uttara, sector#10, Road #12', 'Dhaka', '1230', '787', 1, '2019-04-12 13:54:12', '32, 27', '1, 1', '1'),
 (2, 1, 'Tahmid Nishat', 'tahmid.ni7@gmail.com', '01822597379', 'Kamar Para, Turag', 'Dhaka', '1216', '690', 1, '2019-04-12 13:55:22', '31, 30, 19', '1, 1, 1', '0'),
 (3, 1, 'Abid Mahmud Abrar', 'tahmid.ni7@gmail.com', '01683302276', 'Maheshkhali, Cox\'s Bazar', 'Cox\'s Bazar', '4710', '462', 1, '2019-04-12 13:56:22', '25', '1', '0'),
-(4, 1, 'Tahmid Nishat', 'tahmid.ni7@gmail.com', '01822597379', 'None', 'Dhaka', '222', '225', 1, '2019-04-12 13:59:07', '17', '1', '0'),
+(4, 1, 'Tahmid Nishat', 'tahmid.ni7@gmail.com', '01822597379', 'None', 'Dhaka', '222', '225', 1, '2019-04-12 13:59:07', '17', '1', '1'),
 (5, 19, 'MR User', 'user@system.com', '01822597379', 'Mirpur, Section #3, Road #15, Block #C, House-23', 'Dhaka', '1216', '240', 1, '2019-04-12 14:02:54', '31', '1', '0'),
 (6, 19, 'MR User', 'user@system.com', '01683302276', 'Mirpur, section #10,  Road #2, Block-D', 'Dhaka', '1200', '225', 1, '2019-04-12 14:04:30', '17', '1', '1');
 
@@ -203,7 +204,10 @@ INSERT INTO `reviews` (`id`, `review`, `bookId`, `userId`, `dateTime`) VALUES
 (41, ' A dark part of him wonders whether it would be interesting if something did happen, if they came, if he had to fight for his life…', 39, 1, '2019-03-29 11:20:06'),
 (42, 'This book is very useful for beginners, who want to be a successful programmer.', 30, 1, '2019-03-29 17:03:53'),
 (43, 'You CAN learn to program professionally. The path is there. Will you take it?', 30, 21, '2019-03-30 18:23:19'),
-(44, 'This book is awesome.', 39, 1, '2019-04-11 04:33:21');
+(44, 'This book is awesome.', 39, 1, '2019-04-11 04:33:21'),
+(45, 'A dark part of him wonders whether it would be interesting if something did happen, if they came, if he had to fight for his life…', 39, 1, '2019-04-15 04:44:11'),
+(46, 'Victor Brooks never could have imagined that he’d be on a honeymoon for one. Only here he is, taking a hard look at his life after the younger women he thought he loved walked out. The woman who volunteers to help him reflect is the last person he expects to be attracted to.!', 27, 1, '2019-04-15 05:05:12'),
+(47, 'In The Power of Habit, award-winning business reporter Charles Duhigg takes us to the thrilling edge of scientific discoveries that explain why habits exist and how they can be changed. Distilling vast amounts of information into engrossing narratives that take us from the boardrooms of Procter &amp;amp;amp;amp; Gamble to the sidelines of the NFL to the front lines of the civil rights movement, Duhigg presents a whole new understanding of human nature and its potential. At its core, The Power of Habit contains an exhilarating argument: The key to exercising regularly, losing weight, being more productive, and achieving success is understanding how habits work. As Duhigg shows, by harnessing this new science, we can transform our businesses, our communities, and our lives.', 32, 1, '2019-04-16 07:47:33');
 
 -- --------------------------------------------------------
 
@@ -293,7 +297,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 --
 -- AUTO_INCREMENT for table `category`
 --
@@ -303,7 +307,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `ebooks`
 --
 ALTER TABLE `ebooks`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `orders`
 --
@@ -318,7 +322,7 @@ ALTER TABLE `order_items`
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 --
 -- AUTO_INCREMENT for table `users`
 --
