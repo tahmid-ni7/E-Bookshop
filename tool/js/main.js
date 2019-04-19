@@ -3,15 +3,22 @@
 
 	jQuery(document).ready(function () {
 
+		/*=== For Slider ===*/
 		$('.slider-area').owlCarousel({
 			items: 1,
 			nav: false,
 			dots: true,
 			loop: true,
-			autoplay: 3000,
+			autoplay: false,
 			animateIn: 'fadeIn',
   			animateOut: 'fadeOut'
 		});
+
+		/*=== For clickable table row ===*/
+		$(".clickable-row").click(function()
+		 {
+		   window.location = $(this).data("href");
+		 });
 		
 	});
 

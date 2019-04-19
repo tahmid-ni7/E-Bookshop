@@ -12,10 +12,10 @@
                    </div>
                    <div class="col-md-6">
                        <div class="search-bar">
-                           <form action="">
-                               <span class="sb"><input type="search" name="" placeholder="Find your books" ></span>
-                               <span class="sb"><input type="submit" name="search" value="Search"></span>
-                           </form>
+                           <?= form_open('users/search')?>
+                               <span class="sb"><input type="search" name="search_book" placeholder="Find your books"></span>
+                               <span class="sb"><input type="submit" value="Search"></span>
+                           <?= form_close()?>
                        </div>
                    </div>
                </div>
@@ -35,10 +35,10 @@
                    </div>
                    <div class="col-md-6">
                        <div class="search-bar">
-                           <form action="">
-                               <span class="sb"><input type="search" name="" placeholder="Find your books" ></span>
-                               <span class="sb"><input type="submit" name="search" value="Search"></span>
-                           </form>
+                           <?= form_open('users/search')?>
+                               <span class="sb"><input type="search" name="search_book" placeholder="Find your books"></span>
+                               <span class="sb"><input type="submit" value="Search"></span>
+                           <?= form_close()?>
                        </div>
                    </div>
                </div>
@@ -58,10 +58,10 @@
                    </div>
                    <div class="col-md-6">
                        <div class="search-bar">
-                           <form action="">
-                               <span class="sb"><input type="search" name="" placeholder="Find your books" ></span>
-                               <span class="sb"><input type="submit" name="search" value="Search"></span>
-                           </form>
+                           <?= form_open('users/search')?>
+                               <span class="sb"><input type="search" name="search_book" placeholder="Find your books"></span>
+                               <span class="sb"><input type="submit" value="Search"></span>
+                           <?= form_close()?>
                        </div>
                    </div>
                </div>

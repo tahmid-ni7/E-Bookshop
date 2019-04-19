@@ -50,7 +50,10 @@ class Cart extends CI_Controller {
 		);
 		
 		$this->cart->insert($data);
-		redirect('cart');
+		/*redirect('cart');*/
+		
+		#...Redirected same page after action
+		redirect($_SERVER['HTTP_REFERER']);
 
 	}
 /*=============== Update data from cart ============*/
@@ -84,7 +87,15 @@ class Cart extends CI_Controller {
 				{
 					$this->session->set_flashdata('error', '*This much quantity is not in stock.');
 				}*/
-				$this->cart->update($info);
+				if($content['qty'] > 5 )
+				{
+					$this->session->set_flashdata('cart_error', '<i class="fas fa-exclamation-triangle"></i> Quantity can not buy more than 5 books at a time.');
+				}
+				else
+				{
+					$this->cart->update($info);
+				}
+				
 			}
 			
 		}

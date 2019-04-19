@@ -235,6 +235,35 @@ class Users extends CI_Controller {
 	}
 
 
+	public function search()
+	{
+		/*=== LOAD DYNAMIC CATAGORY ===*/
+		$this->load->model('admin_model');
+		$view['category'] = $this->admin_model->get_category();
+		/*==============================*/
+
+
+		$this->form_validation->set_rules('search_book', "Search",'required');
+
+		if($this->form_validation->run() == FALSE)
+		{
+			#...Redirected same page after action
+			redirect($_SERVER['HTTP_REFERER']);
+		}
+		else
+		{
+			$query = $this->input->post('search_book');
+
+			$this->load->model('user_model');
+			$view['books'] = $this->user_model->search($query);
+
+
+			$view['user_view'] = "users/search_books";
+			$this->load->view('layouts/user_layout', $view);
+		}
+			
+	}
+
 
 
 }

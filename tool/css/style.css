@@ -72,7 +72,6 @@ h6 {
     color: #333;
     word-break: break-word;
 }
-
 .section-padding {
     padding: 20px 0;
 }
@@ -381,7 +380,7 @@ h6 {
 span input[type="search"] {
     padding: 5px;
     border: 1px solid #F8694A;
-    width: 60%;
+    width: 70%;
     background: none;
     border-radius: 5px;
     outline: none;
@@ -944,11 +943,16 @@ td.hidden {
     background: #E7E8EA;
     border-bottom: 1px solid #F8694A;
 }
+tr.clickable-row
+{
+    cursor: pointer;
+}
 
-
-
-
-
+.borderless tr, .borderless td, .borderless th 
+{
+    border: none !important;
+    padding-left: 0;
+}
 /*================
 COLOR CSS
 ================= */

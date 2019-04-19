@@ -51,22 +51,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="header-mid">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-5">
                         <div class="logo">
                             <div class="lname"><a href="<?= base_url()?>home"><span><img src="<?= base_url('tool/img/favicon.png')?>"> Bookshop</span> & E-learning</a></div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-7">
                         <div class="row">
-                            <div class="col-md-8">
+                            <div class="col-md-9">
                               <div class="admin-search">
-                                <form id="user-search">
-                                    <input type="search" class="form-control" placeholder="Search Books">
+                                <?= form_open('users/search', ['id'=>'user-search'])?>
+                                    <input type="text" name="search_book" class="form-control" placeholder="Search any book">
                                     <button type="submit"><i class="fas fa-search"></i></button>
-                                </form>
+                              <?= form_close()?>
                               </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <div class="ic-cart"><a href="<?= base_url()?>cart"><i class="fas fa-shopping-cart"></i> Cart</a></div>
                                 <!--=== cart item count ===-->
                                 <?php if($this->cart->contents()): ?>

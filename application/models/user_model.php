@@ -213,6 +213,20 @@ class user_model extends CI_Model
 	}
 
 
+	public function search($query)
+	{
+		$this->db->order_by('id', 'DESC');
+		$this->db->from('books');
+
+		$string = str_replace(" ","|", $query);
+		$this->db->where("book_name REGEXP '$string'");
+
+		$this->db->where('status', 1);
+		$q = $this->db->get();
+		return $q->result();
+	}
+
+
 } 
 
 
