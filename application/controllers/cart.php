@@ -42,9 +42,9 @@ class Cart extends CI_Controller {
 				'book_image'=> $books->book_image,
 				'qty'=> 1
 		);
-		
+
+		$this->cart->product_name_rules = '[:print:]'; #...For inserting special char
 		$this->cart->insert($data);
-		/*redirect('cart');*/
 		
 		#...Redirected same page after action
 		redirect($_SERVER['HTTP_REFERER']);

@@ -23,7 +23,7 @@ class Users extends CI_Controller {
 
 	public function registration()
 	{
-		$this->form_validation->set_rules('name', 'Name', 'trim|required|alpha_numeric_spaces');
+		$this->form_validation->set_rules('name', 'Name', 'trim|required|strip_tags[name]');
 		$this->form_validation->set_rules('contact', 'Contact', 'trim|required|numeric');
 		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[users.email]');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required|alpha_dash|min_length[3]');

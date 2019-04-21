@@ -47,8 +47,8 @@ class User_home extends CI_Controller {
 
 		$this->form_validation->set_rules('book_name', 'Book name', 'trim|required|strip_tags[book_name]');
 		$this->form_validation->set_rules('description', 'Description', 'trim|required|min_length[100]|strip_tags[description]');
-		$this->form_validation->set_rules('author', 'Author name', 'trim|required|alpha_numeric_spaces|strip_tags[author]');
-		$this->form_validation->set_rules('publisher', 'Publisher name', 'trim|required|alpha_numeric_spaces|strip_tags[publisher]');
+		$this->form_validation->set_rules('author', 'Author name', 'trim|required|strip_tags[author]');
+		$this->form_validation->set_rules('publisher', 'Publisher name', 'trim|required|strip_tags[publisher]');
 		$this->form_validation->set_rules('price', 'Price', 'trim|required|alpha_numeric_spaces|strip_tags[price]');
 		$this->form_validation->set_rules('quantity', 'Quantity', 'trim|required|numeric|strip_tags[quantity]');
 		$this->form_validation->set_rules('categoryId', 'Category', 'trim|required');
