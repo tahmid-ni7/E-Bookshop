@@ -19,6 +19,12 @@
 		 {
 		   window.location = $(this).data("href");
 		 });
+
+		/*=== For clickable div ===*/
+		$(".clickable-div").click(function()
+		 {
+		   window.location = $(this).data("href");
+		 });
 		
 	});
 

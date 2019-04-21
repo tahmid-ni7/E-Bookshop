@@ -21,7 +21,7 @@ if(isset($_GET['ctg']))
 				<?php print '<img src = "'.strip_tags($book->book_image).'" alt = "">';?>
 			</div>
 			<!--=== Restricted user to buy their own book ===-->
-			<?php if($this->session->userdata('user_data') != $book->userId): ?>
+			<?php if($this->session->userdata('id') != $book->userId): ?>
 
 			<?php print '<div id="addto-cart"><a href="'.base_url().'cart/add_to_cart/'.$book->id.'"><i class="fas fa-shopping-cart"></i> Add to cart</a></div>'; ?>
 			<?php endif; ?>

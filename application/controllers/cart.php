@@ -8,12 +8,6 @@ class Cart extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->library('cart');
-
-		/*if ($this->session->userdata('logged_in') == FALSE) {
-
-			$this->session->set_flashdata('no_access', '<i class="fas fa-exclamation-triangle"></i> For buying the books you must be logged in your account.');
-			redirect('users/login');
-		}*/
 	}
 
 	public function index()
@@ -72,7 +66,7 @@ class Cart extends CI_Controller {
 			);
 			if($content['qty'] < 0)
 			{
-				$this->session->set_flashdata('cart_error', '<i class="fas fa-exclamation-triangle"></i> Quantity can not be less than 0 or negative value.');
+				$this->session->set_flashdata('cart_error', '<i class="fas fa-exclamation-triangle"></i> Quantity can not be less than 0 or negative value');
 			}
 			else 
 			{
@@ -89,7 +83,7 @@ class Cart extends CI_Controller {
 				}*/
 				if($content['qty'] > 5 )
 				{
-					$this->session->set_flashdata('cart_error', '<i class="fas fa-exclamation-triangle"></i> Quantity can not buy more than 5 books at a time.');
+					$this->session->set_flashdata('cart_error', '<i class="fas fa-exclamation-triangle"></i> You can not buy more than 5 books at a time');
 				}
 				else
 				{

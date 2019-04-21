@@ -108,7 +108,7 @@ class admin_model extends CI_Model
 			'quantity' => $this->input->post('quantity'),
 			'categoryId' => $this->input->post('categoryId'),
 			'book_image' => $image_path,
-			'userId' => $this->session->userdata('user_data'),
+			'userId' => $this->session->userdata('id'),
 			'status' => $this->input->post('status')
 		);
 
@@ -158,7 +158,7 @@ class admin_model extends CI_Model
 			'quantity' => $this->input->post('quantity'),
 			'categoryId' => $this->input->post('categoryId'),
 			'book_image' => $image_path,
-			'userId' => $this->session->userdata('user_data'),
+			'userId' => $this->session->userdata('id'),
 			'status' => $this->input->post('status')
 		);
 

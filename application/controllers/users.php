@@ -93,9 +93,10 @@ class Users extends CI_Controller {
 				$login_data = array(
 
 					'user_data' => $user_data,
+					'id'		=> $user_data->id,
 					'email'		=> $email,
 					'type'		=> $type,
-					'name'		=> $name,
+					'name'		=> $user_data->name,
 					'logged_in'	=> true
 
 				);
@@ -105,21 +106,15 @@ class Users extends CI_Controller {
 				if($type == 'A')
 				{
 
-					$this->session->set_flashdata('login_success', 'Logged in successfully. You logged in as an admin.');
+					$this->session->set_flashdata('login_success', 'Logged in successfully. You have logged in as an admin.');
 					redirect('admin/index');
 				}
 				elseif ($type == 'U')
 				{
-					$this->session->set_flashdata('login_success', 'Welcome! You Logged in successfully');
+					$this->session->set_flashdata('login_success', 'Welcome, <a href = "user-home" class = "text-primary">'.$this->session->userdata('name').'</a>. You have Logged in successfully');
 					redirect('home');
 				}
-				else
-				{
-					$this->session->set_flashdata('login_fail', '<i class="fas fa-exclamation-triangle"></i> Invalid logged in...');
-
-					$view['user_view'] = "users/login";
-					$this->load->view('layouts/user_layout', $view);
-				}
+			
 			}
 
 			else
@@ -129,7 +124,7 @@ class Users extends CI_Controller {
 				$view['category'] = $this->admin_model->get_category();
 				/*==============================*/
 				
-				$this->session->set_flashdata('login_fail', '<i class="fas fa-exclamation-triangle"></i> Invalid logged in.');
+				$this->session->set_flashdata('login_fail', '<i class="fas fa-exclamation-triangle"></i> Invalid login. The email or password that you have entered is incorrect. ');
 
 				$view['user_view'] = "users/login";
 				$this->load->view('layouts/user_layout', $view);

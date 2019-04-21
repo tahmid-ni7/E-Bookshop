@@ -22,6 +22,8 @@ class admin extends CI_Controller {
 /*=============== Admin Index Page =================*/
 	public function index()
 	{
+		$this->load->model('admin_model');
+		
 		$view['admin_view'] = "admin/admin_index";
 		$this->load->view('layouts/admin_layout', $view);
 	}

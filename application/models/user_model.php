@@ -35,7 +35,8 @@ class user_model extends CI_Model
 
 		if(password_verify($password, $db_password))
 		{
-			return $result->row(0)->id;
+			// return $result->row(0)->id;
+			return $result->row();
 		}
 		else
 		{
@@ -98,7 +99,7 @@ class user_model extends CI_Model
 			'quantity' => $this->input->post('quantity'),
 			'categoryId' => $this->input->post('categoryId'),
 			'book_image' => $image_path,
-			'userId' => $this->session->userdata('user_data'),
+			'userId' => $this->session->userdata('id'),
 		);
 
 		$insert_book = $this->db->insert('books', $data);
@@ -114,7 +115,7 @@ class user_model extends CI_Model
 		$this->db->join('books', 'books.categoryId = category.id');
 
 		$this->db->order_by('books.id', 'DESC');
-		$this->db->where('books.userId', $this->session->userdata('user_data'));
+		$this->db->where('books.userId', $this->session->userdata('id'));
 		$query = $this->db->get();
 		return $query->result();	
 	}
@@ -130,7 +131,7 @@ class user_model extends CI_Model
 	{
 		$data = array(
 			'review' => $this->input->post('review'),
-			'userId' => $this->session->userdata('user_data'),
+			'userId' => $this->session->userdata('id'),
 			'bookId' => $id
 		);
 
@@ -164,7 +165,7 @@ class user_model extends CI_Model
 			$quantity = implode(', ', $q);
 
 		$data = array(
-			'userId'	=> $this->session->userdata('user_data'),
+			'userId'	=> $this->session->userdata('id'),
 			'name'		=> $this->input->post('name'),
 			'address'	=> $this->input->post('address'),
 			'city' 		=> $this->input->post('city'),
@@ -187,7 +188,7 @@ class user_model extends CI_Model
 	public function my_orders()
 	{
 		$this->db->order_by('orderId', 'DESC');
-		$this->db->where('userId', $this->session->userdata('user_data'));
+		$this->db->where('userId', $this->session->userdata('id'));
 		$query = $this->db->get('orders');
 		return $query->result();
 	}
