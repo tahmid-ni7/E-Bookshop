@@ -117,7 +117,7 @@ class admin_model extends CI_Model
 	}
 
 	#...Display all books
-	public function get_books()
+	public function get_books($limit, $offset)
 	{	
 		/*=== SQL join ===*/
 		$this->db->select('*');
@@ -126,7 +126,27 @@ class admin_model extends CI_Model
 
 		$this->db->order_by('books.id', 'DESC');
 		$this->db->where('books.status', '1');
+		$this->db->limit($limit, $offset);
 		$query = $this->db->get();
+		return $query->result();
+	}
+	#...For pagination
+	public function num_rows_admin_books()
+	{
+		$this->db->select('*');
+		$this->db->from('category');
+		$this->db->join('books', 'books.categoryId = category.id');
+
+		$this->db->order_by('books.id', 'DESC');
+		$this->db->where('books.status', '1');
+		$query = $this->db->get();
+		return $query->num_rows();
+	}
+	#...For count total books
+	public function count_total_books()
+	{
+		$this->db->where('books.status', '1');
+		$query = $this->db->get('books');
 		return $query->result();
 	}
 

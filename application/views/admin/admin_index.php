@@ -38,7 +38,7 @@
 						</div>
 						<?php 
 				          $this->load->model('admin_model');
-				          $count_books = count($this->admin_model->get_books());
+				          $count_books = count($this->admin_model->count_total_books());
 				          print $count_books;
 				          ?> 
 					</div>

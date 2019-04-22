@@ -45,7 +45,7 @@ class user_model extends CI_Model
 	}
 
 	##...Get all books and filter category wise books
-	public function get_books()
+	public function get_books($limit, $offset)
 	{
 		/*=== SQL join and Data filter ===*/
 		$this->db->select('*');
@@ -57,13 +57,27 @@ class user_model extends CI_Model
 			$query = $this->db->where('category.tag', $a);
 			$this->db->order_by('books.id', 'DESC');
 			$this->db->where('books.status', 1);
+			$this->db->limit($limit, $offset);
 			$query = $this->db->get();
 			return $query->result();
 		}
 		$this->db->order_by('books.id', 'DESC');
 		$this->db->where('books.status', 1);
+		$this->db->limit($limit, $offset);
 		$query = $this->db->get();
 		return $query->result();
+	}
+	#...For pagination
+	public function num_rows_books()
+	{
+		$this->db->select('*');
+		$this->db->from('category');
+		$this->db->join('books', 'books.categoryId = category.id');
+	
+		$this->db->order_by('books.id', 'DESC');
+		$this->db->where('books.status', 1);
+		$query = $this->db->get();
+		return $query->num_rows();
 	}
 
 	public function recent_books()

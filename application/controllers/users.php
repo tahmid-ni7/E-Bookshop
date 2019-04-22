@@ -149,8 +149,31 @@ class Users extends CI_Controller {
 		$view['category'] = $this->admin_model->get_category();
 		/*==============================*/
 		
+		#...Pagination code start
 		$this->load->model('user_model');
-		$view['books'] = $this->user_model->get_books();
+		$this->load->library('pagination');
+		$config = [
+
+			'base_url' => base_url('users/all_books'),
+			'per_page' => 18,
+			'total_rows'=>  $this->user_model->num_rows_books(),
+			'full_tag_open' => "<ul class='custom-pagination'>",
+			'full_tag_close' => "</ul>", 
+			'first_tag_open' => '<li>',
+			'first_tag_close' => '</li>',
+			'last_tag_open' => '<li>',
+			'last_tag_close' => '</li>',
+			'next_tag_open' => '<li>',
+			'next_tag_close' => '</li>',
+			'prev_tag_open' => '<li>',
+			'prev_tag_close' => '</li>',
+			'cur_tag_open' => "<li class = 'active'><a>",
+			'cur_tag_close' => '</a></li>',
+		];
+		$this->pagination->initialize($config);
+
+		$this->load->model('user_model');
+		$view['books'] = $this->user_model->get_books($config['per_page'], $this->uri->segment(3));
 
 		$view['user_view'] = "users/all_books";
 		$this->load->view('layouts/user_layout', $view);

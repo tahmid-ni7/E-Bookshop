@@ -35,6 +35,13 @@ if(isset($_GET['ctg']))
 		</div>	
 	</div>
 	<?php endforeach;?>
+</div><br>
+
+<!--=== Pagination ===-->
+<?php if(!isset($_GET['ctg'])):?>
+<div class="paginataion section-padding">
+<?= $this->pagination->create_links() ?>
 </div>
+<?php endif; ?>
 
  

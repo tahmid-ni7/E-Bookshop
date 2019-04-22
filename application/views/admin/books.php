@@ -71,4 +71,8 @@
 	<?php endforeach; ?>
   </tbody>
 </table>
+
+<div class="paginataion section-padding">
+<?= $this->pagination->create_links() ?>
+</div>
 </div>

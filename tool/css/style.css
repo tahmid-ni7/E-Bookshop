@@ -967,3 +967,42 @@ td.hidden {
 .col-admin h6 {
     color: #fff;
 }
+
+
+/*=== Pagination ===*/
+ul.custom-pagination {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+ul.custom-pagination li {
+    list-style: none;
+    display: inline-block;
+    margin: 5px;
+}
+
+ul.custom-pagination a {
+    color: #666;
+    display: inline-block;
+    padding: 5px;
+    height: 28px;
+    width: 28px;
+    line-height: 20px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    transition: .1s;
+}
+
+ul.custom-pagination a:hover {
+    background: #F6F7F8;
+}
+ul.custom-pagination li.active a {
+    background-color: #F8694A;
+    color: #fff;
+    border: 1px solid #F8694A;
+}
+ul.custom-pagination li.active a:hover
+{
+    color: #fff;
+}

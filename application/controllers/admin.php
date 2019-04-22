@@ -190,7 +190,31 @@ class admin extends CI_Controller {
 	public function books()
 	{
 		$this->load->model('admin_model');
-		$view['books'] = $this->admin_model->get_books();
+		$this->load->library('pagination');
+		$config = [
+
+			'base_url' => base_url('admin/books'),
+			'per_page' => 10,
+			'total_rows'=>  $this->admin_model->num_rows_admin_books(),
+			'full_tag_open' => "<ul class='custom-pagination'>",
+			'full_tag_close' => "</ul>", 
+			'first_tag_open' => '<li>',
+			'first_tag_close' => '</li>',
+			'last_tag_open' => '<li>',
+			'last_link'=>'last',
+			'last_tag_close' => '</li>',
+			'next_tag_open' => '<li>',
+			'next_tag_close' => '</li>',
+			'prev_tag_open' => '<li>',
+			'prev_tag_close' => '</li>',
+			'cur_tag_open' => "<li class = 'active'><a>",
+			'cur_tag_close' => '</a></li>',
+		];
+		$this->pagination->initialize($config);
+
+
+		$this->load->model('admin_model');
+		$view['books'] = $this->admin_model->get_books($config['per_page'], $this->uri->segment(3));
 
 		$view['admin_view'] = "admin/books";
 		$this->load->view('layouts/admin_layout', $view);
