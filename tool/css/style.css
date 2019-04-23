@@ -962,12 +962,16 @@ td.hidden {
     font-size: 30px;
     text-align: center;
     margin-bottom: 8px;
+    transition: .3s;
 }
 
 .col-admin h6 {
     color: #fff;
 }
-
+.clickable-div:hover
+{
+    background-color: #F8694A !important;
+}
 
 /*=== Pagination ===*/
 ul.custom-pagination {

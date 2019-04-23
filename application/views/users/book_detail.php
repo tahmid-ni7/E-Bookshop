@@ -12,7 +12,7 @@
 					<div>Author: <i><?= strip_tags($book_detail->author)?></i></div>
 					<div>Publisher: <?= strip_tags($book_detail->publisher)?></div>
 					<div>Category: <?= strip_tags($book_detail->category)?></div>
-					<div class="text-success"><i class="fas fa-check-circle"></i> In stock: <?= strip_tags($book_detail->quantity)?></div>
+					<div class="text-success"><i class="fas fa-check-circle"></i> Stock: Available</div>
 					<div>Price: <?= strip_tags($book_detail->price)?>.TK</div>
 				</div>
 			<!--=== Restricted user to buy their own book ===-->

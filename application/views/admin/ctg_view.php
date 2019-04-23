@@ -1,7 +1,7 @@
 <br>
 <div class="container">
 	<div class="row">
-		<div class="col-sm-6 col-xs-7">
+		<div class="col-sm-6 col-xs-7" style="min-height: 500px">
 			<div id="table-header">Category Detail</div><br>
 			<h4>Category Name: <?= strip_tags($ctg_detail->category) ?></h4>
 			<p><?= strip_tags($ctg_detail->description) ?></p>

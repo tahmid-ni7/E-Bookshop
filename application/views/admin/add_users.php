@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                <label for="type"">Type</label>
+                <label for="type">Type</label>
                 <div class="form-group">
                     <?php $options = array(
                             '' => 'Choose...',
@@ -71,4 +71,3 @@
             <?= form_close() ?>
         </div>
     </div>
-</div>
