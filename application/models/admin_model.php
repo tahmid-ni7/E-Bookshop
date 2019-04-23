@@ -120,9 +120,11 @@ class admin_model extends CI_Model
 	public function get_books($limit, $offset)
 	{	
 		/*=== SQL join ===*/
-		$this->db->select('*');
-		$this->db->from('category');
-		$this->db->join('books', 'books.categoryId = category.id');
+		$this->db->select('books.id, books.book_name, books.description, books.author, books.publisher, books.quantity, books.price, books.book_image, category.category, users.name');
+
+		$this->db->from('books');
+		$this->db->join('category', 'books.categoryId = category.id');
+		$this->db->join('users', 'books.userId = users.id'); // Join 3rd table
 
 		$this->db->order_by('books.id', 'DESC');
 		$this->db->where('books.status', '1');
@@ -145,7 +147,7 @@ class admin_model extends CI_Model
 	#...For count total books
 	public function count_total_books()
 	{
-		$this->db->where('books.status', '1');
+		$this->db->where('status', '1');
 		$query = $this->db->get('books');
 		return $query->result();
 	}
@@ -154,9 +156,10 @@ class admin_model extends CI_Model
 	public function get_book_detail($id)
 	{
 		/*=== SQL join ===*/
-		$this->db->select('*');
-		$this->db->from('category');
-		$this->db->join('books', 'books.categoryId = category.id');
+		$this->db->select('books.*, users.name, category.category');
+		$this->db->from('books');
+		$this->db->join('category', 'books.categoryId = category.id');
+		$this->db->join('users', 'books.userId = users.id'); // Join 3rd table
 
 		$this->db->where('books.id', $id);
 		$query = $this->db->get();
@@ -197,9 +200,10 @@ class admin_model extends CI_Model
 	public function pending_books()
 	{	
 		/*=== SQL join ===*/
-		$this->db->select('*');
-		$this->db->from('category');
-		$this->db->join('books', 'books.categoryId = category.id');
+		$this->db->select('books.*, users.name, category.category');
+		$this->db->from('books');
+		$this->db->join('category', 'books.categoryId = category.id');
+		$this->db->join('users', 'books.userId = users.id'); //Join 3rd table
 
 		$this->db->order_by('books.id', 'DESC');
 		$this->db->where('books.status', '0');
@@ -275,9 +279,9 @@ class admin_model extends CI_Model
 	public function get_ebooks()
 	{	
 		/*=== SQL join ===*/
-		$this->db->select('*');
-		$this->db->from('category');
-		$this->db->join('ebooks', 'ebooks.categoryId = category.id');
+		$this->db->select('ebooks.*, category.category');
+		$this->db->from('ebooks');
+		$this->db->join('category', 'ebooks.categoryId = category.id');
 
 		$this->db->order_by('ebooks.id', 'DESC');
 		$query = $this->db->get();
@@ -288,9 +292,9 @@ class admin_model extends CI_Model
 	public function get_ebook_detail($id)
 	{
 		/*=== SQL join ===*/
-		$this->db->select('*');
-		$this->db->from('category');
-		$this->db->join('ebooks', 'ebooks.categoryId = category.id');
+		$this->db->select('ebooks.*, category.category');
+		$this->db->from('ebooks');
+		$this->db->join('category', 'ebooks.categoryId = category.id');
 
 		$this->db->where('ebooks.id', $id);
 		$query = $this->db->get();

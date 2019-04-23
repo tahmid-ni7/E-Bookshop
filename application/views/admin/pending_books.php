@@ -41,6 +41,7 @@
       <th scope="col">Price</th>
       <th scope="col">Quantity</th>
       <th scope="col">Category</th>
+      <th scope="col">User</th>
       <th scope="col">Book Image</th>
       <th scope="col">Action</th>
     </tr>
@@ -54,11 +55,12 @@
       <?php print '<td><a href = "'.base_url().'admin/book_view/'.$book->id.'" title="More Description" class= "text-info">'.strip_tags(ucwords($book->book_name)).'</a></td>'; ?>
 
       <?php print '<td><span>'.substr(strip_tags($book->description), 0, 100).'</span></td>'; ?>
-      <?php print '<td><span>'.strip_tags($book->author).'</span></td>'; ?>
+      <?php print '<td><b>'.strip_tags($book->author).'</b></td>'; ?>
       <?php print '<td><span>'.strip_tags($book->publisher).'</span></td>'; ?>
       <?php print '<td><span>'.strip_tags($book->price).'.TK</span></td>'; ?>
       <?php print '<td><span>'.strip_tags($book->quantity).'</span></td>'; ?>
       <?php print '<td><span>'.ucwords(strip_tags($book->category)).'</span></td>'; ?>
+      <?php print '<td>'.ucwords(strip_tags($book->name)).'</td>'; ?>
 
       <?php print '<td><img src = "'.strip_tags($book->book_image).'" alt = "" width="50" hieght="80" </td>';?>
 
