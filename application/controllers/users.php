@@ -18,20 +18,26 @@ class Users extends CI_Controller {
 		$this->load->model('admin_model');
 		$view['category'] = $this->admin_model->get_category();
 		/*==============================*/		
-		/*$this->load->view('layouts/user_layout', $view);*/
+		redirect($_SERVER['HTTP_REFERER']);
 	}
 
 	public function registration()
 	{
 		$this->form_validation->set_rules('name', 'Name', 'trim|required|strip_tags[name]');
 		$this->form_validation->set_rules('contact', 'Contact', 'trim|required|numeric');
-		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[users.email]');
+		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[users.email]',
+				array(
+					'required' => 'Email field can not be empty',
+					'is_unique' => 'This email is already registered')
+			);
 		$this->form_validation->set_rules('password', 'Password', 'trim|required|alpha_dash|min_length[3]');
 		$this->form_validation->set_rules('repassword', 'Confirm Password',
 		'trim|required|alpha_dash|min_length[3]|matches[password]');
-		$this->form_validation->set_rules('address', 'Address', 'trim|required|max_length[80]|strip_tags[address]');
-		$this->form_validation->set_rules('city', 'City', 'trim|required|alpha_numeric_spaces');
-		$this->form_validation->set_rules('conditionBox', 'Check box', 'trim|required');
+		$this->form_validation->set_rules('address', 'Address', 'trim|required|strip_tags[address]');
+		$this->form_validation->set_rules('city', 'City', 'trim|required|strip_tags[city]');
+		$this->form_validation->set_rules('conditionBox', 'Check box', 'trim|required',
+				array('required' => 'You have to check the box.')
+		);
 
 
 		if($this->form_validation->run() == FALSE)
@@ -198,8 +204,16 @@ class Users extends CI_Controller {
 			$this->load->model('user_model');
 			$view['reviews'] = $this->user_model->get_reviews();
 
-			$view['user_view'] = "users/book_detail";
-			$this->load->view('layouts/user_layout', $view);
+			if($this->admin_model->get_book_detail($id))
+			{
+				$view['user_view'] = "users/book_detail";
+				$this->load->view('layouts/user_layout', $view);
+			}
+			else
+			{
+				$view['user_view'] = "temp/404page";
+				$this->load->view('layouts/user_layout', $view);
+			}
 		}
 		else
 		{
@@ -235,9 +249,16 @@ class Users extends CI_Controller {
 		$this->load->model('admin_model');
 		$view['ebook_detail'] = $this->admin_model->get_ebook_detail($id);
 
-		$view['user_view'] = "users/ebook_detail";
-		$this->load->view('layouts/user_layout', $view);
-
+		if($this->admin_model->get_ebook_detail($id))
+		{
+			$view['user_view'] = "users/ebook_detail";
+			$this->load->view('layouts/user_layout', $view);
+		}
+		else
+		{
+			$view['user_view'] = "temp/404page";
+			$this->load->view('layouts/user_layout', $view);
+		}
 		
 	}
 

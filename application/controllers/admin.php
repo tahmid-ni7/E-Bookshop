@@ -75,8 +75,16 @@ class admin extends CI_Controller {
 		$this->load->model('admin_model');
 		$view['ctg_detail'] = $this->admin_model->get_ctg_detail($id);
 
-		$view['admin_view'] = "admin/ctg_view";
-		$this->load->view('layouts/admin_layout', $view);
+		if($this->admin_model->get_ctg_detail($id))
+		{
+			$view['admin_view'] = "admin/ctg_view";
+			$this->load->view('layouts/admin_layout', $view);
+		}
+		else
+		{
+			$view['admin_view'] = "temp/404page";
+			$this->load->view('layouts/admin_layout', $view);
+		}
 
 	}
 
@@ -277,8 +285,16 @@ class admin extends CI_Controller {
 		$this->load->model('admin_model');
 		$view['book_detail'] = $this->admin_model->get_book_detail($id);
 
-		$view['admin_view'] = "admin/book_view";
-		$this->load->view('layouts/admin_layout', $view);
+		if($this->admin_model->get_book_detail($id))
+		{
+			$view['admin_view'] = "admin/book_view";
+			$this->load->view('layouts/admin_layout', $view);
+		}
+		else
+		{
+			$view['admin_view'] = "temp/404page";
+			$this->load->view('layouts/admin_layout', $view);
+		}
 	}
 
 	public function book_edit($id)
@@ -388,8 +404,17 @@ class admin extends CI_Controller {
 		$this->load->model('admin_model');
 		$view['order_detail'] = $this->admin_model->get_order_detail($orderId);
 
-		$view['admin_view'] = "admin/order_detail";
-		$this->load->view('layouts/admin_layout', $view);
+		if($this->admin_model->get_order_detail($orderId))
+		{
+			$view['admin_view'] = "admin/order_detail";
+			$this->load->view('layouts/admin_layout', $view);
+		}
+		else
+		{
+			$view['admin_view'] = "temp/404page";
+			$this->load->view('layouts/admin_layout', $view);
+		}
+		
 	}
 
 	#...Accepting order
@@ -481,8 +506,17 @@ class admin extends CI_Controller {
 		$this->load->model('admin_model');
 		$view['ebook_detail'] = $this->admin_model->get_ebook_detail($id);
 
-		$view['admin_view'] = "admin/ebook_view";
-		$this->load->view('layouts/admin_layout', $view);
+		if($this->admin_model->get_ebook_detail($id))
+		{
+			$view['admin_view'] = "admin/ebook_view";
+			$this->load->view('layouts/admin_layout', $view);
+		}
+		else
+		{
+			$view['admin_view'] = "temp/404page";
+			$this->load->view('layouts/admin_layout', $view);
+		}
+		
 	}
 
 	#...Deleting e-books

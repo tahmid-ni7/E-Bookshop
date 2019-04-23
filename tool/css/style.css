@@ -548,7 +548,7 @@ span.sb input[type="submit"] {
     text-transform: uppercase;
 }
 #form-header, #table-header {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #F6F7F8;
     font-size: 25px;
     padding-bottom: 10px;
     text-transform: uppercase;
@@ -1005,4 +1005,19 @@ ul.custom-pagination li.active a {
 ul.custom-pagination li.active a:hover
 {
     color: #fff;
+}
+
+/*=== 404 page CSS ===*/
+._404-page {
+    text-align: center;
+}
+
+.error-type {
+    font-size: 80px;
+    color: #F8694A;
+    text-shadow: 3px 2px 4px #555;
+    font-weight: 600;
+}
+._404text {
+    font-size: 21px;
 }

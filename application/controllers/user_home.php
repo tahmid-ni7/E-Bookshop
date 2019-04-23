@@ -129,8 +129,17 @@ class User_home extends CI_Controller {
 		$this->load->model('admin_model');
 		$view['order_detail'] = $this->admin_model->get_order_detail($orderId);
 
-		$view['user_view'] = "users/myOrder_detail";
-		$this->load->view('layouts/user_home', $view);
+		if($this->admin_model->get_order_detail($orderId))
+		{
+			$view['user_view'] = "users/myOrder_detail";
+			$this->load->view('layouts/user_home', $view);
+		}
+		else
+		{
+			$view['user_view'] = "temp/404page";
+			$this->load->view('layouts/user_layout', $view);
+		}
+		
 
 	}
 

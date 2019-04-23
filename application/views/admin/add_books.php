@@ -80,12 +80,14 @@
         <div class="form-group row">
             <label for="book_image" class="col-sm-2 col-form-label">Book image</label>
             <div class="col-sm-6">
-                <?= form_upload(['name'=>'userfile', 'class'=>'form-control'])?>
+                <?= form_upload(['name'=>'userfile', 'class'=>'form-control', 'id' => 'book_image'])?>
                 <div class="text-secondary">* Upload PNG, JPG format. Image should not be more than 400KB</div>
             </div>
+            <?php if (isset($upload_errors)) { ?>
             <div class="col-sm-4">
-               <div class="text-danger form-error"></div>    
+               <div class="text-danger form-error"><?php echo $upload_errors; ?></div>    
             </div>
+            <?php } ?>
         </div>
         <div class="form-group row">
             <label for="category" class="col-sm-2 col-form-label">Category</label>
