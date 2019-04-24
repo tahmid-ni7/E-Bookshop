@@ -103,6 +103,8 @@ class Users extends CI_Controller {
 					'email'		=> $email,
 					'type'		=> $type,
 					'name'		=> $user_data->name,
+					'contact'	=> $user_data->contact,
+					'address'	=> $user_data->address,
 					'logged_in'	=> true
 
 				);

@@ -206,6 +206,22 @@ class user_model extends CI_Model
 		$query = $this->db->get('orders');
 		return $query->result();
 	}
+	public function my_reviews()
+	{
+		$this->db->order_by('id', 'DESC');
+		$this->db->where('userId', $this->session->userdata('id'));
+		$query = $this->db->get('reviews');
+		return $query->result();
+	}
+
+	public function my_published_books()
+	{
+		$this->db->where('userId', $this->session->userdata('id'));
+		$this->db->where('status', '1');
+		$query = $this->db->get('books');
+		return $query->result();
+	}
+
 
 	##...Get all E-books and filter category wise E-books
 	public function get_ebooks()

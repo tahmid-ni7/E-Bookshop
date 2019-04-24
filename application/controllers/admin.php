@@ -97,13 +97,22 @@ class admin extends CI_Controller {
 
 		$this->form_validation->set_rules('category', 'Category name', 'trim|required|alpha_numeric_spaces');
 		$this->form_validation->set_rules('tag', 'Category tag', 'trim|required|alpha|strip_tags[tag]');
-		$this->form_validation->set_rules('description', 'Description', 'trim|required|callback_my_rules');
+		$this->form_validation->set_rules('description', 'Description', 'trim|required|strip_tags[description]');
 
 
 		if($this->form_validation->run() == FALSE)
 		{
-			$view['admin_view'] = "admin/ctg_edit";
-			$this->load->view('layouts/admin_layout', $view);
+			if($this->admin_model->get_ctg_detail($id))
+			{
+				$view['admin_view'] = "admin/ctg_edit";
+				$this->load->view('layouts/admin_layout', $view);
+			}
+			else
+			{
+				$view['admin_view'] = "temp/404page";
+				$this->load->view('layouts/admin_layout', $view);
+			}
+
 		}
 		else
 		{
@@ -253,7 +262,6 @@ class admin extends CI_Controller {
 		$this->form_validation->set_rules('price', 'Price', 'trim|required|alpha_numeric_spaces|strip_tags[price]');
 		$this->form_validation->set_rules('quantity', 'Quantity', 'trim|required|numeric|strip_tags[quantity]');
 		$this->form_validation->set_rules('categoryId', 'Category', 'trim|required');
-		/*$this->form_validation->set_rules('userfile', 'File', 'trim|required');*/
 
 
 		if(($this->form_validation->run() && $this->upload->do_upload()) == FALSE)
@@ -324,14 +332,21 @@ class admin extends CI_Controller {
 		$this->form_validation->set_rules('price', 'Price', 'trim|required|alpha_numeric_spaces|strip_tags[price]');
 		$this->form_validation->set_rules('quantity', 'Quantity', 'trim|required|numeric|strip_tags[quantity]');
 		$this->form_validation->set_rules('categoryId', 'Category', 'trim|required');
-		/*$this->form_validation->set_rules('userfile', 'File', 'trim|required');*/
 
 
 		if(($this->form_validation->run() && $this->upload->do_upload()) == FALSE)
 		{
 
-			$view['admin_view'] = "admin/book_edit";
-			$this->load->view('layouts/admin_layout', $view);
+			if($this->admin_model->get_book_detail($id))
+			{
+				$view['admin_view'] = "admin/book_edit";
+				$this->load->view('layouts/admin_layout', $view);
+			}
+			else
+			{
+				$view['admin_view'] = "temp/404page";
+				$this->load->view('layouts/admin_layout', $view);
+			}
 
 		}
 		else
@@ -464,7 +479,6 @@ class admin extends CI_Controller {
 		$this->form_validation->set_rules('author', 'Author name', 'trim|required|alpha_numeric_spaces|strip_tags[author]');
 		
 		$this->form_validation->set_rules('categoryId', 'Category', 'trim|required');
-		/*$this->form_validation->set_rules('userfile', 'File', 'trim|required');*/
 
 
 		if(($this->form_validation->run() && $this->upload->do_upload()) == FALSE)
@@ -529,26 +543,5 @@ class admin extends CI_Controller {
 		redirect('admin/ebooks');
 	}
 
-
-
-
-
-
-
-
-/*============== SET CUSTOM VALIDATION RULES FOR TEXT-AREA ==============*/
-
-	public function my_rules($description)
-	{
-		if(!preg_match("/^([a-zA-Z0-9.,; ])+$/i", $description))
-		{
-			$this->form_validation->set_message('my_rules', 'The %s field can only contains alphabet, numbers, dashes and punctuations.');
-			return false;
-		}
-		else
-		{
-			return true;
-		}
-	}
 
 }

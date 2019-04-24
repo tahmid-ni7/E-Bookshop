@@ -25,6 +25,8 @@ class User_home extends CI_Controller {
 		$view['category'] = $this->admin_model->get_category();
 		/*==============================*/
 
+		$this->load->model('user_model');
+
 		$view['user_view'] = "users/user_index";
 		$this->load->view('layouts/user_home', $view);
 	}

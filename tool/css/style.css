@@ -1025,3 +1025,19 @@ ul.custom-pagination li.active a:hover
 ._404text {
     font-size: 21px;
 }
+
+/*=== User Index css ===*/
+.user-info, .user-activities {
+    padding: 8px 15px;
+    border: 1px solid #F6F7F8;
+    min-height: 250px;
+}
+
+.user-info svg {
+    margin-right: 10px;
+    font-size: 15px;
+    color: #999;
+}
+.user-books, .user-orders, .user-reviews {
+    margin-bottom: 10px;
+}
