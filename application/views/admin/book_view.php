@@ -12,7 +12,19 @@
 				<div>Author: <?= strip_tags($book_detail->author)?></div>
 				<div>Publisher: <?= strip_tags($book_detail->publisher)?></div>
 				<div>Category: <?= strip_tags($book_detail->category)?></div>
-				<div>Uploaded By: <i class="text-info"><?= strip_tags($book_detail->name)?></i></div><br>
+				<div>Uploaded By: <i class="text-info"><?= strip_tags($book_detail->name)?></i></div>
+				<div>
+					<?php
+					if($book_detail->status == '1')
+					{
+						print "Status: <span class = 'text-success'>Published</span>";
+					}
+					else
+					{
+						print "Status: <span class = 'text-danger'>Unpublished</span>";
+					}
+					?>		
+				</div><br>
 				<div class="text-success"><i class="fas fa-check-circle"></i> In stock: <?= strip_tags($book_detail->quantity)?></div>
 				<div>Price: <?= strip_tags($book_detail->price)?>.TK</div>
 				</div>

@@ -1030,7 +1030,7 @@ ul.custom-pagination li.active a:hover
 .user-info, .user-activities {
     padding: 8px 15px;
     border: 1px solid #F6F7F8;
-    min-height: 250px;
+    min-height: 300px;
 }
 
 .user-info svg {

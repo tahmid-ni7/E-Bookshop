@@ -250,11 +250,35 @@ class user_model extends CI_Model
 		$this->db->from('books');
 
 		$string = str_replace(" ","|", $query);
-		$this->db->where("book_name REGEXP '$string'");
+		$this->db->where("book_name RLIKE '$string'");
 
 		$this->db->where('status', 1);
 		$q = $this->db->get();
 		return $q->result();
+	}
+
+	public function get_user_details($id)
+	{
+		$this->db->where('id', $id);
+		$query = $this->db->get('users');
+		return $query->row();
+	}
+
+	public function edit_profile($id, $data)
+	{
+		$options = ['cost'=> 12];
+		$encripted_pass = password_hash($this->input->post('password'), PASSWORD_BCRYPT, $options);
+
+		$data = array(
+		'name'	=> $this->input->post('name'),
+		'contact'	=> $this->input->post('contact'),
+		'address'	=> $this->input->post('address'),
+		'city'	=> $this->input->post('city'),
+		'password' => $encripted_pass,
+
+		);
+
+		return $query = $this->db->where('id', $id)->update('users', $data);
 	}
 
 

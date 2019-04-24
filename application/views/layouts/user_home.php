@@ -99,7 +99,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <li><a href="<?= base_url()?>user-home/sell-books">Sell Books</a></li>
                 <li><a href="<?= base_url()?>user-home/myBooks">My books</a></li>
                 <li><a href="<?= base_url()?>user-home/my-orders">My orders</a></li>
-                <li><a href="#">Edit profile</a></li>
+                <li><a href="<?= base_url('user-home/edit-profile/'.$this->session->userdata('id').'')?>">Edit profile</a></li>
                 <li><a href="<?= base_url()?>users/logout"><i class="fas fa-power-off"></i> Logout</a></li>
             </ul>
             </div>
