@@ -22,10 +22,11 @@
     <div class="col-lg-5">
      <div class="user-info">
         <div id="table-header">Profile details</div><br>
-            <h4 class="text-info"><?= htmlentities($this->session->userdata('name')) ?></h4>
-            <p><i class="fas fa-envelope"></i> <?= htmlentities($this->session->userdata('email'))?></p>
-            <p><i class="fas fa-mobile-alt"></i> <?= htmlentities($this->session->userdata('contact'))?></p>
-            <p><i class="fas fa-map-marked-alt"></i> <?= htmlentities($this->session->userdata('address'))?></p>
+            <h4 class="text-info"><?= htmlentities($user_details->name) ?></h4>
+            <p><i class="fas fa-envelope"></i> <?= htmlentities($user_details->email)?></p>
+            <p><i class="fas fa-mobile-alt"></i> <?= htmlentities($user_details->contact)?></p>
+            <p><i class="fas fa-map-marker-alt"></i> <?= htmlentities($user_details->address)?> &nbsp<i class="fas fa-city"></i> <?= htmlentities($user_details->city)?></p>
+            <p><i class="fas fa-history"></i> Joined from: <?= htmlentities(date('d-M, y', strtotime($user_details->createdate)))?></p>
         </div>
     </div>
     <div class="col-lg-7">
@@ -44,7 +45,7 @@
                 <?php 
                 $this->load->model('user_model');
                 $count = count($this->user_model->my_orders());
-                print "<b>Orders: </b>You placed ".$count." orders till now.";
+                print "<b>Orders: </b>You have placed ".$count." orders till now.";
                 ?>
             </div>
             <div class="user-reviews">

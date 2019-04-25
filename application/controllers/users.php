@@ -103,8 +103,6 @@ class Users extends CI_Controller {
 					'email'		=> $email,
 					'type'		=> $type,
 					'name'		=> $user_data->name,
-					'contact'	=> $user_data->contact,
-					'address'	=> $user_data->address,
 					'logged_in'	=> true
 
 				);
@@ -284,12 +282,11 @@ class Users extends CI_Controller {
 		/*==============================*/
 
 
-		$this->form_validation->set_rules('search_book', "Search",'required');
+		$this->form_validation->set_rules('search_book', "Search",'trim|required|strip_tags[search_book]');
 
 		if($this->form_validation->run() == FALSE)
 		{
-			#...Redirected same page after action
-			redirect($_SERVER['HTTP_REFERER']);
+			redirect('home');
 		}
 		else
 		{
