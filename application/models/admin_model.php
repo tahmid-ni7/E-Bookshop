@@ -233,8 +233,11 @@ class admin_model extends CI_Model
 	#...Get order details
 	public function get_order_detail($orderId)
 	{
-		$this->db->where('orderId', $orderId);
-		$query = $this->db->get('orders');
+		$this->db->select('orders.*, users.name');
+		$this->db->from('orders');
+		$this->db->join('users', 'orders.userId = users.id');
+		$this->db->where('orders.orderId', $orderId);
+		$query = $this->db->get();
 		return $query->row();
 	}
 

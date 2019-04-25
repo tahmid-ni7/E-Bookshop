@@ -30,7 +30,7 @@
     <tr>
       <?php print '<td>'.$order->orderId.'</td>'; ?>
 
-      <?php print '<td><span>'.substr(strip_tags($order->name), 0, 100).'</span></td>'; ?>
+      <?php print '<td><span>'.substr(strip_tags($order->ship_name), 0, 100).'</span></td>'; ?>
       <?php print '<td><span>'.strip_tags($order->email).'</span></td>'; ?>
       <?php print '<td><span>'.strip_tags($order->contact).'</span></td>'; ?>
       <?php print '<td><span>'.strip_tags($order->city).'</span></td>'; ?>

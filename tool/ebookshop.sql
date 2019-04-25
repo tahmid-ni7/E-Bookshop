@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 21, 2019 at 09:12 PM
+-- Generation Time: Apr 25, 2019 at 11:39 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.2
 
@@ -135,7 +135,7 @@ INSERT INTO `ebooks` (`id`, `ebook_name`, `description`, `author`, `book_file`, 
 CREATE TABLE `orders` (
   `orderId` int(11) NOT NULL,
   `userId` int(11) NOT NULL,
-  `name` varchar(200) NOT NULL,
+  `ship_name` varchar(200) NOT NULL,
   `email` varchar(200) NOT NULL,
   `contact` varchar(200) NOT NULL,
   `address` text NOT NULL,
@@ -153,15 +153,15 @@ CREATE TABLE `orders` (
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`orderId`, `userId`, `name`, `email`, `contact`, `address`, `city`, `zipcode`, `total_price`, `paymentcheck`, `dateTime`, `bookId`, `quantity`, `status`) VALUES
+INSERT INTO `orders` (`orderId`, `userId`, `ship_name`, `email`, `contact`, `address`, `city`, `zipcode`, `total_price`, `paymentcheck`, `dateTime`, `bookId`, `quantity`, `status`) VALUES
 (1, 1, 'Tahmid Nishat', 'tahmid.ni7@gmail.com', '01822597379', 'Uttara, sector#10, Road #12', 'Dhaka', '1230', '787', 1, '2019-04-12 13:54:12', '32, 27', '1, 1', '1'),
-(2, 1, 'Tahmid Nishat', 'tahmid.ni7@gmail.com', '01822597379', 'Kamar Para, Turag', 'Dhaka', '1216', '690', 1, '2019-04-12 13:55:22', '31, 30, 19', '1, 1, 1', '0'),
+(2, 1, 'Tahmid Nishat', 'tahmid.ni7@gmail.com', '01822597379', 'Kamar Para, Turag', 'Dhaka', '1216', '690', 1, '2019-04-12 13:55:22', '31, 30, 19', '1, 1, 1', '1'),
 (3, 1, 'Abid Mahmud Abrar', 'tahmid.ni7@gmail.com', '01683302276', 'Maheshkhali, Cox\'s Bazar', 'Cox\'s Bazar', '4710', '462', 1, '2019-04-12 13:56:22', '25', '1', '0'),
 (4, 1, 'Tahmid Nishat', 'tahmid.ni7@gmail.com', '01822597379', 'None', 'Dhaka', '222', '225', 1, '2019-04-12 13:59:07', '17', '1', '1'),
 (5, 19, 'MR User', 'user@system.com', '01822597379', 'Mirpur, Section #3, Road #15, Block #C, House-23', 'Dhaka', '1216', '240', 1, '2019-04-12 14:02:54', '31', '1', '0'),
 (6, 19, 'MR User', 'user@system.com', '01683302276', 'Mirpur, section #10,  Road #2, Block-D', 'Dhaka', '1200', '225', 1, '2019-04-12 14:04:30', '17', '1', '1'),
 (7, 1, 'Izaz Mahmud Tahur', 'izaz@gmail.com', '01822597379', 'Maheshkhali, cox\'s bazar', 'Cox\'s Bazar', '1430', '438', 1, '2019-04-21 10:40:30', '27', '1', '0'),
-(8, 19, 'Md User', 'user@system.com', '01822597379', 'Dhaka', 'Dhaka', '1230', '590', 1, '2019-04-21 15:46:10', '43, 42, 41', '1, 1, 1', '0');
+(8, 19, 'Md User', 'user@system.com', '01822597379', 'Dhaka', 'Dhaka', '1230', '590', 1, '2019-04-21 15:46:10', '43, 42, 41', '1, 1, 1', '1');
 
 -- --------------------------------------------------------
 
@@ -235,7 +235,7 @@ CREATE TABLE `users` (
   `address` varchar(500) NOT NULL,
   `city` varchar(50) NOT NULL,
   `type` varchar(20) NOT NULL DEFAULT 'U',
-  `createdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `createdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -243,15 +243,16 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `contact`, `email`, `password`, `address`, `city`, `type`, `createdate`) VALUES
-(1, 'Tahmid Nishat', '01822597379', 'tahmid.ni7@gmail.com', '$2y$12$dTg8uL7nwgN2HKNE1.K7c.9VvOCBKxmv0bW/KewDDRhAO8FfviuXC', 'Kamarpara', 'Dhaka', 'U', '2019-03-09 04:35:10'),
+(1, 'Tahmid Nishat', '01822597379', 'tahmid.ni7@gmail.com', '$2y$12$BlQKV1nWpTE6U3kuKf7Zve/kEKuRuey6iFliZ61xbeLdVRzmmnEOm', 'Kamarpara, Turag, Thana Road', 'Dhaka', 'U', '2019-02-28 13:51:33'),
 (7, 'MR. Admin Bhai', '01683302276', 'admin@gmail.com', '$2y$12$zmX.SQijiuC1oZUCF3ekleOlWnZlFFjfaj6d2XYleydtEbbF8yjPO', 'Maheshkhali', 'Coxs Bazar', 'A', '2019-04-21 10:54:26'),
 (9, 'Mr Admin', '01822597379', 'admin@system.com', '$2y$12$ib8I47YZPQwapuxUwUZ3turJjKEx0OxmE9FZ7SWSIKLd3vVrUMNsO', 'Uttara', 'Dhaka', 'A', '2019-03-09 18:22:46'),
 (17, 'Tahmid Nishat', '01822597379', 'tahmid@gmail.com', '$2y$12$JappExwfHgkgCjUpMFSV/eUEmxYzA0mW6A6GT4Uz3EElkdZATdNKC', 'Uttara Sector 10 Road 12', 'Dhaka', 'A', '2019-03-12 14:53:55'),
-(19, 'MR User', '01683302276', 'user@system.com', '$2y$12$ofrfiQHKQNezH/4V4pwF7enxL89tgItbrERPjapFiGtc015GUQC3.', 'Uttara Sector 10 Road 12', 'Dhaka', 'U', '2019-03-12 17:05:51'),
+(19, 'Mr. User', '01683302276', 'user@system.com', '$2y$12$1kgdGbPXiGux3xO763h5aeYlMpDH1NxAWH.3VZFfGm7TqwIiOZ62S', 'Uttara, Sector#10, Road#12', 'Dhaka', 'U', '2019-03-24 13:49:09'),
 (20, 'Nishat', '01683302276', 'nishat@gmail.com', '$2y$12$5sTv5IJMiabIrgfxGtHgDu0HPSPS/WBSC/Hq4kdzqGtPortbnG8K6', 'Uttara', 'Dhaka', 'U', '2019-03-12 17:07:17'),
-(21, 'Abid Mahmud Abrar', '01683302276', 'abid@gmail.com', '$2y$12$NAnDI/6uPQPtwitJ7K4dvu.1VoCKoYhyGJ7nnUPaoztp3RvwvjGEu', 'Maheshkhali', 'Coxs Bazar', 'U', '2019-03-14 04:35:02'),
+(21, 'Abid Mahmud Abrar', '01683302276', 'abid@gmail.com', '$2y$12$opQYQXnoF2iQ3ZZqI8MuUeRRsKsXp691ICM4kyMm0UZE0g7EJe6ia', 'Bara Maheshkhali', 'Coxs Bazar', 'U', '2019-03-14 04:35:02'),
 (22, 'Tahmid Nishat', '01822597379', 'mssuser@gmail.com', '$2y$12$q7B0pNDAgd.ApZUiJMb8jOyEANAa0znRz6FU8DEZrvkUJJOsii7Ca', 'nai', 'dhaka', 'U', '2019-03-27 15:31:34'),
-(23, 'Md Samiul Islam', '01781501769', 'mdsami9898@gmail.com', '$2y$12$DNxmJR1xJEwjWiqq7kN.BOMYBssyT1B5HtoUcTpTX8yiBqWFpqQu6', 'Tongi', 'dhaka', 'U', '2019-04-11 10:20:13');
+(23, 'Md Samiul Islam', '01781501769', 'mdsami9898@gmail.com', '$2y$12$DNxmJR1xJEwjWiqq7kN.BOMYBssyT1B5HtoUcTpTX8yiBqWFpqQu6', 'Tongi', 'dhaka', 'U', '2019-04-11 10:20:13'),
+(25, 'Izaz Mahmud Tahur', '01833277892', 'izaz@gmail.com', '$2y$12$kHF022GKp9tQ0Xr/dc8pj.AluHJyAPGEKmMArLBjjbNpbq2jgkZh2', 'Maheshkhali', 'Cox\'s Bazar', 'U', '2019-04-24 14:17:56');
 
 --
 -- Indexes for dumped tables
@@ -323,7 +324,7 @@ ALTER TABLE `ebooks`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `orderId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `orderId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `order_items`
 --
@@ -338,7 +339,7 @@ ALTER TABLE `reviews`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

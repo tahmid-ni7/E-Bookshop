@@ -15,7 +15,7 @@
 			<table class="table">
 				<tr>
 					<th>Ship Name</th>
-					<td colspan="1"><span><?= strip_tags($order_detail->name) ?></span></td>
+					<td colspan="1"><span><?= strip_tags($order_detail->ship_name) ?></span></td>
 				</tr>
 				<tr>
 					<th>Contact</th>
@@ -77,6 +77,10 @@
 					print '<th>Order Status</th>';
 					print '<td colspan="1">'.($order_detail->status).'</td>';
 					?>
+				</tr>
+				<tr>
+					<th>Order placed by</th>
+					<td colspan="1"><b><?= strip_tags($order_detail->name) ?></b></td>
 				</tr>
 			</table>
 			<div><h5>Action</h5></div>

@@ -7,7 +7,7 @@
 			<table class="table">
 				<tr>
 					<th>Ship Name</th>
-					<td colspan="1"><span><?= strip_tags($order_detail->name) ?></span></td>
+					<td colspan="1"><span><?= strip_tags($order_detail->ship_name) ?></span></td>
 				</tr>
 				<tr>
 					<th>Contact</th>

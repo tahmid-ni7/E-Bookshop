@@ -24,7 +24,7 @@
     <tr>
       <?php print '<td>'.$order->orderId.'</td>'; ?>
 
-      <?php print '<td>'.substr(strip_tags($order->name), 0, 100).'</td>'; ?>
+      <?php print '<td>'.substr(strip_tags($order->ship_name), 0, 100).'</td>'; ?>
       <?php print '<td>'.strip_tags($order->email).'</td>'; ?>
       <?php print '<td>'.strip_tags($order->contact).'</td>'; ?>
       <?php print '<td>'.strip_tags($order->total_price).'.TK</td>'; ?>
