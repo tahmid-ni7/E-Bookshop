@@ -526,12 +526,12 @@ span.sb input[type="submit"] {
 /*====================== Form CSS ==================*/
 .login-form,
 .reg-form, .my-form {
-    border: 1px solid #ddd;
-    padding: 40px;
+    border: 1px solid #dddd;
+    padding: 40px 28px;
     margin: 40px 0;
     min-height: 450px;
     position: relative;
-    border-radius: 15px;
+    border-radius: 6px;
     overflow: hidden;
 }
 
@@ -566,6 +566,7 @@ form#user-search {
     background-color: #F8694A;
     border: 1px solid #F8694A;
     margin-top: 30px;
+    font-weight: 600;
 }
 .my-btn-res
 {
@@ -1040,4 +1041,15 @@ ul.custom-pagination li.active a:hover
 }
 .user-books, .user-orders, .user-reviews {
     margin-bottom: 10px;
+}
+
+
+.login-with {
+    margin-top: 50px;
+    text-align: center;
+}
+.fb
+{
+    background: #3B5998;
+    border: 1px solid #3B5998;
 }

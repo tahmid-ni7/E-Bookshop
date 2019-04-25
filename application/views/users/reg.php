@@ -69,13 +69,20 @@
 
 
                 <div class="form-group">
-                <?= form_submit(['name'=>'submit','value'=>'Sign Up', 'class'=>'btn btn-primary btn-sm my-btn']); ?>
+                <?= form_submit(['name'=>'submit','value'=>'Sign Up', 'class'=>'btn btn-primary my-btn']); ?>
                 </div>
                 <div class="form-group" id="acc">
                     <span>Already have an account?</span>
                     <a href="<?= base_url()?>users/login">Login now</a>
                 </div>
             <?= form_close() ?>
+
+            <!--=== Login with social apps ===-->
+            <div class="col-lg-12 text-center">
+                <span><a href="#" class="btn btn-primary fb"><i class="fab fa-facebook-f"></i> Login with Facebook</a></span>&nbsp
+                <span><a href="#" class="btn btn-outline-danger"><i class="fab fa-google"></i> Login with Google &nbsp</a></span>
+            </div>
+
         </div>
     </div>
 </div>

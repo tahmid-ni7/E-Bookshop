@@ -24,11 +24,9 @@ class user_model extends CI_Model
 
 	}
 
-	public function login_user($email, $password, $type)
+	public function login_user($email, $password)
 	{
 		$this->db->where('email', $email);
-		$this->db->where('type', $type);
-
 		$result = $this->db->get('users');
 
 		$db_password = $result->row('password');
@@ -284,6 +282,4 @@ class user_model extends CI_Model
 
 } 
 
-
-
- ?>
+?>

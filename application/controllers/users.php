@@ -72,7 +72,6 @@ class Users extends CI_Controller {
 	{
 		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[3]|alpha_dash');
-		$this->form_validation->set_rules('type', 'Type', 'trim|required');
 
 		if($this->form_validation->run() == FALSE)
 		{
@@ -90,9 +89,8 @@ class Users extends CI_Controller {
 
 			$email = $this->input->post('email');
 			$password = $this->input->post('password');
-			$type = $this->input->post('type');
 
-			$user_data = $this->user_model->login_user($email, $password, $type);
+			$user_data = $this->user_model->login_user($email, $password);
 
 			if($user_data)
 			{
@@ -101,21 +99,21 @@ class Users extends CI_Controller {
 					'user_data' => $user_data,
 					'id'		=> $user_data->id,
 					'email'		=> $email,
-					'type'		=> $type,
+					'type'		=> $user_data->type,
 					'name'		=> $user_data->name,
 					'logged_in'	=> true
 
-				);
+				); // Data keeps in SESSION
 				
 				$this->session->set_userdata($login_data);
 
-				if($type == 'A')
+				if($user_data->type == 'A') // Admin
 				{
 
 					$this->session->set_flashdata('login_success', 'Logged in successfully. You have logged in as an admin.');
 					redirect('admin/index');
 				}
-				elseif ($type == 'U')
+				elseif ($user_data->type == 'U') // User
 				{
 					$this->session->set_flashdata('login_success', 'Welcome, <a href = "user-home" class = "text-primary">'.$this->session->userdata('name').'</a>. You have Logged in successfully');
 					redirect('home');
@@ -125,15 +123,9 @@ class Users extends CI_Controller {
 
 			else
 			{
-				/*=== LOAD DYNAMIC CATAGORY ===*/
-				$this->load->model('admin_model');
-				$view['category'] = $this->admin_model->get_category();
-				/*==============================*/
-				
 				$this->session->set_flashdata('login_fail', '<i class="fas fa-exclamation-triangle"></i> Invalid login. The email or password that you have entered is incorrect. ');
 
-				$view['user_view'] = "users/login";
-				$this->load->view('layouts/user_layout', $view);
+				redirect($_SERVER['HTTP_REFERER']); // Redirect at same page.
 			}
 
 		}

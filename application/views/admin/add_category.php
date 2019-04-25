@@ -1,4 +1,5 @@
-<div class="my-form">
+<div class="container">
+    <div class="my-form">
     <div id="form-header">Add new category</div>
     
     <?= form_open('admin/add_category')?>
@@ -36,4 +37,6 @@
             <span><?= form_reset(['name'=>'reset', 'value'=>'Reset', 'class'=>'btn btn-danger btn-sm my-btn-res'])?></span>
         </div>
     <?= form_close()?>
+</div>
+
 </div>
