@@ -1,11 +1,10 @@
-<div class="text-success">
+<!--=== Success msg ===-->
 <?php 
     if($this->session->flashdata('success'))
     {
         print '<div class= "success-msg">'.$this->session->flashdata('success').'</div>';
     }
 ?>
-</div>
 
 <div class="container-fluid">
     <div class="books-menu">

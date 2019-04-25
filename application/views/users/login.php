@@ -1,4 +1,4 @@
-<div class="text-danger">
+<!--=== Error msg ===-->
 <?php 
     if($this->session->flashdata('login_fail'))
     {
@@ -10,15 +10,14 @@
         print '<div class= "error-msg">'.$this->session->flashdata('no_access').'</div>';
     }
 ?>
-</div>
-<div class="text-success">
+<!--=== Success msg ===-->
 <?php 
     if($this->session->flashdata('reg_success'))
     {
         print '<div class= "success-msg">'.$this->session->flashdata('reg_success').'</div>';
     }
 ?>
-</div>
+
 <div class="login-form-area">
     <div class="container">
         <div class="login-form">

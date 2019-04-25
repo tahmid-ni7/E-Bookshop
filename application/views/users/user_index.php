@@ -1,4 +1,4 @@
-<div class="text-success">
+<!--=== Success msg ===-->
 <?php 
     if($this->session->flashdata('login_success'))
     {
@@ -9,7 +9,6 @@
         print '<div class= "success-msg">'.$this->session->flashdata('success').'</div>';
     }
 ?>
-</div>
 
 
 <div class="admin-index section-padding">

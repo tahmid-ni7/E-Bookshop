@@ -1,11 +1,10 @@
-<div class="text-success">
+<!--=== Success msg ===-->
 <?php 
     if($this->session->flashdata('success'))
     {
         print '<div class= "success-msg">'.$this->session->flashdata('success').'</div>';
     }
 ?>
-</div>
 <br>
 <div class="container-fluid">
 	<div id="table-header">all orders</div>

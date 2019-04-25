@@ -1,11 +1,10 @@
-<div class="text-success">
+<!--=== Success msg ===-->
 <?php 
     if($this->session->flashdata('success'))
     {
         print '<div class= "success-msg">'.$this->session->flashdata('success').'</div>';
     }
 ?>
-</div>
 
 <div class="view-btn"><a href="<?= base_url()?>admin/add_category">Add new Category <i class="fas fa-plus-circle"></i></a></div>
 <br>

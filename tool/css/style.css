@@ -670,13 +670,15 @@ small a {
 }
 .success-msg{
     background: #E6EDDE;
-    border: 1px solid #4E7F16;
+    border: 1px solid #1111;
     position: relative;
+    color: #444;
 }
 .error-msg{
     background: #FFEBE8;
-    border: 1px solid #DD3C10;
+    border: 1px solid #1111;
     position: relative;
+    color: #444;
 }
 .cross {
     position: absolute;
