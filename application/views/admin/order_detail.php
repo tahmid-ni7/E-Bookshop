@@ -86,7 +86,7 @@
 			<div><h5>Action</h5></div>
 		      <?php print '<td>';
 		        print '<a href= "'.base_url('admin/accept_order/'.$order_detail->orderId.'').'" title= "Edit" class="btn btn-success btn-sm"> <i class= "fas fa-check"></i> Accept Order</a>&nbsp';
-		        print '<a href= "'.base_url().'admin/delete_order/'.$order_detail->orderId.'" title= "Delete" class="btn btn-danger btn-sm"> <i class= "fas fa-trash"></i> Cencle Order</a>&nbsp';
+		        print '<a href= "'.base_url().'admin/delete_order/'.$order_detail->orderId.'" title= "Delete" class="btn btn-danger btn-sm delete" data-confirm = "Are you sure to cencel this order?"> <i class= "fas fa-trash"></i> Cencle Order</a>&nbsp';
 
 		        print '</td>'; 
 		      ?>

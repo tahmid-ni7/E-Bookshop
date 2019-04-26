@@ -31,7 +31,7 @@
 
 			<div><h5>Action</h5></div>
 		      <?php print '<td>';
-		        print '<a href= "'.base_url('admin/delete_ebook/'.$ebook_detail->id.'').'" title= "Delete" class="btn btn-danger btn-sm"> <i class= "fas fa-trash"></i> Delete</a>&nbsp';
+		        print '<a href= "'.base_url('admin/delete_ebook/'.$ebook_detail->id.'').'" title= "Delete" class="btn btn-danger btn-sm delete" data-confirm = "Are you sure to delete this e-book?"> <i class= "fas fa-trash"></i> Delete</a>&nbsp';
 
 		        print '</td>'; 
 		      ?>

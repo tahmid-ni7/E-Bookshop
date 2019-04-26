@@ -65,9 +65,9 @@
 
 
       <?php print '<td>';
-        print '<div><a href= "'.base_url().'admin/published_books/'.$book->id.'" title= "Published the book" class="btn btn-primary btn-sm">Published</a></div><br>';
+        print '<div><a href= "'.base_url().'admin/published_books/'.$book->id.'" title= "Published the book" class="btn btn-primary btn-sm confirm-alert" data-confirm = "Are you sure to publish this book?">Published</a></div><br>';
 
-        print '<div><a href= "'.base_url().'admin/delete_pending_books/'.$book->id.'" title= "Delete" class="btn btn-danger btn-sm"><i class= "fas fa-trash"></i> Delete&nbsp</a></div>';
+        print '<div><a href= "'.base_url().'admin/delete_pending_books/'.$book->id.'" title= "Delete" class="btn btn-danger btn-sm delete" data-confirm = "Are you sure to delete this book, which is upload by a user?"><i class= "fas fa-trash"></i> Delete&nbsp</a></div>';
         print '</td>'; 
       ?>
     </tr>

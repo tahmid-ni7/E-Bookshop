@@ -37,7 +37,7 @@
       <?php print '<td>'.htmlentities($udata->city).'</td>'; ?>
 
       <?php print '<td>';
-        print '<a href= "'.base_url().'admin/user_delete/'.$udata->id.'" title= "Delete" class="btn btn-outline-danger btn-sm"><i class="fas fa-times"></i></a>';
+        print '<a href= "'.base_url().'admin/user_delete/'.$udata->id.'" title= "Delete" class="btn btn-outline-danger btn-sm delete" data-confirm = "Are you sure to delete this User?"><i class="fas fa-times"></i></a>';
 
         print '</td>'; 
       ?>

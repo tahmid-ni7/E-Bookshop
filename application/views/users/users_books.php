@@ -59,7 +59,7 @@
       print '<td>';
         print '<div><a href= "'.base_url().'users/book-view/'.$book->id.'" title= "View details" class="btn btn-info btn-sm"><i class= "fas fa-eye"></i> View&nbsp</a></div>';
         print '<br>';
-        print '<div><a href= "'.base_url().'user-home/myBooks-delete/'.$book->id.'" title= "Delete" class="btn btn-danger btn-sm"><i class= "fas fa-trash"></i> Delete</a></div>';
+        print '<div><a href= "'.base_url().'user-home/myBooks-delete/'.$book->id.'" title= "Delete" class="btn btn-danger btn-sm delete" data-confirm = "Are you sure to delete this book?"><i class= "fas fa-trash"></i> Delete</a></div>';
       print '</td>'; 
       ?>
     </tr>
