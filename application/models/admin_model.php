@@ -311,5 +311,35 @@ class admin_model extends CI_Model
 		$this->db->delete('ebooks');
 	}
 
+	#...Get all orders ready to deliver
+	public function get_orders_to_deliver()
+	{
+		$this->db->order_by('orderId', 'DESC');
+		$this->db->where('status', '1');
+		$query = $this->db->get('orders');
+		return $query->result();
+	}
+	#...Confirm order delivery
+	public function confirm_delivery($orderId, $data)
+	{
+		
+		$data = array(
+			'del_status' => 1
+		);
+
+		return $query = $this->db->where('orderId', $orderId)->update('orders', $data);
+	}
+
+	#...cencle order delivery
+	public function cancle_delivery($orderId, $data)
+	{
+		
+		$data = array(
+			'del_status' => 0
+		);
+
+		return $query = $this->db->where('orderId', $orderId)->update('orders', $data);
+	}
+
 
 }

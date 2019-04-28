@@ -543,5 +543,53 @@ class admin extends CI_Controller {
 		redirect('admin/ebooks');
 	}
 
+	public function ready_to_deliver()
+	{
+		$this->load->model('admin_model');
+		$view['orders'] = $this->admin_model->get_orders_to_deliver();
+
+		$view['admin_view'] = "admin/ready_to_deliver";
+		$this->load->view('layouts/admin_layout', $view);
+	}
+
+	public function delivery_details($orderId)
+	{
+		$this->load->model('admin_model');
+		$view['order_detail'] = $this->admin_model->get_order_detail($orderId);
+
+		if($this->admin_model->get_order_detail($orderId))
+		{
+			$view['admin_view'] = "admin/delivery_details";
+			$this->load->view('layouts/admin_layout', $view);
+		}
+		else
+		{
+			$view['admin_view'] = "temp/404page";
+			$this->load->view('layouts/admin_layout', $view);
+		}
+	}
+
+	#...Confirm delivery
+	public function confirm_delivery($orderId)
+	{
+		$this->load->model('admin_model');
+		if($this->admin_model->confirm_delivery($orderId, $data))
+		{
+			$this->session->set_flashdata('success','Order number '.$this->uri->segment(3).' is delivered successfully');
+			redirect('admin/ready_to_deliver');
+		}
+	}
+
+	public function cancle_delivery($orderId)
+	{
+		$this->load->model('admin_model');
+		if($this->admin_model->cancle_delivery($orderId, $data))
+		{
+			$this->session->set_flashdata('success','Order number '.$this->uri->segment(3).' is cancled.');
+			redirect('admin/ready_to_deliver');
+		}
+	}
+
+
 
 }

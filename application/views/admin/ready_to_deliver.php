@@ -6,8 +6,8 @@
     }
 ?>
 <br>
-<div class="container-fluid">
-	<div id="table-header">all orders</div>
+<div class="container-fluid" style="min-height: 500px">
+	<div id="table-header">orders ready to deliver</div>
   <div class="table-responsive-sm">
 	<table class="table table-hover">
   <thead class="thead-light">
@@ -19,7 +19,7 @@
       <th scope="col">Shipping city</th>
       <th scope="col">Total Price</th>
       <th scope="col">Order Date</th>
-      <th scope="col">Orders Status</th>
+      <th scope="col">Delivery Status</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -36,28 +36,28 @@
       <?php print '<td><span>'.strip_tags($order->city).'</span></td>'; ?>
       <?php print '<td><span>'.strip_tags($order->total_price).'.TK</span></td>'; ?>
       <?php print '<td>'.date('h:i a, d-M y', strtotime($order->dateTime)).'</td>'; ?>
-
+      
       <?php 
-      if($order->status == 1)
+      if($order->del_status == 1)
       { 
-        $order->status = '<span class = "text-success">Accepted</span>';
+        $order->del_status = '<span class = "text-success">Delivered</span>';
       }
       else
       {
-        $order->status = '<span class = "text-danger">Pending</span>';
+        $order->del_status = '<span class = "text-danger">Set to deliver</span>';
       }
-      print '<td>'.$order->status.'</td>';
+      print '<td>'.$order->del_status.'</td>';
        
       ?>
   
       <?php print '<td>';
-        print '<a href= "'.base_url().'admin/order_view/'.$order->orderId.'" title= "View Details" class="btn btn-primary btn-sm">Details</a>&nbsp';
+        print '<a href= "'.base_url().'admin/confirm_delivery/'.$order->orderId.'" title= "Delivered" class="btn btn-success btn-sm confirm-alert" data-confirm = "Are you sure to confirm this order delivery.?">Delivered</a>&nbsp';
+        print '<a href= "'.base_url().'admin/delivery_details/'.$order->orderId.'" title= "View Details" class="btn btn-primary btn-sm">Details</a>&nbsp';
         print '</td>'; 
       ?>
     </tr>
 	<?php endforeach; ?>
   </tbody>
 </table>
-<div class="section-padding"><h6><a href="<?= base_url('admin/ready_to_deliver')?>" class="text-primary"><i class="fas fa-truck"></i> Orders ready to deliver</a></h6></div>
 </div>
 </div>

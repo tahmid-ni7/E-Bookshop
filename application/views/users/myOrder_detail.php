@@ -74,4 +74,5 @@
 		</div>
 		<div class="col-lg-4"></div>
 	</div>
+	<div><h6 class="text-danger">* Order will delivered with in 7 days after accepted.</h6></div>
 </div><br>

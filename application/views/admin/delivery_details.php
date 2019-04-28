@@ -6,13 +6,32 @@
     }
 ?>
 
+<!--=== JS code for print ===-->
+<script>
+function printDiv(eleId){
+    var PW = window.open('', '_blank', 'Print content');
+    PW.document.write(document.getElementById(eleId).innerHTML);
+    PW.document.close();
+    PW.focus();
+    PW.print();
+    PW.close();
+}
+</script>
+<!-- js code end -->
+
 <br>
-<div class="container">
+<div class="container" id="print-delivery-details">
+	
+	<!--=== Css links for keep style while printing ===-->
+	<link rel="stylesheet" type="text/css" href="<?= base_url('tool/css/bootstrap.min.css'); ?>">
+    <link rel="stylesheet" type="text/css" href="<?= base_url('tool/css/style.css'); ?>">
+    <!-- Css link end -->
+
 	<div class="row">
 		<div class="col-lg-8">
-			<div id="table-header">Order Detail</div><br>
-			<h5>Details information of Order number <?= $order_detail->orderId ?></h5>
-			<table class="table">
+			<div id="table-header">Detail delivery informations</div><br>
+			<h5 class="text-info">Details information of Order number <?= $order_detail->orderId ?></h5>
+			<table class="table borderless">
 				<tr>
 					<th>Ship Name</th>
 					<td colspan="1"><span><?= strip_tags($order_detail->ship_name) ?></span></td>
@@ -64,18 +83,18 @@
 					<th>Book Quantity</th>
 					<td colspan="1"><?= strip_tags($order_detail->quantity) ?></td>
 				</tr>
-				<tr class="border-bottom">
+				<tr>
 					<?php
-					if($order_detail->status == 1)
+					if($order_detail->del_status == 1)
 					{
-						$order_detail->status = '<span class = "text-success">Accepted</span>';
+						$order_detail->del_status = '<span class = "text-success">Delivered</span>';
 					}
 					else
 					{
-						$order_detail->status = '<span class = "text-danger">Pending</span>';
+						$order_detail->del_status = '<span class = "text-danger">Set to deliver</span>';
 					}
-					print '<th>Order Status</th>';
-					print '<td colspan="1">'.($order_detail->status).'</td>';
+					print '<th>Delivery Status</th>';
+					print '<td colspan="1">'.($order_detail->del_status).'</td>';
 					?>
 				</tr>
 				<tr>
@@ -83,14 +102,13 @@
 					<td colspan="1"><b><?= strip_tags($order_detail->name) ?></b></td>
 				</tr>
 			</table>
-			<div><h5>Action</h5></div>
-		      <?php print '<td>';
-		        print '<a href= "'.base_url('admin/accept_order/'.$order_detail->orderId.'').'" title= "Edit" class="btn btn-success btn-sm"> <i class= "fas fa-check"></i> Accept Order</a>&nbsp';
-		        print '<a href= "'.base_url().'admin/delete_order/'.$order_detail->orderId.'" title= "Delete" class="btn btn-danger btn-sm delete" data-confirm = "Are you sure to cencel this order?"> <i class= "fas fa-trash"></i> Cancle Order</a>&nbsp';
-
-		        print '</td>'; 
-		      ?>
 		</div>
 		<div class="col-lg-4"></div>
 	</div>
+	<div><h5>* Customer has to pay total <span class="text-info"><?= $order_detail->total_price?>.TK</span> with shipping cost.</h5></div>
+</div>
+<br>
+<div class="container">
+	<button onclick="printDiv('print-delivery-details');" class="btn btn-primary btn-sm"><i class="fas fa-print"></i> Print&nbsp</button>&nbsp
+	<a href="<?= base_url('admin/cancle_delivery/'.$order_detail->orderId.'')?>" class="btn btn-danger btn-sm delete" data-confirm = "Are you sure to cencel this order delivery?">Cancle Delivery</a>
 </div>
