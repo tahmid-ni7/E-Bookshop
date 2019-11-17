@@ -40,4 +40,4 @@ Thanks & Regards
 
 Email: tahmid.ni7@gmail.com
 
-#### Have a look to project interface screenshots: https://imgur.com/a/vPxwOiF here.
+#### Have a look to project interface [screenshots](https://imgur.com/a/vPxwOiF) here.
